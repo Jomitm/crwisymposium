@@ -53,4 +53,75 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Search and Filter Functionality
+    const searchInput = document.querySelector('.search-input');
+    const filterSelect = document.querySelector('.filter-select');
+    const presenterCards = document.querySelectorAll('.presenter-card-large');
+
+    function filterPresenters() {
+        // Escape special regex characters to prevent errors
+        const escapeRegExp = (string) => {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        };
+
+        const searchText = searchInput.value.trim();
+        const selectedTheme = filterSelect.value.toLowerCase();
+
+        presenterCards.forEach(card => {
+            const name = card.querySelector('h5').textContent;
+            const congregation = card.querySelector('.role').textContent;
+            const title = card.querySelector('.paper-title').textContent;
+
+            // Combine text for searching
+            // Note: We use original case for display but can use case-insensitive regex
+            const cardText = `${name} ${congregation} ${title}`;
+
+            // Theme matching (simplified)
+            const matchesTheme = selectedTheme === 'all themes' || cardText.toLowerCase().includes(selectedTheme);
+
+            // Search matching with Word Boundaries
+            let matchesSearch = true;
+            if (searchText) {
+                // creating a regex for the search term with word boundaries
+                // 'i' flag for case-insensitive matching
+                try {
+                    const safeSearchText = escapeRegExp(searchText);
+                    const regex = new RegExp(`\\b${safeSearchText}`, 'i');
+                    // Note: Using \b only at start or depending on requirement. 
+                    // User asked result for "Name 1". "Name 1" is two words.
+                    // If user searches "Name 1", we want it to match "Sr. Presenter Name 1"
+                    // But NOT "Sr. Presenter Name 11".
+                    // The '1' effectively needs the word boundary.
+
+                    // Let's use a simpler approach: check if the cardText contains the EXACT phrase if it's potentially partial
+                    // But for the specific case "1" vs "11", \b is key.
+                    // If we use RegExp(`\\b${safeSearchText}\\b`, 'i'), "Name 1" matches "Name 1" but not "Name 11".
+
+                    const strictRegex = new RegExp(`\\b${safeSearchText}\\b`, 'i');
+                    matchesSearch = strictRegex.test(cardText);
+                } catch (e) {
+                    // Fallback to simple includes if regex fails (unlikely with escape)
+                    matchesSearch = cardText.toLowerCase().includes(searchText.toLowerCase());
+                }
+            }
+
+            if (matchesTheme && matchesSearch) {
+                card.style.display = 'block';
+                // Re-trigger animation if needed, or ensure it's visible
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterPresenters);
+    }
+
+    if (filterSelect) {
+        filterSelect.addEventListener('change', filterPresenters);
+    }
 });
