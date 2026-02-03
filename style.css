@@ -944,3 +944,61 @@ footer {
         margin-top: 2rem;
     }
 }
+/* Contact Card Styles in Footer */
+.contact-card-small {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s;
+}
+
+.contact-card-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-avatar,
+.contact-avatar-placeholder {
+    width: 50px;
+    height: 60px; /* Passport ratio roughly */
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--accent-color);
+}
+
+.contact-avatar-placeholder {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-avatar-placeholder::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #444;
+    border-radius: 50%;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-name {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.2rem !important;
+    font-size: 0.95rem;
+}
+
+.contact-phone {
+    font-size: 0.85rem;
+    color: var(--text-light); /* Or #bbb */
+    margin-bottom: 0 !important;
+}
