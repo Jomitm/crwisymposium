@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Burger Animation
         burger.classList.toggle('toggle');
+        
+        // Accessibility
+        const expanded = nav.classList.contains('nav-active');
+        burger.setAttribute('aria-expanded', expanded);
     });
 
     // Close nav when clicking a link
@@ -17,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             nav.classList.remove('nav-active');
             burger.classList.remove('toggle');
+            burger.setAttribute('aria-expanded', 'false');
         });
     });
 
@@ -36,81 +41,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Fade up animations for sections
-    const animElements = document.querySelectorAll('.card, .theme-card, .text-content, .quote-card, .timeline-item');
+    const animElements = document.querySelectorAll('.card, .theme-card, .text-content, .quote-card, .timeline-item, .presenter-card-large, .fade-in-up');
     animElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        // Only apply if not already handled by CSS classes like .fade-in-up logic
+        if (!el.classList.contains('fade-in-up')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        } else {
+             // If it has fade-in-up, we still want to trigger the 'visible' class
+             observer.observe(el);
+        }
+    });
+    
+    // Add visible class to trigger CSS animations if they use it
+    const cssAnimElements = document.querySelectorAll('.fade-in-up');
+    cssAnimElements.forEach(el => {
         observer.observe(el);
     });
 
-    // Custom helper to trigger the transition
+
+    // Custom helper to trigger the transition for JS-styled elements
     document.addEventListener('scroll', () => {
         animElements.forEach(el => {
-            if (el.classList.contains('visible')) {
+            if (el.classList.contains('visible') && !el.classList.contains('fade-in-up')) {
                 el.style.opacity = '1';
                 el.style.transform = 'translateY(0)';
             }
         });
     });
 
-    // Search and Filter Functionality
-    const searchInput = document.querySelector('.search-input');
-    const filterSelect = document.querySelector('.filter-select');
+    // --- Countdown Timer Logic ---
+    const countdownElement = document.getElementById('countdown');
+    if (countdownElement) {
+        const conferenceDate = new Date('2026-05-07T09:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = conferenceDate - now;
+
+            if (distance < 0) {
+                countdownElement.innerHTML = "Symposium has started!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m remaining`;
+        }
+        
+        updateCountdown(); // Run immediately
+        setInterval(updateCountdown, 60000); // Update every minute
+    }
+
+    // --- Search and Filter Functionality ---
+    const searchInput = document.getElementById('search-input');
+    const filterSelect = document.getElementById('theme-filter');
     const presenterCards = document.querySelectorAll('.presenter-card-large');
 
     function filterPresenters() {
-        // Escape special regex characters to prevent errors
-        const escapeRegExp = (string) => {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        };
-
-        const searchText = searchInput.value.trim();
-        const selectedTheme = filterSelect.value.toLowerCase();
+        const searchText = searchInput.value.toLowerCase().trim();
+        const selectedTheme = filterSelect.value; // 'all' or specific theme ('Formation', etc.)
 
         presenterCards.forEach(card => {
-            const name = card.querySelector('h5').textContent;
-            const congregation = card.querySelector('.role').textContent;
-            const title = card.querySelector('.paper-title').textContent;
+            const name = card.querySelector('h5') ? card.querySelector('h5').textContent.toLowerCase() : '';
+            const role = card.querySelector('.role') ? card.querySelector('.role').textContent.toLowerCase() : '';
+            const title = card.querySelector('.paper-title') ? card.querySelector('.paper-title').textContent.toLowerCase() : '';
+            
+            // Get theme from data attribute
+            const cardTheme = card.getAttribute('data-theme');
 
-            // Combine text for searching
-            // Note: We use original case for display but can use case-insensitive regex
-            const cardText = `${name} ${congregation} ${title}`;
+            // 1. Theme Match
+            // If selected is 'all', it matches everything.
+            // Otherwise, cardTheme must exactly match the selected option.
+            const matchesTheme = (selectedTheme === 'all') || (cardTheme === selectedTheme);
 
-            // Theme matching (simplified)
-            const matchesTheme = selectedTheme === 'all themes' || cardText.toLowerCase().includes(selectedTheme);
+            // 2. Search Text Match
+            const cardText = `${name} ${role} ${title}`;
+            const matchesSearch = !searchText || cardText.includes(searchText);
 
-            // Search matching with Word Boundaries
-            let matchesSearch = true;
-            if (searchText) {
-                // creating a regex for the search term with word boundaries
-                // 'i' flag for case-insensitive matching
-                try {
-                    const safeSearchText = escapeRegExp(searchText);
-                    const regex = new RegExp(`\\b${safeSearchText}`, 'i');
-                    // Note: Using \b only at start or depending on requirement. 
-                    // User asked result for "Name 1". "Name 1" is two words.
-                    // If user searches "Name 1", we want it to match "Sr. Presenter Name 1"
-                    // But NOT "Sr. Presenter Name 11".
-                    // The '1' effectively needs the word boundary.
-
-                    // Let's use a simpler approach: check if the cardText contains the EXACT phrase if it's potentially partial
-                    // But for the specific case "1" vs "11", \b is key.
-                    // If we use RegExp(`\\b${safeSearchText}\\b`, 'i'), "Name 1" matches "Name 1" but not "Name 11".
-
-                    const strictRegex = new RegExp(`\\b${safeSearchText}\\b`, 'i');
-                    matchesSearch = strictRegex.test(cardText);
-                } catch (e) {
-                    // Fallback to simple includes if regex fails (unlikely with escape)
-                    matchesSearch = cardText.toLowerCase().includes(searchText.toLowerCase());
-                }
-            }
-
+            // Visibility
             if (matchesTheme && matchesSearch) {
                 card.style.display = 'block';
-                // Re-trigger animation if needed, or ensure it's visible
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+                // Trigger animation reset implementation if needed, but simple display toggle is safer for now
+                setTimeout(() => {
+                     card.style.opacity = '1';
+                     card.style.transform = 'translateY(0)';
+                }, 50);
             } else {
                 card.style.display = 'none';
             }
