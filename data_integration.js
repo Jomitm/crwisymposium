@@ -79,7 +79,8 @@ async function fetchAndPopulateData() {
                         const day = dateMatch[1];
                         const month = dateMatch[4];
                         const year = dateMatch[5];
-                        target = `${year}-${month}-${day}T09:00:00`;
+                        // Use a more widely supported format for new Date()
+                        target = `${month} ${day}, ${year} 09:00:00`;
                     }
                 }
             }

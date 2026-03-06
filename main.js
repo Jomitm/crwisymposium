@@ -92,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
+                if (isNaN(days) || isNaN(hours) || isNaN(minutes)) {
+                    countdownElement.innerHTML = "Counting down to Symposium...";
+                    return;
+                }
+
                 countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m remaining`;
             }
 
