@@ -12,12 +12,12 @@
     },
     {
       "Setting_Key": "Event_Start_Date",
-      "Setting_Value": "2026-05-07",
+      "Setting_Value": 46148,
       "Description": "Used in Schema.org / JSON-LD"
     },
     {
       "Setting_Key": "Event_End_Date",
-      "Setting_Value": "2026-05-08",
+      "Setting_Value": 46150,
       "Description": "Used in Schema.org / JSON-LD"
     },
     {

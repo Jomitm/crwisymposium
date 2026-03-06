@@ -21,6 +21,26 @@ async function fetchAndPopulateData() {
             const navLogoImg = document.querySelector('.nav-logo-img');
             if (navLogoImg && settings.Nav_Logo_Image) navLogoImg.src = settings.Nav_Logo_Image;
 
+            const heroDate = document.getElementById('hero-date');
+            if (heroDate) {
+                if (settings.Event_Date_Text) {
+                    heroDate.textContent = settings.Event_Date_Text;
+                } else if (data.Important_Dates) {
+                    // Fallback: Use the "Conference Dates" from Important_Dates sheet
+                    const confDate = data.Important_Dates.find(d =>
+                        d.Event_Description && d.Event_Description.toLowerCase().includes('conference')
+                    );
+                    if (confDate) {
+                        heroDate.textContent = confDate.Date_String;
+                    }
+                }
+            }
+
+            const heroLocation = document.getElementById('hero-location');
+            if (heroLocation && settings.Location_Name && settings.Location_City) {
+                heroLocation.textContent = `${settings.Location_Name}, ${settings.Location_City}`;
+            }
+
             const heroSection = document.getElementById('hero');
             if (heroSection && settings.Hero_Background) {
                 // If you are setting background via css vars or style
@@ -43,8 +63,11 @@ async function fetchAndPopulateData() {
                 btn.href = heroData.Button_Link;
             }
 
-            // Set countdown target globally if needed
+            // Set countdown target globally and update the timer
             window.countdownTarget = heroData.Countdown_Target;
+            if (window.initCountdown) {
+                window.initCountdown(window.countdownTarget);
+            }
         }
 
         // --- Populate Collaborator Logos ---
@@ -62,18 +85,18 @@ async function fetchAndPopulateData() {
         if (data.Important_Dates) {
             const datesContainer = document.querySelector('.hero-timeline-card');
             if (datesContainer) {
-                // Keep the h3 and the link, replace the timeline items
-                const title = datesContainer.querySelector('h3').outerHTML;
-                const link = datesContainer.querySelector('div[style*="text-align: center"]').outerHTML;
+                const titleEl = datesContainer.querySelector('h3');
+                const linkEl = datesContainer.querySelector('a[href="#call-for-papers"]')?.parentElement;
 
-                let datesHTML = title;
+                let datesHTML = titleEl ? titleEl.outerHTML : '<h3>Important Dates</h3>';
                 data.Important_Dates.sort((a, b) => a.Sort_Order - b.Sort_Order).forEach(date => {
                     datesHTML += `
                      <div class="timeline-item-hero">
                         <strong>${date.Date_String}</strong><br>${date.Event_Description}
                      </div>`;
                 });
-                datesHTML += link;
+
+                if (linkEl) datesHTML += linkEl.outerHTML;
                 datesContainer.innerHTML = datesHTML;
             }
         }

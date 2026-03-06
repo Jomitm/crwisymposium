@@ -75,26 +75,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Countdown Timer Logic ---
     const countdownElement = document.getElementById('countdown');
     if (countdownElement) {
-        const conferenceDate = new Date('2026-05-07T09:00:00').getTime();
+        // Function to start/update countdown
+        window.initCountdown = function (targetDateStr) {
+            const targetDate = new Date(targetDateStr || '2026-05-07T09:00:00').getTime();
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = conferenceDate - now;
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
 
-            if (distance < 0) {
-                countdownElement.innerHTML = "Symposium has started!";
-                return;
+                if (distance < 0) {
+                    countdownElement.innerHTML = "Symposium has started!";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m remaining`;
             }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            if (window.countdownInterval) clearInterval(window.countdownInterval);
+            updateCountdown();
+            window.countdownInterval = setInterval(updateCountdown, 60000);
+        };
 
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m remaining`;
-        }
-
-        updateCountdown(); // Run immediately
-        setInterval(updateCountdown, 60000); // Update every minute
+        // Initial call with fallback
+        window.initCountdown();
     }
 
     // --- Search and Filter Functionality (Handled by data_integration.js) ---
