@@ -172,13 +172,22 @@ async function fetchAndPopulateData() {
                     // Use a placeholder if no image
                     const bgImage = speaker.Image_Path ? `background-image: url('${speaker.Image_Path}');` : '';
                     grid.innerHTML += `
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo" style="${bgImage}"></div>
-                        <div class="presenter-info">
-                            <h5>${speaker.Speaker_Name}</h5>
-                            <p class="role">${speaker.Speaker_Role}</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">${speaker.Paper_Title}</p>
+                    <div class="presenter-card-large">
+                        <div class="presenter-card-inner">
+                            <div class="presenter-card-front">
+                                <div class="presenter-photo" style="${bgImage}"></div>
+                                <div class="presenter-info">
+                                    <h5>${speaker.Speaker_Name}</h5>
+                                    <p class="role">${speaker.Speaker_Role}</p>
+                                    <hr class="divider-small">
+                                    <p class="paper-title">${speaker.Paper_Title}</p>
+                                    <span class="read-more">Profile</span>
+                                </div>
+                            </div>
+                            <div class="presenter-card-back">
+                                <h5>Profile</h5>
+                                <div class="profile-text">${speaker.Paper_Title}</div>
+                            </div>
                         </div>
                     </div>`;
                 });
@@ -195,13 +204,25 @@ async function fetchAndPopulateData() {
                     const bgImage = presenter.Image_Path ? `background-image: url('${presenter.Image_Path}');` : '';
                     grid.innerHTML += `
                      <article class="presenter-card-large" data-theme="${presenter.Theme_Category}">
-                        <div class="presenter-photo" style="${bgImage}"></div>
-                        <div class="presenter-info">
-                            <h5>${presenter.Presenter_Name}</h5>
-                            <p class="role">${presenter.Congregation_Name}</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">${presenter.Paper_Title}</p>
-                            <a href="${presenter.Abstract_Link}" class="read-more">Read Abstract</a>
+                        <div class="presenter-card-inner">
+                            <div class="presenter-card-front">
+                                <div class="presenter-photo" style="${bgImage}"></div>
+                                <div class="presenter-info">
+                                    <h5>${presenter.Presenter_Name}</h5>
+                                    <p class="role">${presenter.Congregation_Name}</p>
+                                    <hr class="divider-small">
+                                    <p class="paper-title">${presenter.Paper_Title}</p>
+                                    <span class="read-more">Profile</span>
+                                </div>
+                            </div>
+                            <div class="presenter-card-back">
+                                <h5>Profile</h5>
+                                <div class="profile-text">
+                                    <p><strong>Theme:</strong> ${presenter.Theme_Category}</p>
+                                    <p>${presenter.Paper_Title}</p>
+                                    <a href="${presenter.Abstract_Link}" target="_blank" style="color: var(--accent-color); text-decoration: underline; margin-top: 10px; display: inline-block;">Full Abstract</a>
+                                </div>
+                            </div>
                         </div>
                     </article>`;
                 });

@@ -648,25 +648,69 @@ img {
 }
 
 .presenter-card-large {
-    background: var(--white);
-    border: 1px solid #eee;
+    background: transparent;
+    perspective: 1000px;
+    height: 480px;
+    border: none;
     border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
 }
 
-.presenter-card-large:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-color: var(--accent-color);
+.presenter-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.presenter-card-large:hover .presenter-card-inner {
+    transform: rotateY(180deg);
+}
+
+.presenter-card-front, .presenter-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    background-color: var(--white);
+    border: 1px solid #eee;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.presenter-card-back {
+    transform: rotateY(180deg);
+    padding: 2rem;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: 2px solid var(--accent-color);
+}
+
+.presenter-card-back h5 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading-sub);
+}
+
+.presenter-card-back .profile-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-y: auto;
 }
 
 .presenter-photo {
-    height: 200px;
+    height: 220px;
     background-color: #f0f0f0;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%23cccccc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>');
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     border-bottom: 1px solid #eee;
 }
 
