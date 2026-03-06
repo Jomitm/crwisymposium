@@ -164,12 +164,10 @@ async function fetchAndPopulateData() {
 
         // --- Populate Key Speakers ---
         if (data.Key_Speakers) {
-            // The first presenters-grid-large inside #presenters
             const grid = document.querySelector('#presenters .presenters-grid-large');
             if (grid) {
                 grid.innerHTML = '';
                 data.Key_Speakers.forEach(speaker => {
-                    // Use a placeholder if no image
                     const bgImage = speaker.Image_Path ? `background-image: url('${speaker.Image_Path}');` : '';
                     grid.innerHTML += `
                     <div class="presenter-card-large">
@@ -186,7 +184,10 @@ async function fetchAndPopulateData() {
                             </div>
                             <div class="presenter-card-back">
                                 <h5>Profile</h5>
-                                <div class="profile-text">${speaker.Paper_Title}</div>
+                                <div class="profile-text">
+                                    <p><strong>Paper Title:</strong> ${speaker.Paper_Title}</p>
+                                    <p>${speaker.Abstract_Link && speaker.Abstract_Link !== '#' ? speaker.Abstract_Link : 'Profile information coming soon...'}</p>
+                                </div>
                             </div>
                         </div>
                     </div>`;
@@ -194,42 +195,21 @@ async function fetchAndPopulateData() {
             }
         }
 
-        // --- Populate Presenters ---
+        // --- Populate Presenters (with Pagination) ---
         if (data.Presenters) {
-            const grids = document.querySelectorAll('#presenters .presenters-grid-large');
-            if (grids.length > 1) {
-                const grid = grids[1]; // The second grid is for all presenters
-                grid.innerHTML = '';
-                data.Presenters.forEach(presenter => {
-                    const bgImage = presenter.Image_Path ? `background-image: url('${presenter.Image_Path}');` : '';
-                    grid.innerHTML += `
-                     <article class="presenter-card-large" data-theme="${presenter.Theme_Category}">
-                        <div class="presenter-card-inner">
-                            <div class="presenter-card-front">
-                                <div class="presenter-photo" style="${bgImage}"></div>
-                                <div class="presenter-info">
-                                    <h5>${presenter.Presenter_Name}</h5>
-                                    <p class="role">${presenter.Congregation_Name}</p>
-                                    <hr class="divider-small">
-                                    <p class="paper-title">${presenter.Paper_Title}</p>
-                                    <span class="read-more">Profile</span>
-                                </div>
-                            </div>
-                            <div class="presenter-card-back">
-                                <h5>Profile</h5>
-                                <div class="profile-text">
-                                    <p><strong>Theme:</strong> ${presenter.Theme_Category}</p>
-                                    <p>${presenter.Paper_Title}</p>
-                                    <a href="${presenter.Abstract_Link}" target="_blank" style="color: var(--accent-color); text-decoration: underline; margin-top: 10px; display: inline-block;">Full Abstract</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>`;
-                });
+            window.allPresenters = data.Presenters;
+            window.filteredPresenters = data.Presenters;
+            window.itemsToShow = 8;
 
-                // Re-attach event listeners for newly created cards
-                // We re-call the filter setup because cards are new
-                setupFilters();
+            renderPresenters();
+            setupFilters();
+
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.onclick = () => {
+                    window.itemsToShow += 8;
+                    renderPresenters();
+                };
             }
         }
 
@@ -335,6 +315,72 @@ async function fetchAndPopulateData() {
     } catch (error) {
         console.error('Error fetching or populating data:', error);
     }
+}
+
+function renderPresenters() {
+    const grids = document.querySelectorAll('#presenters .presenters-grid-large');
+    if (grids.length > 1) {
+        const grid = grids[1];
+        grid.innerHTML = '';
+
+        const items = window.filteredPresenters.slice(0, window.itemsToShow);
+
+        items.forEach(presenter => {
+            const bgImage = presenter.Image_Path ? `background-image: url('${presenter.Image_Path}');` : '';
+            grid.innerHTML += `
+            <article class="presenter-card-large" data-theme="${presenter.Theme_Category}">
+                <div class="presenter-card-inner">
+                    <div class="presenter-card-front">
+                        <div class="presenter-photo" style="${bgImage}"></div>
+                        <div class="presenter-info">
+                            <h5>${presenter.Presenter_Name}</h5>
+                            <p class="role">${presenter.Congregation_Name}</p>
+                            <hr class="divider-small">
+                            <p class="paper-title">${presenter.Paper_Title}</p>
+                            <span class="read-more">Profile</span>
+                        </div>
+                    </div>
+                    <div class="presenter-card-back">
+                        <h5>Profile</h5>
+                        <div class="profile-text">
+                            <p><strong>Theme:</strong> ${presenter.Theme_Category}</p>
+                            <p>${presenter.Abstract_Link && presenter.Abstract_Link !== '#' ? presenter.Abstract_Link : 'Profile information coming soon...'}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>`;
+        });
+
+        const loadMoreContainer = document.getElementById('load-more-container');
+        if (loadMoreContainer) {
+            loadMoreContainer.style.display = (window.itemsToShow < window.filteredPresenters.length) ? 'block' : 'none';
+        }
+    }
+}
+
+function setupFilters() {
+    const searchInput = document.getElementById('search-input');
+    const filterSelect = document.getElementById('theme-filter');
+
+    if (!searchInput || !filterSelect) return;
+
+    const filterHandler = () => {
+        const searchText = searchInput.value.toLowerCase().trim();
+        const selectedTheme = filterSelect.value;
+
+        window.filteredPresenters = window.allPresenters.filter(p => {
+            const matchesTheme = (selectedTheme === 'all') || (p.Theme_Category === selectedTheme);
+            const cardText = `${p.Presenter_Name} ${p.Congregation_Name} ${p.Paper_Title} ${p.Abstract_Link}`.toLowerCase();
+            const matchesSearch = !searchText || cardText.includes(searchText);
+            return matchesTheme && matchesSearch;
+        });
+
+        window.itemsToShow = 8;
+        renderPresenters();
+    };
+
+    searchInput.oninput = filterHandler;
+    filterSelect.onchange = filterHandler;
 }
 
 // Ensure the data is populated when the DOM is loaded

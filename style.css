@@ -349,15 +349,16 @@ img {
 }
 
 .council-card-marquee {
-    width: 300px;
+    width: 280px;
     flex-shrink: 0;
     white-space: normal;
     background: var(--white);
     padding: 0;
-    /* Reset padding */
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Ensure hover pauses scrolling */
@@ -532,7 +533,7 @@ img {
 /* Objectives Grid */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -564,7 +565,7 @@ img {
 /* Themes Grid */
 .themes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -650,7 +651,8 @@ img {
 .presenter-card-large {
     background: transparent;
     perspective: 1000px;
-    height: 480px;
+    height: 400px;
+    /* Fixed height is needed for the 3D flip effect to work predictably across faces */
     border: none;
     border-radius: 8px;
 }
@@ -662,7 +664,7 @@ img {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
 
@@ -670,7 +672,8 @@ img {
     transform: rotateY(180deg);
 }
 
-.presenter-card-front, .presenter-card-back {
+.presenter-card-front,
+.presenter-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -706,51 +709,67 @@ img {
 }
 
 .presenter-photo {
-    height: 220px;
+    height: 140px;
     background-color: #f0f0f0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-color: var(--white);
     border-bottom: 1px solid #eee;
 }
 
 .presenter-info {
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
 }
 
 .presenter-info h5 {
     font-family: var(--font-heading-sub);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--primary-color);
     margin-bottom: 0.2rem;
 }
 
 .presenter-info .role {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .divider-small {
     border: none;
     border-top: 1px solid #eee;
-    width: 40px;
-    margin: 0.5rem auto 1rem;
+    width: 30px;
+    margin: 0.3rem auto 0.7rem;
 }
 
 .paper-title {
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    line-height: 1.4;
-    height: 3em;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    height: 2.6em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+.presenter-card-back .profile-text {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+#load-more-btn {
+    transition: all 0.3s ease;
+}
+
+#load-more-btn:hover {
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
 }
 
 .read-more {
@@ -994,6 +1013,48 @@ footer {
 
     .quote-card {
         margin-top: 2rem;
+        padding: 2rem;
+    }
+
+    .section-header h3 {
+        font-size: 2rem;
+    }
+
+    .leader-card {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .hero-logos-top {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .sub-headline {
+        font-size: 1.5rem;
+    }
+
+    .presenter-card-large {
+        height: 420px;
+        /* Slightly taller for narrow screens to prevent text overflow */
+    }
+
+    .council-card-marquee {
+        width: 240px;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Burger Animation
         burger.classList.toggle('toggle');
-        
+
         // Accessibility
         const expanded = nav.classList.contains('nav-active');
         burger.setAttribute('aria-expanded', expanded);
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(el);
         } else {
-             // If it has fade-in-up, we still want to trigger the 'visible' class
-             observer.observe(el);
+            // If it has fade-in-up, we still want to trigger the 'visible' class
+            observer.observe(el);
         }
     });
-    
+
     // Add visible class to trigger CSS animations if they use it
     const cssAnimElements = document.querySelectorAll('.fade-in-up');
     cssAnimElements.forEach(el => {
@@ -92,56 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m remaining`;
         }
-        
+
         updateCountdown(); // Run immediately
         setInterval(updateCountdown, 60000); // Update every minute
     }
 
-    // --- Search and Filter Functionality ---
-    const searchInput = document.getElementById('search-input');
-    const filterSelect = document.getElementById('theme-filter');
-    const presenterCards = document.querySelectorAll('.presenter-card-large');
-
-    function filterPresenters() {
-        const searchText = searchInput.value.toLowerCase().trim();
-        const selectedTheme = filterSelect.value; // 'all' or specific theme ('Formation', etc.)
-
-        presenterCards.forEach(card => {
-            const name = card.querySelector('h5') ? card.querySelector('h5').textContent.toLowerCase() : '';
-            const role = card.querySelector('.role') ? card.querySelector('.role').textContent.toLowerCase() : '';
-            const title = card.querySelector('.paper-title') ? card.querySelector('.paper-title').textContent.toLowerCase() : '';
-            
-            // Get theme from data attribute
-            const cardTheme = card.getAttribute('data-theme');
-
-            // 1. Theme Match
-            // If selected is 'all', it matches everything.
-            // Otherwise, cardTheme must exactly match the selected option.
-            const matchesTheme = (selectedTheme === 'all') || (cardTheme === selectedTheme);
-
-            // 2. Search Text Match
-            const cardText = `${name} ${role} ${title}`;
-            const matchesSearch = !searchText || cardText.includes(searchText);
-
-            // Visibility
-            if (matchesTheme && matchesSearch) {
-                card.style.display = 'block';
-                // Trigger animation reset implementation if needed, but simple display toggle is safer for now
-                setTimeout(() => {
-                     card.style.opacity = '1';
-                     card.style.transform = 'translateY(0)';
-                }, 50);
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    if (searchInput) {
-        searchInput.addEventListener('input', filterPresenters);
-    }
-
-    if (filterSelect) {
-        filterSelect.addEventListener('change', filterPresenters);
-    }
+    // --- Search and Filter Functionality (Handled by data_integration.js) ---
 });
+

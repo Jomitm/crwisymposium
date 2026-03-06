@@ -105,7 +105,7 @@
     },
     {
       "ID": "4",
-      "Date_String": "07-08 May 2026",
+      "Date_String": "06-08 May 2026",
       "Event_Description": "Conference Dates",
       "Sort_Order": "4"
     }
@@ -254,47 +254,331 @@
   "Presenters": [
     {
       "ID": "1",
-      "Presenter_Name": "Sr. Presenter Name 1",
-      "Congregation_Name": "Congregation Name",
-      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Presenter_Name": "Sr. Dr. Jamesy Vakayil, CTC",
+      "Congregation_Name": "CTC",
+      "Paper_Title": "Life long formation is a continues renewal of vocation and mission",
       "Theme_Category": "Formation",
-      "Image_Path": "",
-      "Abstract_Link": "#"
+      "Image_Path": "images/Presenters/1.jpg",
+      "Abstract_Link": "A theologian from the Congregation of Teresian Carmelites, Sr. Jamesy has extensive experience in academic formation and holds a Doctorate in Theology. She has taught across major theological institutions and contributes significantly to contemporary discussions on religious and priestly formation."
     },
     {
       "ID": "2",
-      "Presenter_Name": "Sr. Presenter Name 2",
-      "Congregation_Name": "Congregation Name",
-      "Paper_Title": "\"Title of the Paper Goes Here\"",
-      "Theme_Category": "Education",
-      "Image_Path": "",
+      "Presenter_Name": "Sr. Louisa Archana Gomes CJ",
+      "Congregation_Name": "Lorretto(CJ)",
+      "Paper_Title": "Mentorship and accompaniment: \"warming the dreams of the young\" (Pope Francis). ",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/2.jpg",
       "Abstract_Link": "#"
     },
     {
       "ID": "3",
-      "Presenter_Name": "Sr. Presenter Name 3",
-      "Congregation_Name": "Congregation Name",
-      "Paper_Title": "\"Title of the Paper Goes Here\"",
-      "Theme_Category": "Health Ministry",
-      "Image_Path": "",
+      "Presenter_Name": "Fr. Wilson ",
+      "Congregation_Name": "CSC",
+      "Paper_Title": "Addressing psychological well-being, intercultural living, and the responsible use of technology",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/3.jpg",
       "Abstract_Link": "#"
     },
     {
       "ID": "4",
-      "Presenter_Name": "Sr. Presenter Name 4",
-      "Congregation_Name": "Congregation Name",
-      "Paper_Title": "\"Title of the Paper Goes Here\"",
-      "Theme_Category": "Care for the Elderly",
-      "Image_Path": "",
+      "Presenter_Name": "Sr. Lavina",
+      "Congregation_Name": "AC",
+      "Paper_Title": "Intercultural and intergenerational community living",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/4.jpg",
       "Abstract_Link": "#"
     },
     {
-      "ID": "5",
-      "Presenter_Name": "Sr. Presenter Name 5",
-      "Congregation_Name": "Congregation Name",
-      "Paper_Title": "\"Title of the Paper Goes Here\"",
-      "Theme_Category": "",
-      "Image_Path": "",
+      "ID": 5,
+      "Presenter_Name": "Sr. Anna Mary Thumma",
+      "Congregation_Name": "SCCG",
+      "Paper_Title": "Formation is a lifelong pilgrimage of grace. It calls for spiritual maturity, psychological integration, intercultural dialogue, and pastoral adaptability.",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/5.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 6,
+      "Presenter_Name": "Fr. Bhayju ",
+      "Congregation_Name": "CMF",
+      "Paper_Title": "Reimagining structures to integrate spiritual, human, intellectual, and pastoral dimensions.",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/6.png",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 7,
+      "Presenter_Name": "Dr. Patrick Jude L.",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Cascading Response and Support Model to Enhance Psychological Integration among Women Religious in India.",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/7.jpg",
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, Dr. Patrick specialises in school mental health, stress management, and psychosocial interventions. He has contributed extensively to community‑based programmes, research supervision, and academic training."
+    },
+    {
+      "ID": 8,
+      "Presenter_Name": "Sr. Mary Paul, FCC",
+      "Congregation_Name": "FCC",
+      "Paper_Title": "Care for the Elderly: Honoring Wisdom Ensuring Dignity",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/8.jpg",
+      "Abstract_Link": "An educationist with 22+ years of teaching and administration, including roles as Principal and Associate Professor. Her academic work spans ageing, diaspora studies, and community development with contributions to major national seminars"
+    },
+    {
+      "ID": 9,
+      "Presenter_Name": "Dr. Kripanjali",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Establishing sustainable and faith -rooted eldercare models that uphold diginity and independence",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/9.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 10,
+      "Presenter_Name": "Dr. Joice Steffi Y",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Pilgrimage of Care: Evidence-Based Psychosocial Training for Women Religious Serving the Elderly in India.",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/10.jpg",
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy."
+    },
+    {
+      "ID": 11,
+      "Presenter_Name": "Dr. Bindu ",
+      "Congregation_Name": "St.John's Medical ",
+      "Paper_Title": " Promoting accessability inclusion and spiritual enrichment in aging communities",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/11.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 12,
+      "Presenter_Name": "Sr. Helen Mary",
+      "Congregation_Name": "SAB",
+      "Paper_Title": "Care for the Elderly: Honoring Wisdom, Ensuring Dignity—A Pilot Study on Intercongregational Collaboration in Housing, Healthcare, and Palliative Care",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/12.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 13,
+      "Presenter_Name": "Dr. Alphonsa K. K. (Sr. Prasada, CMC)",
+      "Congregation_Name": "CMC",
+      "Paper_Title": "Effectiveness of Relaxation Therapy on Psychological, Physiological and Bio-Chemical Variables among Elderly Residing at Old Age Homes.",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/Presenters/13.jpg",
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy."
+    },
+    {
+      "ID": 14,
+      "Presenter_Name": "Sr. Maria Nirmalini AC",
+      "Congregation_Name": "AC",
+      "Paper_Title": "Empowering consecrated women as educators and leaders in Christ centered, value-based education. ",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/14.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 15,
+      "Presenter_Name": "Fr. (Dr.) Paul Pudussery, CSC",
+      "Congregation_Name": "Holy Cross",
+      "Paper_Title": "Strengthening collaboration between Catholic schools, universities, and congregations for shared mission.",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/15.jpg",
+      "Abstract_Link": "A scholar in philosophy of education, Fr. Paul researches mission integrity, ethical use of technology, and truth in the post‑truth era. He is a consultant supporting educational and religious institutions and promotes holistic, values‑based education."
+    },
+    {
+      "ID": 16,
+      "Presenter_Name": "Mr. Hector",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": " Promoting education as a transformative tool for gender equity, ecological consciousness, and social renewal",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/16.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 17,
+      "Presenter_Name": "Dr. Thomson Philip",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Integrating digital literacy, artificial intelligence, and innovative pedagogies with spiritual and ethical formation. ",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/17.jpg",
+      "Abstract_Link": "CEO and Co‑Founder of Eloit Innovations, Dr. Thomson leads global EdTech and Faith‑Tech solutions serving over 700 institutions. Recognised with UN and international awards, he promotes ethical, values‑driven digital transformation in education"
+    },
+    {
+      "ID": 18,
+      "Presenter_Name": "Dr. Veenashree",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Advancing Justice through Education: A Capacity-Building Intervention for Religious Sisters to Promote Child Mental Health in Educational Institutions.",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/18.jpg",
+      "Abstract_Link": "A mental health practitioner with 8+ years of experience, she has worked with NIMHANS and Carers Worldwide. Her expertise includes child protection, disaster support, domestic violence, and women’s mental health, with over 100 trainings delivered"
+    },
+    {
+      "ID": 19,
+      "Presenter_Name": "Sr. Dr. Sally ",
+      "Congregation_Name": "Sister",
+      "Paper_Title": "Pilgrims of Hope in Healing Ministries: The TREASURE Model for Mental Health and Holistic Wellbeing of Women Religious in India ",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/19.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 20,
+      "Presenter_Name": "Dr.  John Tharakan",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Addressing mental health, burnout, and holistic well-being of sisters in healthcare. ",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/20.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 21,
+      "Presenter_Name": " Sr.Dr. Rachitta ",
+      "Congregation_Name": "FCC",
+      "Paper_Title": "Compassionate Healing: Consecrated Women as Healers and Caregivers Continuing the Compassionate Mission of Christ.",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/21.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 22,
+      "Paper_Title": "Training sisters in emerging health technologies, preventive medicine, and compassionate care. ",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/22.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 23,
+      "Presenter_Name": "Sr. Dr. Blanch Ancintha Rosario",
+      "Congregation_Name": "Sister",
+      "Paper_Title": "Motivational Factors Influencing Doctors to Provide Holistic Care: A Qualitative study",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/23.png",
+      "Abstract_Link": "Consultant Obstetrician & Gynaecologist at Canossa Hospital with expertise in high‑risk pregnancies, preventive health, and community outreach. A former national leader of Sister Doctors Forum of India, she integrates clinical practice with faith‑based healthcare"
+    },
+    {
+      "ID": 24,
+      "Presenter_Name": "Dr. Pretesh Kiran",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Expanding faith-rooted responses to maternal, child, and geriatric health needs. ",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/Presenters/24.jpg",
+      "Abstract_Link": "Associate Professor of Community Health at St. John’s, Bengaluru, with expertise in gerontology, disaster preparedness, and health systems. He contributes to national health committees and has numerous publications in public health"
+    },
+    {
+      "ID": 25,
+      "Presenter_Name": "Sr. Dr. Doris D Souza",
+      "Congregation_Name": "AC",
+      "Paper_Title": "Empowering Consecrated women as leaders in ecological justice, advocacy, and community development",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/25.jpg",
+      "Abstract_Link": "A professor of Business Ethics at XLRI and former Principal of Patna Women’s College, Sr. Doris holds doctoral degrees in Clinical Genetics and Zoology. Her expertise spans ethics, sustainability, genetics, and leadership in education"
+    },
+    {
+      "ID": 26,
+      "Presenter_Name": "Bro. Sunil Britto, CFC",
+      "Congregation_Name": "Christian Brothers",
+      "Paper_Title": "Strengthening Faith‑Based Responses to Environmental Degradation and Its Impact on Marginalized Communities.",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/26.jpg",
+      "Abstract_Link": "A psychologist and international trainer, Bro. Sunil served on his congregation’s global formation team. Based in Shillong, he works in eco‑spirituality, leadership formation, and Non‑Violent Communication, and represents India in global religious forums."
+    },
+    {
+      "ID": 27,
+      "Paper_Title": "Safeguarding of minors and vulnerable adults",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/27.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 28,
+      "Presenter_Name": "Sr. Roshini",
+      "Congregation_Name": "PHL",
+      "Paper_Title": "Impact of SLYI on vulnerable populations and impact of Networking  among religious sisters in India",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/28.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 29,
+      "Presenter_Name": "Sr. Jyoti ",
+      "Congregation_Name": "BS",
+      "Paper_Title": "Faith and Freedom: Addressing Human Trafficking at the Margins",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/29.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 30,
+      "Presenter_Name": "Sr. Sujata Jena",
+      "Congregation_Name": "SSCC",
+      "Paper_Title": "Faith-based responses to systemic injustice",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/30.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 31,
+      "Presenter_Name": "Sr. Rushila Rebello",
+      "Congregation_Name": "DHM",
+      "Paper_Title": "Pilgrims of Hope at the Margins: Consecrated Women as Defenders of Human Rights and Agents of Justice",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/31.png",
+      "Abstract_Link": "A human rights lawyer practicing across major Indian courts, she specialises in gender justice and institutional compliance. She serves on multiple ICCs and conducts national‑level training in legal advocacy and gender sensitisation."
+    },
+    {
+      "ID": 32,
+      "Presenter_Name": "Mrs. Anita Cheria",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Grievnce redressal Cell & Safeguarding of minors and vulnerable adults",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/32.jpg",
+      "Abstract_Link": "A senior human rights practitioner working with grassroots movements, donors, and global platforms. She advocates for social justice, women’s leadership, and marginalised communities, and is known for influential publications and policy engagement."
+    },
+    {
+      "ID": 33,
+      "Presenter_Name": "Sr. Dr. Shiji James MSMHC",
+      "Congregation_Name": "MSMHC",
+      "Paper_Title": "Sharing the untold stories of consecrated life to inspire, renew and call forth new generations",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/Presenters/33.jpg",
+      "Abstract_Link": "PhD in Journalism & Communication; Director of MSMHC Communications. She teaches at several universities and leads media strategy within ecclesial communication networks including SIGNIS North East India."
+    },
+    {
+      "ID": 34,
+      "Presenter_Name": "Fr. (Dr.) Sajith Cyriac, SSP",
+      "Congregation_Name": "St.Pauls",
+      "Paper_Title": "Media Hubs for Inter-Congregational Collaboration: A Communion–Synodal–Network Analysis of Collaborative Digital Mission among Women Religious",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/Presenters/34.jpg",
+      "Abstract_Link": "A priest of the Society of St. Paul, Fr. Sajith works in higher education, research, and priestly formation. His academic focus includes spirituality, communication, and pastoral challenges in contemporary society."
+    },
+    {
+      "ID": 35,
+      "Presenter_Name": "Nolan Pinto",
+      "Congregation_Name": "Lay Person",
+      "Paper_Title": "Storytelling, visibility, and vocation promotion",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/Presenters/35.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 36,
+      "Presenter_Name": "Sr. Lismy",
+      "Congregation_Name": "CMC",
+      "Paper_Title": "Radiating Hope Through the Lens: Reclaiming Women’s Voices and Renewing Consecrated Life in the Digital Age",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/Presenters/36.jpg",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": 37,
+      "Presenter_Name": "Fr. Biju Madathikunnel",
+      "Congregation_Name": "CSsR",
+      "Paper_Title": "Media hubs for inter-congregational collaboration",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/Presenters/37.jpg",
       "Abstract_Link": "#"
     }
   ],
