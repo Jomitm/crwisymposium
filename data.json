@@ -1,0 +1,427 @@
+{
+  "Global_Settings": [
+    {
+      "Setting_Key": "Site_Title",
+      "Setting_Value": "Symposium on Consecrated Life 2026",
+      "Description": "The title of the HTML page (SEO)"
+    },
+    {
+      "Setting_Key": "Site_Description",
+      "Setting_Value": "Pilgrimage of Hope: Consecrated Women, Living Flames of God’s Love. Symposium May 7-8, 2026, Bangalore.",
+      "Description": "Meta description for Google / WhatsApp"
+    },
+    {
+      "Setting_Key": "Event_Start_Date",
+      "Setting_Value": "2026-05-07",
+      "Description": "Used in Schema.org / JSON-LD"
+    },
+    {
+      "Setting_Key": "Event_End_Date",
+      "Setting_Value": "2026-05-08",
+      "Description": "Used in Schema.org / JSON-LD"
+    },
+    {
+      "Setting_Key": "Location_Name",
+      "Setting_Value": "Christ University",
+      "Description": "Used globally / SEO"
+    },
+    {
+      "Setting_Key": "Location_City",
+      "Setting_Value": "Bangalore",
+      "Description": "Used globally / SEO"
+    },
+    {
+      "Setting_Key": "Nav_Logo_Image",
+      "Setting_Value": "logo.png",
+      "Description": "The main logo in the top-left"
+    },
+    {
+      "Setting_Key": "Hero_Background",
+      "Setting_Value": "/images/hero-bg.jpg",
+      "Description": "Background image for the Hero section"
+    }
+  ],
+  "Hero_Section": [
+    {
+      "ID": "1",
+      "Eyebrow_Text": "Symposium on Consecrated Life",
+      "Main_Title_Line1": "Pilgrimage of Hope:",
+      "Main_Title_Line2": "Consecrated Women, Living Flames of God's Love",
+      "Countdown_Target": "2026-05-07T00:00:00",
+      "Button_Text": "Submit Abstract",
+      "Button_Link": "#call-for-papers"
+    }
+  ],
+  "Collaborator_Logos": [
+    {
+      "ID": "1",
+      "Logo_Image_Path": "Logos/Logo 1.png",
+      "Alt_Text": "Logo 1",
+      "Sort_Order": "1"
+    },
+    {
+      "ID": "2",
+      "Logo_Image_Path": "Logos/Logo 2.jpg",
+      "Alt_Text": "Logo 2",
+      "Sort_Order": "2"
+    },
+    {
+      "ID": "3",
+      "Logo_Image_Path": "Logos/Logo 3.jpg",
+      "Alt_Text": "Logo 3",
+      "Sort_Order": "3"
+    },
+    {
+      "ID": "4",
+      "Logo_Image_Path": "Logos/Logo 4.jpg",
+      "Alt_Text": "Logo 4",
+      "Sort_Order": "4"
+    },
+    {
+      "ID": "5",
+      "Logo_Image_Path": "Logos/Logo 5.jpg",
+      "Alt_Text": "Logo 5",
+      "Sort_Order": "5"
+    }
+  ],
+  "Important_Dates": [
+    {
+      "ID": "1",
+      "Date_String": "10 Feb 2026",
+      "Event_Description": "Abstract Deadline",
+      "Sort_Order": "1"
+    },
+    {
+      "ID": "2",
+      "Date_String": "20 Mar 2026",
+      "Event_Description": "Acceptance Notification",
+      "Sort_Order": "2"
+    },
+    {
+      "ID": "3",
+      "Date_String": "05 Apr 2026",
+      "Event_Description": "Full Paper Deadline",
+      "Sort_Order": "3"
+    },
+    {
+      "ID": "4",
+      "Date_String": "07-08 May 2026",
+      "Event_Description": "Conference Dates",
+      "Sort_Order": "4"
+    }
+  ],
+  "About_Section": [
+    {
+      "ID": "1",
+      "Paragraph_1_Lead": "The Conference of Religious Women India (CRWI), in collaboration with the Global Research Network (GRN), is delighted to invite you to this Symposium.",
+      "Paragraph_2": "For centuries, consecrated women have embodied Christ’s tenderness through ministries of education, pastoral care, healthcare, formation, social outreach, eldercare, ecological stewardship, and media engagement. Their fidelity and service continue to illuminate challenging realities with courage, creativity, and unwavering hope.",
+      "Paragraph_3": "This Symposium will offer a platform for sharing research insights, personal narratives, and collaborative reflections on the evolving mission of Consecrated Women amid contemporary global changes.",
+      "Quote_Text": "\"Consecrated life is a living memory of Jesus’ way of being – a sign that love, when lived radically, can transform the world.\"",
+      "Quote_Author": "— Pope Francis"
+    }
+  ],
+  "Leadership_Messages": [
+    {
+      "ID": "1",
+      "Name": "Sr. Maria Nirmalini AC",
+      "Role": "Message from the President",
+      "Role_Company": "President, CRWI",
+      "Message_Text": "\"It is with great joy and hope that we welcome you to this symposium. As we gather to reflect on our consecrated life, let us be open to the Spirit's leading, renewed in our commitment to be living flames of God's love in a world that yearns for hope.\"",
+      "Image_Path": "images/Leaders/Sr. Maria Nirmalini AC.jpeg"
+    },
+    {
+      "ID": "2",
+      "Name": "Sr. Molly Mathew MSMHC",
+      "Role": "Message from the Executive Director",
+      "Role_Company": "Executive Director, CRWI",
+      "Message_Text": "\"This symposium is a milestone in our journey together. It is an opportunity to celebrate our shared mission, to learn from one another, and to chart a path forward that is sustainable, inclusive, and deeply rooted in our charism.\"",
+      "Image_Path": "images/Leaders/Sr. Molly Mathew MSMHC.png"
+    }
+  ],
+  "Thematic_Areas": [
+    {
+      "ID": "1",
+      "Theme_Title": "Formation",
+      "Sub_Theme": "Journeying Together in Faith and Renewal",
+      "Description": "A lifelong pilgrimage of grace calling for spiritual maturity and intercultural dialogue."
+    },
+    {
+      "ID": "2",
+      "Theme_Title": "Education",
+      "Sub_Theme": "Seeds of Hope for Future Generations",
+      "Description": "Shaping conscience, character, and compassion through value-based learning."
+    },
+    {
+      "ID": "3",
+      "Theme_Title": "Health Ministry",
+      "Sub_Theme": "Healing as Pilgrimage",
+      "Description": "Consecrated women as healers and caregivers continuing the compassionate mission of Christ."
+    },
+    {
+      "ID": "4",
+      "Theme_Title": "Care for the Elderly",
+      "Sub_Theme": "Honoring Wisdom, Ensuring Dignity",
+      "Description": "Sustainable and faith-rooted eldercare as a moral responsibility and spiritual gift."
+    },
+    {
+      "ID": "5",
+      "Theme_Title": "Social Ministry",
+      "Sub_Theme": "Witnessing to Christ at the Margins",
+      "Description": "Advocacy against ecological destruction, displacement, and gender injustice."
+    },
+    {
+      "ID": "6",
+      "Theme_Title": "Media Engagement",
+      "Sub_Theme": "Radiating Hope in the Digital Age",
+      "Description": "Creative evangelizers - storytellers of truth, beauty, and hope."
+    }
+  ],
+  "Objectives": [
+    {
+      "ID": "1",
+      "Title": "Reaffirm Hope",
+      "Description": "Reaffirm consecrated life as a prophetic sign of hope, healing, and ecological stewardship.",
+      "Icon_Emoji": "🕊️"
+    },
+    {
+      "ID": "2",
+      "Title": "Foster Dialogue",
+      "Description": "Foster dialogue and participatory research across congregations and disciplines.",
+      "Icon_Emoji": "🤝"
+    },
+    {
+      "ID": "3",
+      "Title": "Integrate Values",
+      "Description": "Integrate Gospel values and synodality into ministries of education, formation, health, and social outreach.",
+      "Icon_Emoji": "🌿"
+    },
+    {
+      "ID": "4",
+      "Title": "Promote Solidarity",
+      "Description": "Promote intergenerational and intercultural solidarity.",
+      "Icon_Emoji": "🌍"
+    },
+    {
+      "ID": "5",
+      "Title": "Sustainable Strategies",
+      "Description": "Chart practical strategies for sustainable ministries and dignified eldercare.",
+      "Icon_Emoji": "👵"
+    },
+    {
+      "ID": "6",
+      "Title": "Media Engagement",
+      "Description": "Encourage media engagement and digital presence as new frontiers of evangelization and advocacy.",
+      "Icon_Emoji": "📱"
+    }
+  ],
+  "Key_Speakers": [
+    {
+      "ID": "1",
+      "Speaker_Name": "Key Speaker 1",
+      "Speaker_Role": "Keynote Addressee",
+      "Paper_Title": "\"Transformation through Hope\"",
+      "Image_Path": ""
+    },
+    {
+      "ID": "2",
+      "Speaker_Name": "Key Speaker 2",
+      "Speaker_Role": "Guest of Honor",
+      "Paper_Title": "\"Living Flames of Love\"",
+      "Image_Path": ""
+    },
+    {
+      "ID": "3",
+      "Speaker_Name": "Key Speaker 3",
+      "Speaker_Role": "Distinguished Speaker",
+      "Paper_Title": "\"Consecrated Life in the Modern World\"",
+      "Image_Path": ""
+    },
+    {
+      "ID": "4",
+      "Speaker_Name": "Key Speaker 4",
+      "Speaker_Role": "Plenary Speaker",
+      "Paper_Title": "\"Charism and Ministry\"",
+      "Image_Path": ""
+    },
+    {
+      "ID": "5",
+      "Speaker_Name": "Key Speaker 5",
+      "Speaker_Role": "Featured Speaker",
+      "Paper_Title": "\"A Journey of Faith and Service\"",
+      "Image_Path": ""
+    }
+  ],
+  "Presenters": [
+    {
+      "ID": "1",
+      "Presenter_Name": "Sr. Presenter Name 1",
+      "Congregation_Name": "Congregation Name",
+      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Theme_Category": "Formation",
+      "Image_Path": "",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": "2",
+      "Presenter_Name": "Sr. Presenter Name 2",
+      "Congregation_Name": "Congregation Name",
+      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Theme_Category": "Education",
+      "Image_Path": "",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": "3",
+      "Presenter_Name": "Sr. Presenter Name 3",
+      "Congregation_Name": "Congregation Name",
+      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": "4",
+      "Presenter_Name": "Sr. Presenter Name 4",
+      "Congregation_Name": "Congregation Name",
+      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "",
+      "Abstract_Link": "#"
+    },
+    {
+      "ID": "5",
+      "Presenter_Name": "Sr. Presenter Name 5",
+      "Congregation_Name": "Congregation Name",
+      "Paper_Title": "\"Title of the Paper Goes Here\"",
+      "Theme_Category": "",
+      "Image_Path": "",
+      "Abstract_Link": "#"
+    }
+  ],
+  "Call_For_Papers": [
+    {
+      "ID": "1",
+      "Section_Intro": "We invite submissions on the thematic areas listed above. Rooted in the spirit of a Pilgrimage of Hope, this gathering seeks to deepen communion and foster renewed commitment.",
+      "Guideline_1": "Abstracts: 300–400 words (title, theme, objectives, methodology, keywords).",
+      "Guideline_2": "Full Papers: 4,000–6,000 words (APA style).",
+      "Guideline_3": "Bio Note: 150 words with affiliation.",
+      "Guideline_4": "Language: English."
+    }
+  ],
+  "Executive_Council": [
+    {
+      "ID": "1",
+      "Name": "Dr. Sr. Aruna Jose CHF",
+      "Role": "Vice President",
+      "Congregation": "Congregation of Holy Family",
+      "Image_Path": "images/Council/Dr. Sr. Aruna Jose CHF.jpg"
+    },
+    {
+      "ID": "2",
+      "Name": "Sr. Audrey D'Souza",
+      "Role": "Secretary",
+      "Congregation": "Canossian Sister",
+      "Image_Path": "images/Council/Sr. Audrey D'Souza.jpg"
+    },
+    {
+      "ID": "3",
+      "Name": "Sr. Celine Fathima",
+      "Role": "Treasurer",
+      "Congregation": "St. Anne Madras",
+      "Image_Path": "images/Council/Sr. Celine Fathima.jpg"
+    },
+    {
+      "ID": "4",
+      "Name": "Sr. Maria Goretti FS",
+      "Role": "Member",
+      "Congregation": "Sisters of Our Lady of Fatima",
+      "Image_Path": "images/Council/Sr. Maria Goretti.jpg"
+    },
+    {
+      "ID": "5",
+      "Name": "Dr. D.J. Margaret FMS",
+      "Role": "Member",
+      "Congregation": "Salesian Sister",
+      "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
+    },
+    {
+      "ID": "6",
+      "Name": "Dr. Sr. Sheela Nicholas SAB",
+      "Role": "Member",
+      "Congregation": "Sisters of St. Anne",
+      "Image_Path": "images/Council/Dr. Sr. Sheela Nicholas.jpg"
+    }
+  ],
+  "Contacts_And_Footer": [
+    {
+      "ID": "1",
+      "Contact_Type": "Submission_Contact",
+      "Name_Or_Title": "Sr. Doris D’Souza",
+      "Value_Or_Description": "D'Souza@crwi.org.in",
+      "Image_Path_Or_Link": "images/Contacts/Sr. Doris D Souza.jpg"
+    },
+    {
+      "ID": "2",
+      "Contact_Type": "Submission_Contact",
+      "Name_Or_Title": "Fr. Paul Pudussery",
+      "Value_Or_Description": "paul.pudussery@crwi.org.in",
+      "Image_Path_Or_Link": "images/Contacts/Fr. Paul Pudussery.jpeg"
+    },
+    {
+      "ID": "3",
+      "Contact_Type": "Submission_Contact",
+      "Name_Or_Title": "Executive Director",
+      "Value_Or_Description": "executivedirector@crwi.org.in",
+      "Image_Path_Or_Link": "images/Leaders/Sr. Molly Mathew MSMHC.png"
+    },
+    {
+      "ID": "4",
+      "Contact_Type": "General_Query",
+      "Name_Or_Title": "Sr. Mary Paul",
+      "Value_Or_Description": "+91 98634 61885",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "5",
+      "Contact_Type": "General_Query",
+      "Name_Or_Title": "Sr. Vijo Arul Selvi M",
+      "Value_Or_Description": "+91 69090 63493",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "6",
+      "Contact_Type": "General_Query",
+      "Name_Or_Title": "Sr. Molly Mathew",
+      "Value_Or_Description": "+91 63649 19153",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "7",
+      "Contact_Type": "Footer_Org_Name",
+      "Name_Or_Title": "Organized By",
+      "Value_Or_Description": "Conference of Religious Women India (CRWI)",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "8",
+      "Contact_Type": "Footer_Org_Name",
+      "Name_Or_Title": "In Collaboration with",
+      "Value_Or_Description": "Global Research Network (GRN)",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "9",
+      "Contact_Type": "Footer_Venue",
+      "Name_Or_Title": "Venue",
+      "Value_Or_Description": "Christ University Campus, Bangalore",
+      "Image_Path_Or_Link": ""
+    },
+    {
+      "ID": "10",
+      "Contact_Type": "Footer_Copyright",
+      "Name_Or_Title": "Copyright",
+      "Value_Or_Description": "© 2026 CRWI Symposium. All rights reserved.",
+      "Image_Path_Or_Link": ""
+    }
+  ]
+}
