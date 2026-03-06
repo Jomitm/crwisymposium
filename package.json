@@ -4,7 +4,7 @@
   "description": "Website for the Symposium on Consecrated Life, titled \"Pilgrimage of Hope: Consecrated Women, Living Flames of God’s Love\".",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node parse_excel.js && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

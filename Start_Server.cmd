@@ -5,5 +5,6 @@ echo ==============================================
 echo.
 echo Starting the local Node.js server...
 echo.
+echo Refreshing data from Excel...
 npm start
 pause
