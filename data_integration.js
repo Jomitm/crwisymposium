@@ -64,7 +64,27 @@ async function fetchAndPopulateData() {
             }
 
             // Set countdown target globally and update the timer
-            window.countdownTarget = heroData.Countdown_Target;
+            let target = heroData.Countdown_Target;
+
+            // Smart Fallback: If Hero_Section target is the old default or empty, 
+            // try to use the start date from Important_Dates "Conference Dates"
+            if (!target || target.includes('2026-05-07')) {
+                const confDate = data.Important_Dates?.find(d =>
+                    d.Event_Description && d.Event_Description.toLowerCase().includes('conference')
+                );
+                if (confDate && confDate.Date_String) {
+                    // Try to parse something like "06-08 May 2026" or "15 May 2026"
+                    const dateMatch = confDate.Date_String.match(/(\d{1,2})(-(\d{1,2}))?\s+([A-Za-z]+)\s+(\d{4})/);
+                    if (dateMatch) {
+                        const day = dateMatch[1];
+                        const month = dateMatch[4];
+                        const year = dateMatch[5];
+                        target = `${year}-${month}-${day}T09:00:00`;
+                    }
+                }
+            }
+
+            window.countdownTarget = target;
             if (window.initCountdown) {
                 window.initCountdown(window.countdownTarget);
             }
