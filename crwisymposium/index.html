@@ -8,6 +8,38 @@
     <meta name="description"
         content="Pilgrimage of Hope: Consecrated Women, Living Flames of God’s Love. Symposium May 7-8, 2026, Bangalore.">
 
+    <!-- SEO: Open Graph Tags -->
+    <meta property="og:title" content="Symposium on Consecrated Life 2026">
+    <meta property="og:description" content="Pilgrimage of Hope: Consecrated Women, Living Flames of God’s Love">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://event.crwi.org.in">
+    <meta property="og:image" content="https://event.crwi.org.in/images/hero-bg.jpg">
+
+    <!-- SEO: JSON-LD Schema for Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Symposium on Consecrated Life 2026",
+      "startDate": "2026-05-07",
+      "endDate": "2026-05-08",
+      "location": {
+        "@type": "Place",
+        "name": "Christ University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bangalore",
+          "addressCountry": "IN"
+        }
+      },
+      "description": "Pilgrimage of Hope: Consecrated Women, Living Flames of God’s Love",
+      "organizer": {
+        "@type": "Organization",
+        "name": "Conference of Religious Women India (CRWI)"
+      }
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +53,7 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-container">
             <a href="#" class="logo">
                 <img src="logo.png" alt="CRWI Logo" class="nav-logo-img">
@@ -45,25 +77,39 @@
     </nav>
 
     <header id="hero" class="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="container hero-content">
             <!-- Left Column: Logos + Text -->
             <div class="hero-main-column">
                 <div class="hero-logos-top fade-in-up">
-                    <img src="Logos/Logo 1.png" alt="Logo 1" class="collab-logo">
-                    <img src="Logos/Logo 2.jpg" alt="Logo 2" class="collab-logo">
-                    <img src="Logos/Logo 3.jpg" alt="Logo 3" class="collab-logo">
-                    <img src="Logos/Logo 4.jpg" alt="Logo 4" class="collab-logo">
-                    <img src="Logos/Logo 5.jpg" alt="Logo 5" class="collab-logo">
+                    <div class="logo-group">
+                        <img src="Logos/Logo 1.png" alt="Logo 1" class="collab-logo">
+                        <img src="Logos/Logo 2.jpg" alt="Logo 2" class="collab-logo">
+                        <img src="Logos/Logo 3.jpg" alt="Logo 3" class="collab-logo">
+                        <img src="Logos/Logo 4.jpg" alt="Logo 4" class="collab-logo">
+                        <img src="Logos/Logo 5.jpg" alt="Logo 5" class="collab-logo">
+                    </div>
+                    <a href="https://forms.cloud.microsoft/r/9bnTzTuiT0" target="_blank" class="btn-register-top">Register Now →</a>
                 </div>
-                <p class="eyebrow fade-in-up">Symposium on Consecrated Life</p>
-                <h1 class="fade-in-up delay-1">Pilgrimage of Hope:<br>Consecrated Women, Living Flames of God's Love
+                <p id="hero-eyebrow" class="eyebrow fade-in-up">Symposium on Consecrated Life</p>
+                <h1 id="hero-title" class="fade-in-up delay-1">Pilgrimage of Hope:<br>Consecrated Women, Living Flames of God's Love
                 </h1>
                 <div class="hero-details fade-in-up delay-2">
-                    <span class="detail-item"><i class="icon-calendar"></i> 7th - 8th May 2026</span>
-                    <span class="detail-item"><i class="icon-location"></i> Christ University, Bangalore</span>
+                    <span class="detail-item"><i class="icon-calendar"></i> <span id="hero-date">7th - 8th May
+                            2026</span></span>
+                    <span class="detail-item"><i class="icon-location"></i> <span id="hero-location">Christ University,
+                            Bangalore</span></span>
                 </div>
-                <a href="#call-for-papers" class="btn btn-primary fade-in-up delay-3">Submit Abstract</a>
+
+                <div id="countdown" class="fade-in-up delay-3"
+                    style="margin: 2rem 0; font-weight: bold; font-size: 1.2rem; color: var(--accent-color);">
+                    Loading countdown...
+                </div>
+
+                <div class="hero-actions">
+                    <a id="submit-abstract-btn" href="#call-for-papers" class="btn btn-primary fade-in-up delay-3">Submit Abstract</a>
+                    <button id="open-invitation-btn" class="btn btn-primary fade-in-up delay-3">Invitation and Schedule</button>
+                </div>
             </div>
 
             <!-- Right Column: Timeline -->
@@ -87,12 +133,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- Animated Waves with Embedded Pilgrimage -->
+        <div class="waves-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-12 88-12s 58 12 88 12 58-12 88-12 58 12 88 12 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.4)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)" />
+                    <!-- The Base Wave -->
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#ffffff" />
+                </g>
+            </svg>
+        </div>
     </header>
 
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header">
-                <h3>About The Symposium</h3>
+                <h3 id="about-title">About The Symposium</h3>
                 <div class="underline"></div>
             </div>
             <div class="content-grid two-col">
@@ -107,12 +169,14 @@
                         collaborative reflections on the evolving mission of Consecrated Women amid contemporary global
                         changes.</p>
                 </div>
-                <div class="quote-card">
-                    <blockquote>
-                        "Consecrated life is a living memory of Jesus’ way of being – a sign that love, when lived
-                        radically, can transform the world."
-                    </blockquote>
-                    <cite>— Pope Francis</cite>
+                <div class="quotes-container" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div class="quote-card">
+                        <blockquote>
+                            "Consecrated life is a living memory of Jesus’ way of being – a sign that love, when lived
+                            radically, can transform the world."
+                        </blockquote>
+                        <cite>— Pope Francis</cite>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,14 +185,14 @@
     <section id="leadership" class="section leadership-section">
         <div class="container">
             <div class="section-header">
-                <h3>Messages from Leadership</h3>
+                <h3 id="leadership-title">Messages from Leadership</h3>
                 <div class="underline"></div>
             </div>
             <div class="leadership-grid">
                 <div class="leader-card reverse">
                     <div class="leader-photo-frame">
-                        <!-- Placeholder for President's photo -->
-                        <div class="photo-placeholder"></div>
+                        <img src="images/Leaders/Sr. Maria Nirmalini AC.jpeg" alt="Sr. Maria Nirmalini AC"
+                            style="height: 250px; width: 100%; object-fit: cover;">
                     </div>
                     <div class="leader-content">
                         <h4>Message from the President</h4>
@@ -142,8 +206,8 @@
                 </div>
                 <div class="leader-card">
                     <div class="leader-photo-frame">
-                        <!-- Placeholder for Executive Director's photo -->
-                        <div class="photo-placeholder"></div>
+                        <img src="images/Leaders/Sr. Molly Mathew MSMHC.png" alt="Sr. Molly Mathew MSMHC"
+                            style="height: 250px; width: 100%; object-fit: cover;">
                     </div>
                     <div class="leader-content">
                         <h4>Message from the Executive Director</h4>
@@ -164,41 +228,41 @@
     <section id="themes" class="section">
         <div class="container">
             <div class="section-header">
-                <h3>Thematic Areas</h3>
-                <p>Areas for Papers and Research</p>
+                <h3 id="themes-title">Thematic Areas</h3>
+                <p id="themes-subtitle">Areas for Papers and Research</p>
                 <div class="underline"></div>
             </div>
             <div class="themes-grid">
-                <div class="theme-card">
+                <article class="theme-card">
                     <h4>Formation</h4>
                     <p class="sub-theme">Journeying Together in Faith and Renewal</p>
                     <p>A lifelong pilgrimage of grace calling for spiritual maturity and intercultural dialogue.</p>
-                </div>
-                <div class="theme-card">
+                </article>
+                <article class="theme-card">
                     <h4>Education</h4>
                     <p class="sub-theme">Seeds of Hope for Future Generations</p>
                     <p>Shaping conscience, character, and compassion through value-based learning.</p>
-                </div>
-                <div class="theme-card">
+                </article>
+                <article class="theme-card">
                     <h4>Health Ministry</h4>
                     <p class="sub-theme">Healing as Pilgrimage</p>
                     <p>Consecrated women as healers and caregivers continuing the compassionate mission of Christ.</p>
-                </div>
-                <div class="theme-card">
+                </article>
+                <article class="theme-card">
                     <h4>Care for the Elderly</h4>
                     <p class="sub-theme">Honoring Wisdom, Ensuring Dignity</p>
                     <p>Sustainable and faith-rooted eldercare as a moral responsibility and spiritual gift.</p>
-                </div>
-                <div class="theme-card">
+                </article>
+                <article class="theme-card">
                     <h4>Social Ministry</h4>
                     <p class="sub-theme">Witnessing to Christ at the Margins</p>
                     <p>Advocacy against ecological destruction, displacement, and gender injustice.</p>
-                </div>
-                <div class="theme-card">
+                </article>
+                <article class="theme-card">
                     <h4>Media Engagement</h4>
                     <p class="sub-theme">Radiating Hope in the Digital Age</p>
                     <p>Creative evangelizers - storytellers of truth, beauty, and hope.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -207,7 +271,7 @@
     <section id="objectives" class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h3>Objectives</h3>
+                <h3 id="objectives-title">Objectives</h3>
                 <div class="underline"></div>
             </div>
             <div class="grid-3">
@@ -250,86 +314,55 @@
     <section id="presenters" class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h3>Speakers and Presenters</h3>
-                <p>Explore the research and insights being shared</p>
+                <h3 id="presenters-section-title">Speakers and Presenters</h3>
+                <p id="presenters-subtitle">Explore the research and insights being shared</p>
                 <div class="underline"></div>
             </div>
-
-            <!-- Speakers Section -->
             <div style="margin-bottom: 2rem;">
-                <h4 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Key Speakers</h4>
-                <div class="presenters-grid-large"
-                    style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 3rem;">
-                    <!-- Example Speaker 1 -->
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo"></div>
-                        <div class="presenter-info">
-                            <h5>Key Speaker 1</h5>
-                            <p class="role">Keynote Addressee</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">"Transformation through Hope"</p>
-                        </div>
-                    </div>
-                    <!-- Example Speaker 2 -->
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo"></div>
-                        <div class="presenter-info">
-                            <h5>Key Speaker 2</h5>
-                            <p class="role">Guest of Honor</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">"Living Flames of Love"</p>
-                        </div>
-                    </div>
-                    <!-- Example Speaker 3 -->
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo"></div>
-                        <div class="presenter-info">
-                            <h5>Key Speaker 3</h5>
-                            <p class="role">Distinguished Speaker</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">"Consecrated Life in the Modern World"</p>
-                        </div>
-                    </div>
-                    <!-- Example Speaker 4 -->
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo"></div>
-                        <div class="presenter-info">
-                            <h5>Key Speaker 4</h5>
-                            <p class="role">Plenary Speaker</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">"Charism and Ministry"</p>
-                        </div>
-                    </div>
-                    <!-- Example Speaker 5 -->
-                    <div class="presenter-card-large" style="border: 2px solid var(--accent-color);">
-                        <div class="presenter-photo"></div>
-                        <div class="presenter-info">
-                            <h5>Key Speaker 5</h5>
-                            <p class="role">Featured Speaker</p>
-                            <hr class="divider-small">
-                            <p class="paper-title">"A Journey of Faith and Service"</p>
-                        </div>
-                    </div>
+                <h4 id="key-speakers-title" style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-color);">Key Speakers</h4>
+                <div class="key-speakers-grid">
+                    <!-- Key Speakers are populated dynamically via data_integration.js -->
                 </div>
             </div>
 
-            <div class="section-header">
-                <h4>Presenters</h4>
+            <div style="margin-bottom: 2rem;">
+                <h4 id="dev-partners-title" style="text-align: left; margin-bottom: 1.5rem; color: var(--primary-color);">Development Partners</h4>
+                <div id="dev-partners-grid" class="key-speakers-grid">
+                    <!-- Development Partners are populated dynamically via data_integration.js -->
+                </div>
+            </div>
+
+            <div class="theme-nav-container">
+                <nav class="theme-nav-links" id="theme-nav-links">
+                    <span class="theme-nav-item" data-theme="all">ALL</span>
+                    <span class="theme-nav-item active" data-theme="Formation">FORMATION</span>
+                    <span class="theme-nav-item" data-theme="Education">EDUCATION</span>
+                    <span class="theme-nav-item" data-theme="Media Engagement">MEDIA</span>
+                    <span class="theme-nav-separator">|</span>
+                    <span class="theme-nav-item" data-theme="Care for the Elderly">CARE FOR ELDERLY</span>
+                    <span class="theme-nav-item" data-theme="Health Ministry">HEALTH MINISTRY</span>
+                    <span class="theme-nav-item" data-theme="Social Ministry">SOCIAL MINISTRY</span>
+                </nav>
             </div>
 
             <div class="search-filter-bar">
-                <input type="text" placeholder="Search presenters or topics..." class="search-input">
-                <select class="filter-select">
-                    <option>All Themes</option>
-                    <option>Formation</option>
-                    <option>Education</option>
-                    <!-- More options -->
+                <input type="text" id="search-input" placeholder="Search presenters or topics..." class="search-input"
+                    aria-label="Search presenters">
+                <select class="filter-select" id="theme-filter" aria-label="Filter by theme" style="display: none;">
+                    <option value="Formation">Formation</option>
+                    <option value="all">All Themes</option>
+                    <option value="Formation">Formation</option>
+                    <option value="Education">Education</option>
+                    <option value="Health Ministry">Health Ministry</option>
+                    <option value="Care for the Elderly">Care for the Elderly</option>
+                    <option value="Social Ministry">Social Ministry</option>
+                    <option value="Media Engagement">Media Engagement</option>
                 </select>
             </div>
 
             <div class="presenters-grid-large">
                 <!-- Generates 16 placeholder cards -->
-                <div class="presenter-card-large">
+                <article class="presenter-card-large" data-theme="Formation">
                     <div class="presenter-photo"></div>
                     <div class="presenter-info">
                         <h5>Sr. Presenter Name 1</h5>
@@ -338,8 +371,8 @@
                         <p class="paper-title">"Title of the Paper Goes Here"</p>
                         <a href="#" class="read-more">Read Abstract</a>
                     </div>
-                </div>
-                <div class="presenter-card-large">
+                </article>
+                <article class="presenter-card-large" data-theme="Education">
                     <div class="presenter-photo"></div>
                     <div class="presenter-info">
                         <h5>Sr. Presenter Name 2</h5>
@@ -348,19 +381,19 @@
                         <p class="paper-title">"Title of the Paper Goes Here"</p>
                         <a href="#" class="read-more">Read Abstract</a>
                     </div>
-                </div>
+                </article>
                 <!-- Repeating structure for demo purposes (would be generated dynamically in real app) -->
-                <div class="presenter-card-large">
+                <article class="presenter-card-large" data-theme="Health Ministry">
                     <div class="presenter-photo"></div>
                     <div class="presenter-info">
                         <h5>Sr. Presenter Name 3</h5>
                         <p class="role">Congregation Name</p>
                         <hr class="divider-small">
-                        <p class="paper-title">"Title of the Paper Goes Here"</p><a href="#" class="read-more">Read
-                            Abstract</a>
+                        <p class="paper-title">"Title of the Paper Goes Here"</p>
+                        <a href="#" class="read-more">Read Abstract</a>
                     </div>
-                </div>
-                <div class="presenter-card-large">
+                </article>
+                <article class="presenter-card-large" data-theme="Care for the Elderly">
                     <div class="presenter-photo"></div>
                     <div class="presenter-info">
                         <h5>Sr. Presenter Name 4</h5>
@@ -369,7 +402,7 @@
                         <p class="paper-title">"Title of the Paper Goes Here"</p><a href="#" class="read-more">Read
                             Abstract</a>
                     </div>
-                </div>
+                </article>
                 <div class="presenter-card-large">
                     <div class="presenter-photo"></div>
                     <div class="presenter-info">
@@ -491,18 +524,23 @@
                     </div>
                 </div>
             </div>
+            <div id="load-more-container" style="text-align: center; margin-top: 3rem; display: none;">
+                <button id="load-more-btn" class="btn btn-primary"
+                    style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color);">Load
+                    More</button>
+            </div>
         </div>
     </section>
 
     <section id="call-for-papers" class="section dark-section">
         <div class="container">
             <div class="info-block" style="width: 100%;">
-                <h3>Call for Papers</h3>
-                <p>We invite submissions on the thematic areas listed above. Rooted in the spirit of a Pilgrimage of
+                <h3 id="call-for-papers-title">Call for Papers</h3>
+                <p id="call-for-papers-description">We invite submissions on the thematic areas listed above. Rooted in the spirit of a Pilgrimage of
                     Hope, this gathering seeks to deepen communion and foster renewed commitment.</p>
 
                 <div class="guidelines">
-                    <h4>Submission Guidelines</h4>
+                    <h4 id="guidelines-title">Submission Guidelines</h4>
                     <ul>
                         <li><strong>Abstracts:</strong> 300–400 words (title, theme, objectives, methodology,
                             keywords).</li>
@@ -513,29 +551,76 @@
                 </div>
 
                 <div class="contacts">
-                    <h4>Submission Contacts</h4>
-                    <p>Email your abstracts and papers to:</p>
-                    <ul class="email-list">
-                        <li>Sr. Doris D’Souza: <a href="mailto:D'Souza@crwi.org.in">D'Souza@crwi.org.in</a></li>
-                        <li>Fr. Paul Pudussery: <a
-                                href="mailto:paul.pudussery@crwi.org.in">paul.pudussery@crwi.org.in</a></li>
-                        <li>Executive Director: <a
-                                href="mailto:executivedirector@crwi.org.in">executivedirector@crwi.org.in</a></li>
-                    </ul>
+                    <h4 id="contacts-title">Submission Contacts</h4>
+                    <p style="margin-bottom: 1.5rem;">Email your abstracts and papers to:</p>
+
+                    <div class="contact-card-small">
+                        <img src="images/Contacts/Sr. Doris D Souza.jpg" alt="Sr. Doris D Souza" class="contact-avatar">
+                        <div class="contact-details">
+                            <p class="contact-name">Sr. Doris D’Souza</p>
+                            <p class="contact-phone"><a href="mailto:D'Souza@crwi.org.in"
+                                    style="font-size: 0.85rem; text-decoration: none; color: inherit;">D'Souza@crwi.org.in</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card-small">
+                        <img src="images/Contacts/Fr. Paul Pudussery.jpeg" alt="Fr. Paul Pudussery"
+                            class="contact-avatar">
+                        <div class="contact-details">
+                            <p class="contact-name">Fr. Paul Pudussery</p>
+                            <p class="contact-phone"><a href="mailto:paul.pudussery@crwi.org.in"
+                                    style="font-size: 0.85rem; text-decoration: none; color: inherit;">paul.pudussery@crwi.org.in</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card-small">
+                        <img src="images/Leaders/Sr. Molly Mathew MSMHC.png" alt="Sr. Molly Mathew MSMHC"
+                            class="contact-avatar">
+                        <div class="contact-details">
+                            <p class="contact-name">Executive Director</p>
+                            <p class="contact-phone"><a href="mailto:executivedirector@crwi.org.in"
+                                    style="font-size: 0.85rem; text-decoration: none; color: inherit;">executivedirector@crwi.org.in</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         </div>
     </section>
 
-    <!-- Scrolling Executive Council Marquee -->
-    <section class="section bg-light" style="padding: 0;">
+    <!-- Scrolling Trustees Marquee -->
+    <section class="section bg-light" style="padding: 2rem 0 0 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 1rem;">
+                <h3 id="trustees-title">Trustees</h3>
+                <div class="underline"></div>
+            </div>
+        </div>
         <div class="marquee-container">
-            <div class="marquee-content">
+            <div class="marquee-content" id="trustees-marquee">
+                <!-- Duplicate content for seamless scrolling -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Executive Council Marquee -->
+    <section class="section bg-light" style="padding: 2rem 0 0 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 1rem;">
+                <h3 id="council-title">Executive Council</h3>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content" id="council-marquee">
                 <!-- Duplicate content for seamless scrolling -->
                 <!-- Set 1 -->
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. Sr. Aruna Jose CHF.jpg" alt="Dr. Sr. Aruna Jose CHF"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. Sr. Aruna Jose CHF</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Vice President</p>
@@ -543,7 +628,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Audrey D'Souza.jpg" alt="Sr. Audrey D'Souza"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Audrey D'Souza</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Secretary</p>
@@ -551,7 +637,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Celine Fathima.jpg" alt="Sr. Celine Fathima"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Celine Fathima</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Treasurer</p>
@@ -559,7 +646,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Maria Goretti.jpg" alt="Sr. Maria Goretti FS"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Maria Goretti FS</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Member</p>
@@ -567,7 +655,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. D.J. Margaret.jpg" alt="Dr. D.J. Margaret FMS"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. D.J. Margaret FMS</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Member</p>
@@ -575,7 +664,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. Sr. Sheela Nicholas.jpg" alt="Dr. Sr. Sheela Nicholas SAB"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. Sr. Sheela Nicholas SAB
                         </h5>
@@ -586,7 +676,8 @@
 
                 <!-- Set 2 (Duplicated for marquee effect) -->
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. Sr. Aruna Jose CHF.jpg" alt="Dr. Sr. Aruna Jose CHF"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. Sr. Aruna Jose CHF</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Vice President</p>
@@ -594,7 +685,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Audrey D'Souza.jpg" alt="Sr. Audrey D'Souza"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Audrey D'Souza</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Secretary</p>
@@ -602,7 +694,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Celine Fathima.jpg" alt="Sr. Celine Fathima"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Celine Fathima</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Treasurer</p>
@@ -610,7 +703,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Sr. Maria Goretti.jpg" alt="Sr. Maria Goretti FS"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Sr. Maria Goretti FS</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Member</p>
@@ -618,7 +712,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. D.J. Margaret.jpg" alt="Dr. D.J. Margaret FMS"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. D.J. Margaret FMS</h5>
                         <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">Member</p>
@@ -626,7 +721,8 @@
                     </div>
                 </div>
                 <div class="card council-card council-card-marquee">
-                    <div class="photo-placeholder" style="height: 150px; width: 100%;"></div>
+                    <img src="images/Council/Dr. Sr. Sheela Nicholas.jpg" alt="Dr. Sr. Sheela Nicholas SAB"
+                        style="height: 150px; width: auto; max-width: 100%; object-fit: cover;">
                     <div style="padding: 1rem; text-align: center;">
                         <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">Dr. Sr. Sheela Nicholas SAB
                         </h5>
@@ -663,8 +759,115 @@
             </div>
         </div>
     </footer>
+    <!-- Invitation and Schedule Modal -->
+    <div id="invitation-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content-container">
+            <button class="modal-close">&times;</button>
+            <div class="a4-portrait">
+                <!-- Header Logo -->
+                <div class="invitation-header">
+                    <img src="logo.png" alt="CRWI Logo" class="invitation-logo">
+                </div>
+
+                <div class="invitation-body">
+                    <h1 class="heading-main">International Symposium<br>on Consecrated Life</h1>
+                    <p class="theme-italic">Pilgrimage of Hope</p>
+
+                    <p class="theme-header uppercase">
+                        Consecrated Women – Living Flames of God’s Love
+                    </p>
+
+                    <div class="quote-box">
+                        “Wake up the world! Be witnesses of a different way of doing things, acting, living.”<br>
+                        <span class="quote-author">— Pope Francis</span>
+                    </div>
+
+                    <div class="event-details">
+                        <div class="detail-item">📅 6–8 May 2026</div>
+                        <div class="detail-item">📍 Bengaluru, India</div>
+                    </div>
+
+                    <div class="invitation-section-title">Functional Units of CRWI</div>
+                    <div class="units-grid">
+                        <div class="unit-card">
+                            <div class="unit-name">CIIRI</div>
+                            <div class="unit-desc">Centre for Innovations & Initiatives for Religious India. Focus on Safe
+                                Ministry, Safe Self, and professional growth.</div>
+                        </div>
+                        <div class="unit-card">
+                            <div class="unit-name">CeRRI</div>
+                            <div class="unit-desc">Centre for Research on Religious India. Conducting and promoting
+                                research on the life and mission of religious in India.</div>
+                        </div>
+                        <div class="unit-card">
+                            <div class="unit-name">IMD</div>
+                            <div class="unit-desc">Institute Mater Dei. Providing specialized theological and pastoral
+                                leadership formation for women religious.</div>
+                        </div>
+                        <div class="unit-card">
+                            <div class="unit-name">GRC / SRWI</div>
+                            <div class="unit-desc">Grievance Redressal & Safeguarding. Dedicated to protecting the
+                                dignity and safety of religious women.</div>
+                        </div>
+                    </div>
+
+                    <div class="invitation-section-title">Programme Highlights</div>
+                    <div class="schedule-grid">
+                        <div class="day-column">
+                            <h4>Wed | 06 May</h4>
+                            <div class="schedule-item"><span class="time">05:00 PM</span> <span>Registration</span></div>
+                            <div class="schedule-item"><span class="time">06:30 PM</span> <span>Cultural Evening</span>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <h4>Thu | 07 May</h4>
+                            <div class="schedule-item"><span class="time">06:30 AM</span> <span>Holy Mass</span></div>
+                            <div class="schedule-item"><span class="time">09:00 AM</span> <span>Inauguration</span></div>
+                            <div class="schedule-item"><span class="time">11:15 AM</span> <span>Plenary Session</span></div>
+                            <div class="schedule-item"><span class="time">03:30 PM</span> <span>Tech Sessions</span></div>
+                        </div>
+                        <div class="day-column">
+                            <h4>Fri | 08 May</h4>
+                            <div class="schedule-item"><span class="time">09:30 AM</span> <span>Panel Discussion</span></div>
+                            <div class="schedule-item"><span class="time">11:30 AM</span> <span>Tech Sessions</span></div>
+                            <div class="schedule-item"><span class="time">02:30 PM</span> <span>Synthesis</span></div>
+                            <div class="schedule-item"><span class="time">04:30 PM</span> <span>Way Forward</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="invitation-footer">
+                    <div class="contact-info">
+                        <h3 class="contact-title">CONTACT COORDINATORS</h3>
+                        <div class="contact-grid">
+                            <div class="contact-person">
+                                <div class="person-name">Sr. Molly Mathew MSMHC</div>
+                                <div class="person-details">📞 +91 63649 19153 | ✉️ executivedirector@crwi.org.in</div>
+                            </div>
+                            <div class="contact-person">
+                                <div class="person-name">Fr. Paul Pudussery CSC</div>
+                                <div class="person-details">📞 +91 94021 68195 | ✉️ leadresearcher@crwi.org.in</div>
+                            </div>
+                        </div>
+                        <p class="venue-info">Venue: Christ University Campus, Hosur Road, Bengaluru.</p>
+                    </div>
+
+                    <div class="qr-code-section">
+                        <div class="registration-action" style="text-align: center;">
+                            <a href="https://forms.cloud.microsoft/r/9bnTzTuiT0" target="_blank" class="btn-register-modal">
+                                REGISTER NOW →
+                            </a>
+                            <p style="font-size: 8pt; color: #666; margin-top: 8px;">(Click to open the registration form)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
+    <script src="data_integration.js?v=2.0"></script>
 </body>
 
 </html>

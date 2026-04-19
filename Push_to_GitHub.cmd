@@ -31,13 +31,11 @@ echo Step 3: Committing changes...
 git commit -m "%msg%"
 if %errorlevel% neq 0 (
     echo.
-    echo No changes to commit or commit failed.
-    pause
-    exit /b 0
+    echo No changes to commit or commit failed. Proceeding to push anyway...
 )
 
 echo Step 4: Pushing to GitHub...
-git push https://github.com/Jomitm/crwisymposium.git
+git push -f https://github.com/Jomitm/crwisymposium.git main
 if %errorlevel% neq 0 (
     echo.
     echo Push failed. Check your internet connection and GitHub permissions.

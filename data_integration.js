@@ -1,16 +1,32 @@
+// Prefetch data immediately as script is parsed to eliminate network delay
+const prefetchDataPromise = fetch(`data.json?v=${new Date().getTime()}`)
+    .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+    });
+
 async function fetchAndPopulateData() {
     try {
-        const response = await fetch('data.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await prefetchDataPromise;
 
         // --- Populate Global Settings ---
         if (data.Global_Settings) {
             const settings = {};
             data.Global_Settings.forEach(item => {
-                settings[item.Setting_Key] = item.Setting_Value;
+                // Primary keys
+                if (item.Setting_Key) {
+                    settings[item.Setting_Key] = item.Setting_Value;
+                    if (item.__EMPTY) settings[item.Setting_Key + '_status'] = item.__EMPTY;
+                }
+                
+                // Secondary keys (from columns E/F)
+                if (item.Setting_Key_1) {
+                    settings[item.Setting_Key_1] = item.Setting_Value_1;
+                    if (item.__EMPTY_1) settings[item.Setting_Key_1 + '_status'] = item.__EMPTY_1;
+                } else if (item.__EMPTY_1 && item.__EMPTY_2 && item.__EMPTY_1.startsWith('Parallax')) {
+                    // Support original fallback if column E & F has no headers
+                    settings[item.__EMPTY_1] = item.__EMPTY_2;
+                }
             });
 
             document.title = settings.Site_Title || document.title;
@@ -41,14 +57,182 @@ async function fetchAndPopulateData() {
                 heroLocation.textContent = `${settings.Location_Name}, ${settings.Location_City}`;
             }
 
-            const heroSection = document.getElementById('hero');
-            if (heroSection && settings.Hero_Background) {
-                // If you are setting background via css vars or style
-                // heroSection.style.backgroundImage = `url('${settings.Hero_Background}')`;
+            const heroOverlay = document.querySelector('.hero-overlay');
+            const heroSection = document.querySelector('.hero');
+            const waveContainer = document.querySelector('.waves-container');
+            const heroStatus = settings.Hero_Background_status?.trim().toLowerCase();
+            const heroIsActive = (heroStatus === 'active' || typeof heroStatus === 'undefined');
+
+            if (heroSection && heroOverlay) {
+                if (heroIsActive && settings.Hero_Background) {
+                    heroOverlay.style.backgroundImage = `url('${settings.Hero_Background}')`;
+                    heroSection.style.background = ''; // Keep default CSS gradient
+                    if (waveContainer) waveContainer.style.display = ''; // Show waves
+                } else if (!heroIsActive) {
+                    heroOverlay.style.backgroundImage = 'none';
+                    heroSection.style.background = 'transparent'; // Allow global video to show through
+                    if (waveContainer) waveContainer.style.display = 'none'; // Hide waves
+                }
             }
+
+            // Populate all 4 Parallax Dividers dynamically
+            const dividers = [
+                { id: 'parallax-divider', key: 'Parallax_Background' },
+                { id: 'parallax-divider-2', key: 'Parallax_Background_2' },
+                { id: 'parallax-divider-3', key: 'Parallax_Background_3' },
+                { id: 'parallax-divider-4', key: 'Parallax_Background_4' }
+            ];
+
+            let activeMediaList = [];
+            
+            // First pass: Detect all active parallax backgrounds
+            dividers.forEach(div => {
+                const url = settings[div.key];
+                const status = settings[div.key + '_status']?.trim().toLowerCase();
+                
+                // If NO status column exists, we default to active to not break backwards compatibility
+                const isActive = (status === 'active' || typeof status === 'undefined');
+                
+                if (url && isActive) {
+                    activeMediaList.push(url);
+                }
+            });
+
+            const stage = document.getElementById('global-video-stage');
+            const stageVideo = document.getElementById('stage-video');
+
+            let useGlobalStage = false;
+            
+            // If exactly 1 active media AND it's a video, use global stage
+            if (activeMediaList.length === 1 && /\.(mp4|webm|ogg)$/i.test(activeMediaList[0])) {
+                useGlobalStage = true;
+                if (stage && stageVideo) {
+                    stageVideo.src = activeMediaList[0];
+                    stageVideo.playbackRate = 0.5; // Slow down background video
+                    stage.classList.add('active');
+                    document.body.classList.add('has-global-video');
+                }
+            } else {
+                if (stage) {
+                    stage.classList.remove('active');
+                    if (stageVideo) stageVideo.pause();
+                    document.body.classList.remove('has-global-video');
+                }
+            }
+
+            // Second pass: Apply individual elements dynamically
+            dividers.forEach((div, index) => {
+                const el = document.getElementById(div.id);
+                if (el) {
+                    let assignedMediaUrl = null;
+                    
+                    if (activeMediaList.length > 0) {
+                        // Distribute media continuously based on section and active count
+                        const mediaIndex = Math.floor(index / (4 / activeMediaList.length));
+                        const safeIndex = Math.min(mediaIndex, activeMediaList.length - 1);
+                        assignedMediaUrl = activeMediaList[safeIndex];
+                    }
+
+                    if (!assignedMediaUrl) {
+                        // Clear section if nothing to show
+                        el.style.backgroundImage = 'none';
+                        const localVideo = el.querySelector('video.parallax-bg-video');
+                        if (localVideo) localVideo.remove();
+                        return;
+                    }
+
+                    const isVideo = /\.(mp4|webm|ogg)$/i.test(assignedMediaUrl);
+                    
+                    if (isVideo && useGlobalStage) {
+                        // Section is handled by the global stage, make it a transparent window
+                        el.style.backgroundImage = 'none';
+                        const localVideo = el.querySelector('video.parallax-bg-video');
+                        if (localVideo) localVideo.remove();
+                    } else if (isVideo) {
+                        // Handled locally since more than 1 active (or fallback)
+                        el.style.backgroundImage = 'none';
+                        let video = el.querySelector('video.parallax-bg-video');
+                        if (!video) {
+                            video = document.createElement('video');
+                            video.className = 'parallax-bg-video';
+                            video.autoplay = true;
+                            video.muted = true;
+                            video.loop = true;
+                            video.playsInline = true;
+                            video.playbackRate = 0.5; // Slow down background video
+                            el.insertBefore(video, el.firstChild);
+                        }
+                        if (!video.src.endsWith(assignedMediaUrl)) {
+                            video.src = assignedMediaUrl;
+                            video.playbackRate = 0.5; // Ensure it applies on update
+                        }
+                    } else {
+                        // Standard parallax image for this section
+                        el.style.backgroundImage = `url('${assignedMediaUrl}')`;
+                        const localVideo = el.querySelector('video.parallax-bg-video');
+                        if (localVideo) localVideo.remove();
+                    }
+                }
+            });
 
             const councilTitle = document.getElementById('council-title');
             if (councilTitle && settings.Council_Title) councilTitle.textContent = settings.Council_Title;
+
+            const enginesTitle = document.getElementById('engines-title');
+            if (enginesTitle && settings.Engines_Section_Title) enginesTitle.textContent = settings.Engines_Section_Title;
+
+            const trusteesTitle = document.getElementById('trustees-title');
+            if (trusteesTitle && settings.Trustees_Title) trusteesTitle.textContent = settings.Trustees_Title;
+
+            const aboutTitle = document.getElementById('about-title');
+            if (aboutTitle && settings.About_Title) aboutTitle.textContent = settings.About_Title;
+
+            const leadershipTitle = document.getElementById('leadership-title');
+            if (leadershipTitle && settings.Leadership_Title) leadershipTitle.textContent = settings.Leadership_Title;
+
+            const themesTitle = document.getElementById('themes-title');
+            if (themesTitle && settings.Themes_Title) themesTitle.textContent = settings.Themes_Title;
+
+            const objectivesTitle = document.getElementById('objectives-title');
+            if (objectivesTitle && settings.Objectives_Title) objectivesTitle.textContent = settings.Objectives_Title;
+
+            const presentersSTitle = document.getElementById('presenters-section-title');
+            if (presentersSTitle && settings.Presenters_Section_Title) presentersSTitle.textContent = settings.Presenters_Section_Title;
+
+            const keySpeakersTitle = document.getElementById('key-speakers-title');
+            if (keySpeakersTitle && settings.Key_Speakers_Title) {
+                // Force "Key Speakers" if the data says "Guest Lecturers"
+                keySpeakersTitle.textContent = settings.Key_Speakers_Title === "Guest Lecturers" ? "Key Speakers" : settings.Key_Speakers_Title;
+            }
+
+            const devPartnersTitle = document.getElementById('dev-partners-title');
+            if (devPartnersTitle && settings.Development_Partners_Title) {
+                devPartnersTitle.textContent = settings.Development_Partners_Title;
+            }
+
+            const callPapersTitle = document.getElementById('call-for-papers-title');
+            if (callPapersTitle && settings.Call_For_Papers_Title) callPapersTitle.textContent = settings.Call_For_Papers_Title;
+
+            const heroEyebrow = document.getElementById('hero-eyebrow');
+            if (heroEyebrow && settings.Hero_Eyebrow) heroEyebrow.textContent = settings.Hero_Eyebrow;
+
+            const heroTitle = document.getElementById('hero-title');
+            if (heroTitle && settings.Hero_Title) heroTitle.innerHTML = settings.Hero_Title;
+
+            const themesSubtitle = document.getElementById('themes-subtitle');
+            if (themesSubtitle && settings.Themes_Subtitle) themesSubtitle.textContent = settings.Themes_Subtitle;
+
+            const presentersSubtitle = document.getElementById('presenters-subtitle');
+            if (presentersSubtitle && settings.Presenters_Subtitle) presentersSubtitle.textContent = settings.Presenters_Subtitle;
+
+            const callPapersDesc = document.getElementById('call-for-papers-description');
+            if (callPapersDesc && settings.Call_For_Papers_Description) callPapersDesc.textContent = settings.Call_For_Papers_Description;
+
+            const guidelinesTitle = document.getElementById('guidelines-title');
+            if (guidelinesTitle && settings.Guidelines_Title) guidelinesTitle.textContent = settings.Guidelines_Title;
+
+            const contactsTitle = document.getElementById('contacts-title');
+            if (contactsTitle && settings.Contacts_Title) contactsTitle.textContent = settings.Contacts_Title;
             
             // Store size globally so the marquee can access it
             window.councilPhotoSize = settings.Council_Photo_Size || '150';
@@ -63,7 +247,7 @@ async function fetchAndPopulateData() {
             const h1 = document.querySelector('.hero-main-column h1');
             if (h1) h1.innerHTML = `${heroData.Main_Title_Line1}<br>${heroData.Main_Title_Line2}`;
 
-            const btn = document.querySelector('.hero-main-column .btn-primary');
+            const btn = document.getElementById('submit-abstract-btn');
             if (btn) {
                 btn.textContent = heroData.Button_Text;
                 btn.href = heroData.Button_Link;
@@ -99,7 +283,7 @@ async function fetchAndPopulateData() {
 
         // --- Populate Collaborator Logos ---
         if (data.Collaborator_Logos) {
-            const logosContainer = document.querySelector('.hero-logos-top');
+            const logosContainer = document.querySelector('.logo-group');
             if (logosContainer) {
                 logosContainer.innerHTML = '';
                 data.Collaborator_Logos.sort((a, b) => a.Sort_Order - b.Sort_Order).forEach(logo => {
@@ -139,12 +323,26 @@ async function fetchAndPopulateData() {
                     <p>${about.Paragraph_3}</p>
                 `;
             }
-            const quoteCard = document.querySelector('.about-section .quote-card');
-            if (quoteCard) {
-                quoteCard.innerHTML = `
-                    <blockquote>${about.Quote_Text}</blockquote>
-                    <cite>${about.Quote_Author}</cite>
-                `;
+            const quotesContainer = document.querySelector('.about-section .quotes-container');
+            if (quotesContainer) {
+                quotesContainer.innerHTML = '';
+                // Support multiple quotes if there are multiple rows OR Quote_Text_2 columns!
+                data.About_Section.forEach(row => {
+                    if (row.Quote_Text) {
+                        quotesContainer.innerHTML += `
+                        <div class="quote-card">
+                            <blockquote>${row.Quote_Text}</blockquote>
+                            <cite>${row.Quote_Author || ''}</cite>
+                        </div>`;
+                    }
+                    if (row.Quote_Text_2) {
+                        quotesContainer.innerHTML += `
+                        <div class="quote-card">
+                            <blockquote>${row.Quote_Text_2}</blockquote>
+                            <cite>${row.Quote_Author_2 || ''}</cite>
+                        </div>`;
+                    }
+                });
             }
         }
 
@@ -158,8 +356,7 @@ async function fetchAndPopulateData() {
                     grid.innerHTML += `
                     <div class="leader-card ${isReverse}">
                         <div class="leader-photo-frame">
-                            <img src="${leader.Image_Path}" alt="${leader.Name}"
-                                style="height: 250px; width: 100%; object-fit: cover;">
+                            <img src="${leader.Image_Path}" alt="${leader.Name}" class="leader-photo">
                         </div>
                         <div class="leader-content">
                             <h4>${leader.Role}</h4>
@@ -204,7 +401,7 @@ async function fetchAndPopulateData() {
                 data.Objectives.forEach(obj => {
                     grid.innerHTML += `
                     <div class="card obj-card">
-                        <div class="icon-box">${obj.Icon_Emoji}</div>
+                        <div class="icon-box">${obj.Icon_Emoji || '💠'}</div>
                         <h4>${obj.Title}</h4>
                         <p>${obj.Description}</p>
                     </div>`;
@@ -214,43 +411,67 @@ async function fetchAndPopulateData() {
 
         // --- Populate Key Speakers ---
         if (data.Key_Speakers) {
-            const grid = document.querySelector('#presenters .presenters-grid-large');
+            const grid = document.querySelector('#presenters .key-speakers-grid');
             if (grid) {
                 grid.innerHTML = '';
                 data.Key_Speakers.forEach(speaker => {
-                    const bgImage = speaker.Image_Path ? `background-image: url('${speaker.Image_Path}');` : '';
+                    const bgImage = speaker.Image_Path ? `background-image: url('${speaker.Image_Path}'); background-position: center top;` : '';
                     grid.innerHTML += `
-                    <div class="presenter-card-large">
-                        <div class="presenter-card-inner">
-                            <div class="presenter-card-front">
-                                <div class="presenter-photo" style="${bgImage}"></div>
-                                <div class="presenter-info">
-                                    <h5>${speaker.Speaker_Name}</h5>
-                                    <p class="role">${speaker.Speaker_Role}</p>
-                                    <hr class="divider-small">
-                                    <p class="paper-title">${speaker.Paper_Title}</p>
-                                    <span class="read-more">Profile</span>
-                                </div>
-                            </div>
-                            <div class="presenter-card-back">
-                                <h5>Profile</h5>
-                                <div class="profile-text">
-                                    <p><strong>Paper Title:</strong> ${speaker.Paper_Title}</p>
-                                    <p>${speaker.Abstract_Link && speaker.Abstract_Link !== '#' ? speaker.Abstract_Link : 'Profile information coming soon...'}</p>
-                                </div>
-                            </div>
+                    <div class="presenter-card-static">
+                        <div class="presenter-photo" style="${bgImage}"></div>
+                        <div class="presenter-info">
+                            <h5>${speaker.Speaker_Name}</h5>
+                            <p class="role">${speaker.Speaker_Role}</p>
+                            <hr class="divider-small">
+                            <p class="paper-title">${speaker.Paper_Title}</p>
                         </div>
                     </div>`;
                 });
             }
         }
 
-        // --- Populate Presenters (with Pagination) ---
-        if (data.Presenters) {
-            window.allPresenters = data.Presenters;
-            window.filteredPresenters = data.Presenters;
-            window.itemsToShow = 8;
+        // --- Populate Development Partners ---
+        if (data["Development Partners"]) {
+            const grid = document.getElementById('dev-partners-grid');
+            if (grid) {
+                grid.innerHTML = '';
+                data["Development Partners"].forEach(partner => {
+                    const bgImage = partner.Image_Path ? `background-image: url('${partner.Image_Path}'); background-position: center 20%;` : '';
+                    grid.innerHTML += `
+                    <div class="presenter-card-static">
+                        <div class="presenter-photo" style="${bgImage}"></div>
+                        <div class="presenter-info">
+                            <h5>${partner.Speaker_Name}</h5>
+                            <p class="role">${partner.Speaker_Role}</p>
+                            <hr class="divider-small">
+                            <p class="paper-title">${partner.Paper_Title || ''}</p>
+                        </div>
+                    </div>`;
+                });
+            }
+        }
 
+        if (data.Presenters) {
+            // Filter out any presenter that explicitly contains the word 'inactive' in their data
+            window.allPresenters = data.Presenters.filter(p => {
+                let isInactive = false;
+                for (let key in p) {
+                    const value = String(p[key]).trim().toLowerCase();
+                    // We check if the column value is exactly "inactive" or if it contains "inactive"
+                    if (value === 'inactive') {
+                        isInactive = true;
+                        break;
+                    }
+                }
+                return !isInactive;
+            });
+
+            console.log("Speakers after filtering 'inactive':", window.allPresenters.length);
+            
+            // Set default theme to Formation
+            window.filteredPresenters = window.allPresenters.filter(p => p.Theme_Category === 'Formation');
+            
+            window.itemsToShow = 8;
             renderPresenters();
             setupFilters();
 
@@ -290,8 +511,7 @@ async function fetchAndPopulateData() {
                     data.Trustees.forEach(member => {
                         html += `
                         <div class="card council-card council-card-marquee">
-                            <img src="${member.Image_Path}" alt="${member.Name}"
-                                style="height: ${pSize}px; width: auto; max-width: 100%; object-fit: cover;">
+                            <img src="${member.Image_Path}" alt="${member.Name}" class="council-photo">
                             <div style="padding: 1rem; text-align: center;">
                                 <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">${member.Name}</h5>
                                 <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">${member.Role || ''}</p>
@@ -315,8 +535,7 @@ async function fetchAndPopulateData() {
                     data.Executive_Council.forEach(member => {
                         html += `
                         <div class="card council-card council-card-marquee">
-                            <img src="${member.Image_Path}" alt="${member.Name}"
-                                style="height: ${pSize}px; width: auto; max-width: 100%; object-fit: cover;">
+                            <img src="${member.Image_Path}" alt="${member.Name}" class="council-photo">
                             <div style="padding: 1rem; text-align: center;">
                                 <h5 style="margin-bottom: 0.25rem; color: var(--primary-color);">${member.Name}</h5>
                                 <p style="font-size: 0.9rem; font-weight: bold; color: var(--accent-color);">${member.Role}</p>
@@ -337,11 +556,11 @@ async function fetchAndPopulateData() {
                 // Keep the h4 and p
                 const title = contactsContainer.querySelector('h4').outerHTML;
                 const p = contactsContainer.querySelector('p').outerHTML;
-                let html = title + p;
+                let cardsHtml = '';
 
                 data.Contacts_And_Footer.filter(c => c.Contact_Type === 'Submission_Contact').forEach(contact => {
-                    html += `
-                    <div class="contact-card-small">
+                    cardsHtml += `
+                    <div class="contact-card-small" style="flex: 1; min-width: 180px;">
                         <img src="${contact.Image_Path_Or_Link}" alt="${contact.Name_Or_Title}" class="contact-avatar">
                         <div class="contact-details">
                             <p class="contact-name">${contact.Name_Or_Title}</p>
@@ -351,7 +570,9 @@ async function fetchAndPopulateData() {
                         </div>
                     </div>`;
                 });
-                contactsContainer.innerHTML = html;
+
+                const rowWrapper = `<div style="display: flex; flex-direction: row; gap: 1.5rem; flex-wrap: wrap; align-items: flex-start; margin-top: 1rem;">${cardsHtml}</div>`;
+                contactsContainer.innerHTML = title + p + rowWrapper;
             }
 
             // Footer Cols
@@ -387,20 +608,131 @@ async function fetchAndPopulateData() {
             }
         }
 
+        // --- Populate The Invisible Engines ---
+        populateInvisibleEngines(data);
+
+        setupFilters();
     } catch (error) {
         console.error('Error fetching or populating data:', error);
     }
 }
 
+function populateInvisibleEngines(data) {
+    const engineData = data["The Invisible Engines"];
+    if (!engineData) return;
+
+    const staffGrid = document.getElementById('staff-grid');
+    const volunteersGrid = document.getElementById('volunteers-grid');
+
+    if (!staffGrid || !volunteersGrid) return;
+
+    let currentCategory = ''; // 'staff' or 'volunteers'
+
+    engineData.forEach(person => {
+        // Switch category markers
+        if (person.ID === "CRWI Staff") {
+            currentCategory = 'staff';
+            return;
+        } else if (person.ID === "Volunteers") {
+            currentCategory = 'volunteers';
+            return;
+        }
+
+        // If it's a data row and has a name
+        if (person.Name && currentCategory) {
+            const card = document.createElement('div');
+            card.className = 'staff-card';
+            
+            const imagePath = person.Image_Path || 'images/The Invisible Engines/logo.png';
+            const role = person.Role || '';
+
+            card.innerHTML = `
+                <img src="${imagePath}" alt="${person.Name}" class="staff-photo">
+                <div class="staff-info">
+                    <h5>${person.Name}</h5>
+                    <p>${role}</p>
+                </div>
+            `;
+
+            if (currentCategory === 'staff') {
+                staffGrid.appendChild(card);
+            } else {
+                volunteersGrid.appendChild(card);
+            }
+        }
+    });
+}
+
 function renderPresenters() {
-    const grids = document.querySelectorAll('#presenters .presenters-grid-large');
-    if (grids.length > 1) {
-        const grid = grids[1];
-        grid.innerHTML = '';
+    const filterBar = document.querySelector('.search-filter-bar');
+    if (!filterBar) return;
 
-        const items = window.filteredPresenters.slice(0, window.itemsToShow);
+    // We use the hidden theme-filter to keep state
+    const filterSelect = document.getElementById('theme-filter');
+    const selectedTheme = filterSelect ? filterSelect.value : 'all';
 
-        items.forEach(presenter => {
+    // Disable the Load More button completely since we are grouping them
+    const loadMoreContainer = document.getElementById('load-more-container');
+    if (loadMoreContainer) loadMoreContainer.style.display = 'none';
+
+    // Clear any existing grids after the filter bar
+    let next = filterBar.nextElementSibling;
+    while (next) {
+        if (next.id === 'load-more-container') {
+            next = next.nextElementSibling;
+            continue;
+        }
+        const el = next;
+        next = next.nextElementSibling;
+        el.remove();
+    }
+
+    const container = filterBar.parentElement;
+
+    // Group presenters by theme
+    const groups = {};
+    window.filteredPresenters.forEach(presenter => {
+        const theme = presenter.Theme_Category || 'Other / General';
+        // If a specific theme is selected, only keep that one
+        if (selectedTheme !== 'all' && theme !== selectedTheme) return;
+
+        if (!groups[theme]) {
+            groups[theme] = [];
+        }
+        groups[theme].push(presenter);
+    });
+
+    Object.keys(groups).forEach(theme => {
+        // Sort within each theme: "Chair person" first
+        groups[theme].sort((a, b) => {
+            const titleA = (a.Paper_Title || "").toLowerCase();
+            const titleB = (b.Paper_Title || "").toLowerCase();
+            const isChairA = titleA.includes("chair person") || titleA.includes("chairperson");
+            const isChairB = titleB.includes("chair person") || titleB.includes("chairperson");
+            if (isChairA && !isChairB) return -1;
+            if (!isChairA && isChairB) return 1;
+            return 0;
+        });
+
+        // Create the theme header title (only if showing ALL or if there are multiple people)
+        const header = document.createElement('h4');
+        header.textContent = theme;
+        header.style.textAlign = 'left';
+        header.style.marginTop = '0.75rem';
+        header.style.marginBottom = '1rem';
+        header.style.color = 'var(--primary-color)';
+        header.style.borderBottom = '2px solid var(--accent-color)';
+        header.style.paddingBottom = '0.5rem';
+        header.style.fontSize = '1.5rem';
+        header.style.fontWeight = 'bold';
+        container.insertBefore(header, loadMoreContainer);
+
+        // Create the grid for this specific theme
+        const grid = document.createElement('div');
+        grid.className = 'presenters-grid-large';
+        grid.style.marginBottom = '2rem';
+        
+        groups[theme].forEach(presenter => {
             const bgImage = presenter.Image_Path ? `background-image: url('${presenter.Image_Path}');` : '';
             grid.innerHTML += `
             <article class="presenter-card-large" data-theme="${presenter.Theme_Category}">
@@ -412,30 +744,26 @@ function renderPresenters() {
                             <p class="role">${presenter.Congregation_Name}</p>
                             <hr class="divider-small">
                             <p class="paper-title">${presenter.Paper_Title}</p>
-                            <span class="read-more">Profile</span>
                         </div>
                     </div>
                     <div class="presenter-card-back">
                         <h5>Profile</h5>
                         <div class="profile-text">
-                            <p><strong>Theme:</strong> ${presenter.Theme_Category}</p>
-                            <p>${presenter.Abstract_Link && presenter.Abstract_Link !== '#' ? presenter.Abstract_Link : 'Profile information coming soon...'}</p>
+                            <p style="margin-bottom: 1rem;"><strong>Theme:</strong> ${presenter.Theme_Category}</p>
+                            <p style="font-size: 0.85rem;">${presenter.Abstract_Link && presenter.Abstract_Link !== '#' ? presenter.Abstract_Link : 'Profile information coming soon...'}</p>
                         </div>
                     </div>
                 </div>
             </article>`;
         });
-
-        const loadMoreContainer = document.getElementById('load-more-container');
-        if (loadMoreContainer) {
-            loadMoreContainer.style.display = (window.itemsToShow < window.filteredPresenters.length) ? 'block' : 'none';
-        }
-    }
+        container.insertBefore(grid, loadMoreContainer);
+    });
 }
 
 function setupFilters() {
     const searchInput = document.getElementById('search-input');
     const filterSelect = document.getElementById('theme-filter');
+    const themeNavItems = document.querySelectorAll('.theme-nav-item');
 
     if (!searchInput || !filterSelect) return;
 
@@ -454,11 +782,25 @@ function setupFilters() {
         renderPresenters();
     };
 
+    // Handle Tab Clicks
+    themeNavItems.forEach(item => {
+        item.onclick = () => {
+            // Remove active from others
+            themeNavItems.forEach(n => n.classList.remove('active'));
+            // Add to this one
+            item.classList.add('active');
+            
+            // Update hidden select
+            filterSelect.value = item.getAttribute('data-theme');
+            
+            // Trigger filter
+            filterHandler();
+        };
+    });
+
     searchInput.oninput = filterHandler;
     filterSelect.onchange = filterHandler;
 }
 
-// Ensure the data is populated when the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    fetchAndPopulateData();
-});
+// Execute immediately since the script tag is at the end of the body
+fetchAndPopulateData();

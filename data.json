@@ -22,12 +22,12 @@
     },
     {
       "Setting_Key": "Location_Name",
-      "Setting_Value": "Christ University",
+      "Setting_Value": "Christ University, Central Campus",
       "Description": "Used globally / SEO"
     },
     {
       "Setting_Key": "Location_City",
-      "Setting_Value": "Bangalore",
+      "Setting_Value": "Hosur Main Road, Bangalore.",
       "Description": "Used globally / SEO"
     },
     {
@@ -37,8 +37,120 @@
     },
     {
       "Setting_Key": "Hero_Background",
-      "Setting_Value": "/images/hero-bg.jpg",
-      "Description": "Background image for the Hero section"
+      "Setting_Value": "/images/Hero/Hero.jpg",
+      "Description": "Background image for the Hero section",
+      "__EMPTY": "Inactive",
+      "Setting_Key_1": "Setting_Key",
+      "Setting_Value_1": "Setting_Value",
+      "Description_1": "Spped",
+      "__EMPTY_7": "/images/hero-bg.jpg"
+    },
+    {
+      "Setting_Key": "Parallax_Background",
+      "Setting_Value": "/images/Hero/Video/church inside.mp4",
+      "Description": "Background image for non hero section",
+      "__EMPTY": "Active",
+      "Setting_Key_1": "Parallax_Background_2",
+      "__EMPTY_1": "Inactive",
+      "__EMPTY_2": "Background image for non hero section"
+    },
+    {
+      "Setting_Key_1": "Parallax_Background_3",
+      "__EMPTY_1": "Inactive",
+      "__EMPTY_2": "Background image for non hero section"
+    },
+    {
+      "Setting_Key": "Setting_Key",
+      "Setting_Value": "Example Setting_Value",
+      "Description": "Result on Website",
+      "Setting_Key_1": "Parallax_Background_4",
+      "__EMPTY_1": "Inactive",
+      "__EMPTY_2": "Background image for non hero section"
+    },
+    {
+      "Setting_Key": "Site_Title",
+      "Setting_Value": "CRWI Proceedings 2026",
+      "Description": "Changes the name in the browser tab"
+    },
+    {
+      "Setting_Key": "Hero_Eyebrow",
+      "Setting_Value": "International Symposium",
+      "Description": "Changes small text above the Big Header"
+    },
+    {
+      "Setting_Key": "Hero_Title",
+      "Setting_Value": "A Pilgrimage of Hope",
+      "Description": "Changes the Main Big Title in the image"
+    },
+    {
+      "Setting_Key": "About_Title",
+      "Setting_Value": "About This Event",
+      "Description": "Changes \"About The Symposium\""
+    },
+    {
+      "Setting_Key": "Leadership_Title",
+      "Setting_Value": "Greetings and Reflections",
+      "Description": "Changes \"Messages from Leadership\""
+    },
+    {
+      "Setting_Key": "Themes_Title",
+      "Setting_Value": "Our Research Focus",
+      "Description": "Changes \"Thematic Areas\""
+    },
+    {
+      "Setting_Key": "Themes_Subtitle",
+      "Setting_Value": "Explore our 6 key areas",
+      "Description": "Changes the text under \"Thematic Areas\""
+    },
+    {
+      "Setting_Key": "Objectives_Title",
+      "Setting_Value": "Conference Goals",
+      "Description": "Changes \"Objectives\""
+    },
+    {
+      "Setting_Key": "Key_Speakers_Title",
+      "Setting_Value": "Guest Lecturers",
+      "Description": "Changes \"Key Speakers\""
+    },
+    {
+      "Setting_Key": "Presenters_Section_Title",
+      "Setting_Value": "Our Presenters",
+      "Description": "Changes \"Speakers and Presenters\""
+    },
+    {
+      "Setting_Key": "Presenters_Subtitle",
+      "Setting_Value": "Research from our sisters",
+      "Description": "Changes the text under \"Speakers and Presenters\""
+    },
+    {
+      "Setting_Key": "Call_For_Papers_Title",
+      "Setting_Value": "Join the Research",
+      "Description": "Changes \"Call for Papers\""
+    },
+    {
+      "Setting_Key": "Call_For_Papers_Description",
+      "Setting_Value": "Submit your abstract",
+      "Description": "Changes the description in the dark section"
+    },
+    {
+      "Setting_Key": "Guidelines_Title",
+      "Setting_Value": "Submission Rules",
+      "Description": "Changes \"Submission Guidelines\""
+    },
+    {
+      "Setting_Key": "Contacts_Title",
+      "Setting_Value": "Contact for Support",
+      "Description": "Changes \"Submission Contacts\""
+    },
+    {
+      "Setting_Key": "Trustees_Title",
+      "Setting_Value": "CRWI Trustees",
+      "Description": "Changes \"Trustees\""
+    },
+    {
+      "Setting_Key": "Council_Title",
+      "Setting_Value": "CRWI Executive Council Members",
+      "Description": "Changes \"Executive Council\""
     }
   ],
   "Hero_Section": [
@@ -118,24 +230,9 @@
       "Paragraph_3": "This Symposium will offer a platform for sharing research insights, personal narratives, and collaborative reflections on the evolving mission of Consecrated Women amid contemporary global changes.",
       "Quote_Text": "\"Consecrated life is a living memory of Jesus’ way of being – a sign that love, when lived radically, can transform the world.\"",
       "Quote_Author": "— Pope Francis"
-    }
-  ],
-  "Leadership_Messages": [
-    {
-      "ID": "1",
-      "Name": "Sr. Maria Nirmalini AC",
-      "Role": "Message from the President",
-      "Role_Company": "President, CRWI",
-      "Message_Text": "\"It is with great joy and hope that we welcome you to this symposium. As we gather to reflect on our consecrated life, let us be open to the Spirit's leading, renewed in our commitment to be living flames of God's love in a world that yearns for hope.\"",
-      "Image_Path": "images/Leaders/Sr. Maria Nirmalini AC.jpeg"
     },
     {
-      "ID": "2",
-      "Name": "Sr. Molly Mathew MSMHC",
-      "Role": "Message from the Executive Director",
-      "Role_Company": "Executive Director, CRWI",
-      "Message_Text": "\"This symposium is a milestone in our journey together. It is an opportunity to celebrate our shared mission, to learn from one another, and to chart a path forward that is sustainable, inclusive, and deeply rooted in our charism.\"",
-      "Image_Path": "images/Leaders/Sr. Molly Mathew MSMHC.png"
+      "ID": 2
     }
   ],
   "Thematic_Areas": [
@@ -204,8 +301,7 @@
     {
       "ID": "5",
       "Title": "Sustainable Strategies",
-      "Description": "Chart practical strategies for sustainable ministries and dignified eldercare.",
-      "__EMPTY_1": "👵"
+      "Description": "Chart practical strategies for sustainable ministries and dignified eldercare."
     },
     {
       "ID": "6",
@@ -214,115 +310,218 @@
       "Icon_Emoji": "📱"
     }
   ],
-  "Key_Speakers": [
+  "Leadership_Messages": [
     {
       "ID": "1",
-      "Speaker_Name": "Key Speaker 1",
-      "Speaker_Role": "Keynote Addressee",
-      "Paper_Title": "\"Transformation through Hope\"",
-      "Image_Path": ""
+      "Name": "Sr. Maria Nirmalini AC",
+      "Role": "Message from the President",
+      "Role_Company": "President, CRWI",
+      "Message_Text": "\"It is with great joy and hope that we welcome you to this symposium. As we gather to reflect on our consecrated life, let us be open to the Spirit's leading, renewed in our commitment to be living flames of God's love in a world that yearns for hope.\"",
+      "Image_Path": "images/Leaders/Sr. Maria Nirmalini AC.jpeg"
     },
     {
       "ID": "2",
-      "Speaker_Name": "Key Speaker 2",
-      "Speaker_Role": "Guest of Honor",
-      "Paper_Title": "\"Living Flames of Love\"",
-      "Image_Path": ""
+      "Name": "Sr. Molly Mathew MSMHC",
+      "Role": "Message from the Executive Director",
+      "Role_Company": "Executive Director, CRWI",
+      "Message_Text": "\"This symposium is a milestone in our journey together. It is an opportunity to celebrate our shared mission, to learn from one another, and to chart a path forward that is sustainable, inclusive, and deeply rooted in our charism.\"",
+      "Image_Path": "images/Leaders/Sr. Molly Mathew MSMHC.png"
+    }
+  ],
+  "Key_Speakers": [
+    {
+      "ID": "1",
+      "Speaker_Name": "His Eminence Anthony Poola",
+      "Speaker_Role": "Cardinal, Metropolitan Archbishop of Hyderabad",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/His Eminence Anthony Poola.jpg"
+    },
+    {
+      "ID": "2",
+      "Speaker_Name": "Most Rev. Ivan Pereira",
+      "Speaker_Role": "Bishop of Jammu-Srinagar",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Most Rev.Ivan Pereira.jpeg"
     },
     {
       "ID": "3",
-      "Speaker_Name": "Key Speaker 3",
-      "Speaker_Role": "Distinguished Speaker",
-      "Paper_Title": "\"Consecrated Life in the Modern World\"",
-      "Image_Path": ""
+      "Speaker_Name": "Most Rev. Elias Gonsalves",
+      "Speaker_Role": "Archbishop of Nagpur",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Most Rev. Elias Gonsalves.png"
     },
     {
       "ID": "4",
-      "Speaker_Name": "Key Speaker 4",
-      "Speaker_Role": "Plenary Speaker",
-      "Paper_Title": "\"Charism and Ministry\"",
-      "Image_Path": ""
+      "Speaker_Name": "Rev. Dr. Mathew Koikkal",
+      "Speaker_Role": "Deputy Secretary General Of The CBCI",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Rev. Dr. Mathew Koikkal.jpeg"
     },
     {
       "ID": "5",
-      "Speaker_Name": "Key Speaker 5",
-      "Speaker_Role": "Featured Speaker",
-      "Paper_Title": "\"A Journey of Faith and Service\"",
-      "Image_Path": ""
+      "Speaker_Name": "Sr. Maria Nirmalini AC",
+      "Speaker_Role": "President Women Section",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg"
+    },
+    {
+      "ID": "6",
+      "Speaker_Name": "Fr. Saju Chackalakkal ",
+      "Speaker_Role": "CRI President",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Fr. Saju.jpg"
+    },
+    {
+      "ID": "7",
+      "Speaker_Name": "Fr. Jose Palely   ",
+      "Speaker_Role": "Vice Chancelor, ADBU, Guwahati",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Fr. Jose Palely.jpg"
+    },
+    {
+      "ID": "8",
+      "Speaker_Name": "Fr. Varghese",
+      "Speaker_Role": "Administrator Christ University ",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Fr, Varghese.jpg"
+    },
+    {
+      "ID": "9",
+      "Speaker_Name": "Br. Santhosh P J",
+      "Speaker_Role": "President Brother Section",
+      "Paper_Title": "Message",
+      "Image_Path": "images/Speakers/Br. Santhosh P J.jpg"
+    }
+  ],
+  "Development Partners": [
+    {
+      "ID": 1,
+      "Speaker_Name": "Sr. Jane Wakahiu  ",
+      "Speaker_Role": "Associate Vice President, Program Operations and Head of Catholic Sisters",
+      "Image_Path": "images/Speakers/Sr. Jane.jpg"
+    },
+    {
+      "ID": 2,
+      "Speaker_Name": "Ms. Sabrina Wong",
+      "Speaker_Role": "Senior Program Officer, Catholic Sisters Initiative",
+      "Image_Path": "images/Speakers/sabrina-wong.jpg"
+    },
+    {
+      "ID": 3,
+      "Speaker_Name": "Mr. Marco Lemus",
+      "Speaker_Role": "Program Officer, Catholic Sisters, Asia",
+      "Image_Path": "images/Speakers/Marco.jpg"
+    },
+    {
+      "ID": 4,
+      "Speaker_Name": "Thomas P. Gaunt, SJ.",
+      "Speaker_Role": "Executive director at CARA",
+      "Image_Path": "images/Speakers/Thomas P. Gaunt.webp"
+    },
+    {
+      "ID": 5,
+      "Speaker_Name": "Sr. Thu T. Do",
+      "Speaker_Role": "#",
+      "Image_Path": "images/Speakers/SR. Thu.jpg"
+    },
+    {
+      "ID": 6,
+      "Speaker_Name": "Sr. Candida   Mukundi ",
+      "Speaker_Role": "CERRA",
+      "Image_Path": "images/Speakers/Sr. Cadita Njeri Mukundi.jpg"
+    },
+    {
+      "ID": 7,
+      "Speaker_Name": "Sr. Bibiana Munini Ngundo",
+      "Speaker_Role": "#",
+      "Image_Path": "images/The Invisible Engines/logo.png"
+    },
+    {
+      "ID": 8,
+      "Speaker_Name": "Fr. Luis Fernando Falcó, MsPs.",
+      "Speaker_Role": "Coordinator of Research and Projects- Desarrollo y Salud",
+      "Image_Path": "images/Speakers/Luis Fernando.png"
     }
   ],
   "Presenters": [
     {
       "ID": "1",
-      "Presenter_Name": "Sr. Dr. Jamesy Vakayil, CTC",
+      "Presenter_Name": "Sr. Dr. Jamesy Vakayil",
       "Congregation_Name": "CTC",
       "Paper_Title": "Life long formation is a continues renewal of vocation and mission",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/1.jpg",
-      "Abstract_Link": "A theologian from the Congregation of Teresian Carmelites, Sr. Jamesy has extensive experience in academic formation and holds a Doctorate in Theology. She has taught across major theological institutions and contributes significantly to contemporary discussions on religious and priestly formation."
+      "Abstract_Link": "A theologian from the Congregation of Teresian Carmelites, Sr. Jamesy has extensive experience in academic formation and holds a Doctorate in Theology. She has taught across major theological institutions and contributes significantly to contemporary discussions on religious and priestly formation.",
+      "Status": "Active"
     },
     {
       "ID": "2",
       "Presenter_Name": "#",
       "Congregation_Name": "#",
       "Paper_Title": "Mentorship and accompaniment: \"warming the dreams of the young\" (Pope Francis). ",
-      "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/2.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": "3",
-      "Presenter_Name": "Fr. Wilson ",
-      "Congregation_Name": "CSC",
+      "Presenter_Name": "Sr. Jincy Maria",
+      "Congregation_Name": "FCC",
       "Paper_Title": "Addressing psychological well-being, intercultural living, and the responsible use of technology",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/3.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Dr. Jincy Arakkal George, a psychologist, holds a degree in Counseling Psychology Major in Clinical counseling from De La Salle University, Manila, Philippines. She also has a diploma in Family Counseling from Loyola School of Theology, Ateneo De Manila University. With her expertise, Dr. Jincy George has served in various leadership roles, including Headmistress and Principal ",
+      "Status": "Active"
     },
     {
       "ID": "4",
-      "Presenter_Name": "Sr. Lavina",
+      "Presenter_Name": "Sr. Lavina Rodrigues",
       "Congregation_Name": "AC",
       "Paper_Title": "Intercultural and intergenerational community living",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/4.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Dedicated and accomplished professional belonging to the Congregation of the Apostolic Carmel, with a strong foundation in formative leadership. Trained in Formators Course, I have successfully served in various capacities, including the pivotal roles of overseeing Aspirants, Novices, and Juniors. My academic journey includes the completion of an MA in English, coupled with a rewarding teaching stint.",
+      "Status": "Active"
     },
     {
       "ID": 5,
-      "Presenter_Name": "Sr. Anna Mary Thumma",
-      "Congregation_Name": "SCCG",
-      "Paper_Title": "Formation is a lifelong pilgrimage of grace. It calls for spiritual maturity, psychological integration, intercultural dialogue, and pastoral adaptability.",
-      "Theme_Category": "Formation",
+      "Presenter_Name": "Fr. Dr. Johnson",
+      "Congregation_Name": "CMI",
+      "Paper_Title": "New Education Policy",
+      "Theme_Category": "Education",
       "Image_Path": "images/Presenters/5.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Active"
     },
     {
       "ID": 6,
-      "Presenter_Name": "Fr. Bhayju ",
+      "Presenter_Name": "Fr. V. Antony Bhyju",
       "Congregation_Name": "CMF",
       "Paper_Title": "Reimagining structures to integrate spiritual, human, intellectual, and pastoral dimensions.",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/6.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Fr. V. Antony Bhyju, CMF, is a Claretian Missionary from the Independent Delegation of Kolkata with significant experience in both initial and ongoing formation. He holds a Licentiate in Formative Psychology from the Pontifical Gregorian University, Rome, integrating psychological insight with spiritual accompaniment in his ministry. He has served as Major Superior and has been actively involved in teaching and animating retreats for religious. Currently, he serves at the General Curia in Rome as Assistant to the General Consultors for Formation and Spirituality, contributing to formation and spiritual renewal within the Congregation.",
+      "Status": "Active"
     },
     {
       "ID": 7,
       "Presenter_Name": "Dr. Patrick Jude L.",
-      "Congregation_Name": "Lay Person",
+      "Congregation_Name": "Christ University",
       "Paper_Title": "Cascading Response and Support Model to Enhance Psychological Integration among Women Religious in India.",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/7.jpg",
-      "Abstract_Link": "Assistant Professor of Psychology at Christ University, Dr. Patrick specialises in school mental health, stress management, and psychosocial interventions. He has contributed extensively to community‑based programmes, research supervision, and academic training."
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, Dr. Patrick specialises in school mental health, stress management, and psychosocial interventions. He has contributed extensively to community‑based programmes, research supervision, and academic training.",
+      "Status": "Active"
     },
     {
       "ID": 8,
-      "Presenter_Name": "Sr. Mary Paul, FCC",
+      "Presenter_Name": "Sr. Dr. Mary Paul ",
       "Congregation_Name": "FCC",
       "Paper_Title": "Care for the Elderly: Honoring Wisdom Ensuring Dignity",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/8.jpg",
-      "Abstract_Link": "An educationist with 22+ years of teaching and administration, including roles as Principal and Associate Professor. Her academic work spans ageing, diaspora studies, and community development with contributions to major national seminars"
+      "Abstract_Link": "An educationist with 22+ years of teaching and administration, including roles as Principal and Associate Professor. Her academic work spans ageing, diaspora studies, and community development with contributions to major national seminars",
+      "Status": "Active"
     },
     {
       "ID": 9,
@@ -331,25 +530,28 @@
       "Paper_Title": "Establishing sustainable and faith -rooted eldercare models that uphold diginity and independence",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/9.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Dr. Kripanjali Tellis Nayak is a Registered Nurse, Senior Living Consultant, soft skills trainer, and motivational speaker from Mangalore. With qualifications in Nursing, English Literature, and Healthcare Management, she is currently a PhD research scholar in Management. An author of “Mai and I,” she focuses on senior well-being and empowering young people and women through holistic healthcare and leadership developmen",
+      "Status": "Active"
     },
     {
       "ID": 10,
       "Presenter_Name": "Dr. Joice Steffi Y",
-      "Congregation_Name": "Lay Person",
+      "Congregation_Name": "Christ University",
       "Paper_Title": "Pilgrimage of Care: Evidence-Based Psychosocial Training for Women Religious Serving the Elderly in India.",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/10.jpg",
-      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy."
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy.",
+      "Status": "Active"
     },
     {
       "ID": 11,
-      "Presenter_Name": "#",
+      "Presenter_Name": "REMOVE",
       "Congregation_Name": "#",
       "Paper_Title": " Promoting accessability inclusion and spiritual enrichment in aging communities",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/11.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 12,
@@ -358,70 +560,78 @@
       "Paper_Title": "Care for the Elderly: Honoring Wisdom, Ensuring Dignity—A Pilot Study on Intercongregational Collaboration in Housing, Healthcare, and Palliative Care",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/12.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Sr. Dr. Helen Mary, of the Sisters of St. Anne, Bangalore, is an Obstetrician and Gynecologist with an MBBS and MD from St. John’s Medical College and certification in OBG ultrasonography. She has served in hospital and rural medical settings and has been Chief Medical Officer at Nirmala Health Centre, Bangalore, since 2002. She currently serves as Provincial Councilor and SM Apostolate Coordinator and holds leadership roles in SDFI and CRI.",
+      "Status": "Active"
     },
     {
       "ID": 13,
-      "Presenter_Name": "Dr. Alphonsa K. K. (Sr. Prasada, CMC)",
+      "Presenter_Name": "Dr. Alphonsa K. K.",
       "Congregation_Name": "CMC",
       "Paper_Title": "Effectiveness of Relaxation Therapy on Psychological, Physiological and Bio-Chemical Variables among Elderly Residing at Old Age Homes.",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/13.jpg",
-      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy."
+      "Abstract_Link": "Assistant Professor of Psychology at Christ University, she specialises in disability studies, educational psychology, and adolescent mental health. Her clinical background from NIMHANS and work with vulnerable children shape her research and advocacy.",
+      "Status": "Active"
     },
     {
       "ID": 14,
-      "Presenter_Name": "Sr. Maria Nirmalini AC",
+      "Presenter_Name": "Sr. Maria Nirmalini",
       "Congregation_Name": "AC",
       "Paper_Title": "Empowering consecrated women as educators and leaders in Christ centered, value-based education. ",
       "Theme_Category": "Education",
-      "Image_Path": "images/Presenters/14.jpg",
-      "Abstract_Link": "#"
+      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg",
+      "Abstract_Link": "Sr. Maria Nirmalini AC is the Superior General of the Apostolic Carmel Congregation since February 2020 and currently serves as President of the Conference of Religious in India (CRWI) and Vice President of CRI. A postgraduate in Education and Commerce, she served for many years as Principal of Carmel Convent School, Delhi, and has received several awards for her contributions to education and human rights. She is a prominent voice for gender equality and represented Indian women religious at the global Synod on Synodality in Rome.",
+      "Status": "Active"
     },
     {
       "ID": 15,
-      "Presenter_Name": "Fr. (Dr.) Paul Pudussery, CSC",
-      "Congregation_Name": "Holy Cross",
+      "Presenter_Name": "Fr. Dr. Paul Pudussery",
+      "Congregation_Name": "CSC",
       "Paper_Title": "Strengthening collaboration between Catholic schools, universities, and congregations for shared mission.",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/15.jpg",
-      "Abstract_Link": "A scholar in philosophy of education, Fr. Paul researches mission integrity, ethical use of technology, and truth in the post‑truth era. He is a consultant supporting educational and religious institutions and promotes holistic, values‑based education."
+      "Abstract_Link": "A scholar in philosophy of education, Fr. Paul researches mission integrity, ethical use of technology, and truth in the post‑truth era. He is a consultant supporting educational and religious institutions and promotes holistic, values‑based education.",
+      "Status": "Active"
     },
     {
       "ID": 16,
-      "Presenter_Name": "Mr. Hector",
-      "Congregation_Name": "Lay Person",
-      "Paper_Title": " Promoting education as a transformative tool for gender equity, ecological consciousness, and social renewal",
+      "Presenter_Name": "Dr. Hector Andrade",
+      "Congregation_Name": "Professor ",
+      "Paper_Title": "Promoting education as a transformative tool for gender equity, ecological consciousness, and social renewal",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/16.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Hector Andrade is a philosopher and environmental conservationist who blends ancient wisdom with ecological practice. Formerly an educator, he now focuses on medicinal plant conservation, sustainable living, and ethical education.",
+      "Status": "Active"
     },
     {
       "ID": 17,
       "Presenter_Name": "Dr. Thomson Philip",
-      "Congregation_Name": "Lay Person",
+      "Congregation_Name": "Eloit",
       "Paper_Title": "Integrating digital literacy, artificial intelligence, and innovative pedagogies with spiritual and ethical formation. ",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/17.jpg",
-      "Abstract_Link": "CEO and Co‑Founder of Eloit Innovations, Dr. Thomson leads global EdTech and Faith‑Tech solutions serving over 700 institutions. Recognised with UN and international awards, he promotes ethical, values‑driven digital transformation in education"
+      "Abstract_Link": "CEO and Co‑Founder of Eloit Innovations, Dr. Thomson leads global EdTech and Faith‑Tech solutions serving over 700 institutions. Recognised with UN and international awards, he promotes ethical, values‑driven digital transformation in education",
+      "Status": "Active"
     },
     {
       "ID": 18,
       "Presenter_Name": "Dr. Veenashree",
-      "Congregation_Name": "Lay Person",
+      "Congregation_Name": "Christ University",
       "Paper_Title": "Advancing Justice through Education: A Capacity-Building Intervention for Religious Sisters to Promote Child Mental Health in Educational Institutions.",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/18.jpg",
-      "Abstract_Link": "A mental health practitioner with 8+ years of experience, she has worked with NIMHANS and Carers Worldwide. Her expertise includes child protection, disaster support, domestic violence, and women’s mental health, with over 100 trainings delivered"
+      "Abstract_Link": "A mental health practitioner with 8+ years of experience, she has worked with NIMHANS and Carers Worldwide. Her expertise includes child protection, disaster support, domestic violence, and women’s mental health, with over 100 trainings delivered",
+      "Status": "Active"
     },
     {
       "ID": 19,
       "Presenter_Name": "Sr. Dr. Sally ",
-      "Congregation_Name": "Sister",
+      "Congregation_Name": "SJB",
       "Paper_Title": "Pilgrims of Hope in Healing Ministries: The TREASURE Model for Mental Health and Holistic Wellbeing of Women Religious in India ",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/19.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Dr. Sally John is a senior psychiatrist with over 20 years of experience and currently serves as Head of the Department and Associate Professor of Psychiatry at MGIMS, Sevagram. A graduate of St. John’s Medical College, Bangalore, she works extensively in community, geriatric, and psychosocial mental health. She is the Director of the Jeevadhara Psychospiritual Centre and founder of Treasure, a national mental health initiative for religious sisters.",
+      "Status": "Active"
     },
     {
       "ID": 20,
@@ -430,25 +640,27 @@
       "Paper_Title": "Addressing mental health, burnout, and holistic well-being of sisters in healthcare. ",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/20.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 21,
-      "Presenter_Name": " Sr.Dr. Rachitta ",
+      "Presenter_Name": " Sr. Dr. Viji Poulose",
       "Congregation_Name": "FCC",
       "Paper_Title": "Compassionate Healing: Consecrated Women as Healers and Caregivers Continuing the Compassionate Mission of Christ.",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/21.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Dr. Viji Poulose, of the Franciscan Clarist Congregation, is a paediatrician with extensive clinical experience. She holds an MBBS and DCH and has additional certifications in Sonology, Palliative Care, and Critical Care. She has been serving as Paediatrician and Sonologist at Dayasagar Hospital, Amravati, since 2010, and as Medical Superintendent since 2015, contributing significantly to both patient care and hospital administration.",
+      "Status": "Active"
     },
     {
       "ID": 22,
-      "Presenter_Name": "#",
+      "Presenter_Name": "REMOVE",
       "Congregation_Name": "#",
       "Paper_Title": "Training sisters in emerging health technologies, preventive medicine, and compassionate care. ",
-      "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/22.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 23,
@@ -456,17 +668,19 @@
       "Congregation_Name": "Sister",
       "Paper_Title": "Motivational Factors Influencing Doctors to Provide Holistic Care: A Qualitative study",
       "Theme_Category": "Health Ministry",
-      "Image_Path": "images/Presenters/23.png",
-      "Abstract_Link": "Consultant Obstetrician & Gynaecologist at Canossa Hospital with expertise in high‑risk pregnancies, preventive health, and community outreach. A former national leader of Sister Doctors Forum of India, she integrates clinical practice with faith‑based healthcare"
+      "Image_Path": "images/Presenters/23.jpg",
+      "Abstract_Link": "Consultant Obstetrician & Gynaecologist at Canossa Hospital with expertise in high‑risk pregnancies, preventive health, and community outreach. A former national leader of Sister Doctors Forum of India, she integrates clinical practice with faith‑based healthcare",
+      "Status": "Active"
     },
     {
       "ID": 24,
       "Presenter_Name": "Dr. Pretesh Kiran",
-      "Congregation_Name": "Lay Person",
+      "Congregation_Name": "St Johns Medical College",
       "Paper_Title": "Expanding faith-rooted responses to maternal, child, and geriatric health needs. ",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/24.jpg",
-      "Abstract_Link": "Associate Professor of Community Health at St. John’s, Bengaluru, with expertise in gerontology, disaster preparedness, and health systems. He contributes to national health committees and has numerous publications in public health"
+      "Abstract_Link": "Associate Professor of Community Health at St. John’s, Bengaluru, with expertise in gerontology, disaster preparedness, and health systems. He contributes to national health committees and has numerous publications in public health",
+      "Status": "Active"
     },
     {
       "ID": 25,
@@ -475,43 +689,44 @@
       "Paper_Title": "Empowering Consecrated women as leaders in ecological justice, advocacy, and community development",
       "Theme_Category": "Social Ministry",
       "Image_Path": "images/Presenters/25.jpg",
-      "Abstract_Link": "A professor of Business Ethics at XLRI and former Principal of Patna Women’s College, Sr. Doris holds doctoral degrees in Clinical Genetics and Zoology. Her expertise spans ethics, sustainability, genetics, and leadership in education"
+      "Abstract_Link": "A professor of Business Ethics at XLRI and former Principal of Patna Women’s College, Sr. Doris holds doctoral degrees in Clinical Genetics and Zoology. Her expertise spans ethics, sustainability, genetics, and leadership in education",
+      "Status": "Active"
     },
     {
       "ID": 26,
-      "Presenter_Name": "#",
-      "Congregation_Name": "#",
-      "Paper_Title": "Strengthening Faith‑Based Responses to Environmental Degradation and Its Impact on Marginalized Communities.",
+      "Presenter_Name": "Sr. Dr. Marykutty K. A ",
+      "Congregation_Name": "PHJC ",
+      "Paper_Title": "SLYI- A faith based model of skill development, social capital and womens ecnomic empowerment in india",
       "Theme_Category": "Social Ministry",
       "Image_Path": "images/Presenters/26.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Active"
     },
     {
       "ID": 27,
-      "Presenter_Name": "#",
+      "Presenter_Name": "REMOVE",
       "Congregation_Name": "#",
-      "Paper_Title": "Safeguarding of minors and vulnerable adults",
-      "Theme_Category": "Social Ministry",
       "Image_Path": "images/Presenters/27.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 28,
-      "Presenter_Name": "Sr. Roshini",
-      "Congregation_Name": "PHL",
-      "Paper_Title": "Impact of SLYI on vulnerable populations and impact of Networking  among religious sisters in India",
-      "Theme_Category": "Social Ministry",
+      "Presenter_Name": "REMOVE",
+      "Congregation_Name": "#",
       "Image_Path": "images/Presenters/28.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 29,
-      "Presenter_Name": "Sr. Jyoti ",
+      "Presenter_Name": "Sr. Jyoti Precy Pinto",
       "Congregation_Name": "BS",
       "Paper_Title": "Faith and Freedom: Addressing Human Trafficking at the Margins",
       "Theme_Category": "Social Ministry",
-      "Image_Path": "images/Presenters/29.jpg",
-      "Abstract_Link": "#"
+      "Image_Path": "images/Presenters/29.png",
+      "Abstract_Link": "Sr. Jyoti Precy Pinto, BS, of the Bethany Sisters, Mangalore, has served the congregation for over 55 years and currently serves as Directress of Saanidhya, Bethany Spirituality Centre, Mangaluru. A former Superior General, she has also contributed at national and international levels through CRI, CRWI, AMOR, and UISG. She is widely recognized for her work in women’s empowerment and anti-human trafficking initiatives through AMRAT–Talitha Kum India.",
+      "Status": "Active"
     },
     {
       "ID": 30,
@@ -520,7 +735,8 @@
       "Paper_Title": "Faith-based responses to systemic injustice",
       "Theme_Category": "Social Ministry",
       "Image_Path": "images/Presenters/30.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Sr. Sujata Jena, of the Congregation of the Sacred Hearts of Jesus and Mary, Odisha, is a grassroots activist, freelance journalist, and advocate for the rights of the poor, Dalits, Tribals, women, children, minorities, migrants, and the homeless. She is the recipient of the Best Journalist Award 2021 from the Indian Catholic Press Association and the Salvador Memorial Award 2022 from Bombay Catholic Sobha for her contributions to social justice and human rights",
+      "Status": "Active"
     },
     {
       "ID": 31,
@@ -528,8 +744,9 @@
       "Congregation_Name": "DHM",
       "Paper_Title": "Pilgrims of Hope at the Margins: Consecrated Women as Defenders of Human Rights and Agents of Justice",
       "Theme_Category": "Social Ministry",
-      "Image_Path": "images/Presenters/31.png",
-      "Abstract_Link": "A human rights lawyer practicing across major Indian courts, she specialises in gender justice and institutional compliance. She serves on multiple ICCs and conducts national‑level training in legal advocacy and gender sensitisation."
+      "Image_Path": "images/Presenters/31.jpg",
+      "Abstract_Link": "A human rights lawyer practicing across major Indian courts, she specialises in gender justice and institutional compliance. She serves on multiple ICCs and conducts national‑level training in legal advocacy and gender sensitisation.",
+      "Status": "Active"
     },
     {
       "ID": 32,
@@ -538,34 +755,37 @@
       "Paper_Title": "Grievnce redressal Cell & Safeguarding of minors and vulnerable adults",
       "Theme_Category": "Social Ministry",
       "Image_Path": "images/Presenters/32.jpg",
-      "Abstract_Link": "A senior human rights practitioner working with grassroots movements, donors, and global platforms. She advocates for social justice, women’s leadership, and marginalised communities, and is known for influential publications and policy engagement."
+      "Abstract_Link": "A senior human rights practitioner working with grassroots movements, donors, and global platforms. She advocates for social justice, women’s leadership, and marginalised communities, and is known for influential publications and policy engagement.",
+      "Status": "Active"
     },
     {
       "ID": 33,
-      "Presenter_Name": "Sr. Dr. Shiji James MSMHC",
+      "Presenter_Name": "Sr. Dr. Shiji James ",
       "Congregation_Name": "MSMHC",
-      "Paper_Title": "Sharing the untold stories of consecrated life to inspire, renew and call forth new generations",
+      "Paper_Title": "Radiating Hope: Sacred Presense in virtual spaces",
       "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/33.jpg",
-      "Abstract_Link": "PhD in Journalism & Communication; Director of MSMHC Communications. She teaches at several universities and leads media strategy within ecclesial communication networks including SIGNIS North East India."
+      "Abstract_Link": "PhD in Journalism & Communication; Director of MSMHC Communications. She teaches at several universities and leads media strategy within ecclesial communication networks including SIGNIS North East India.",
+      "Status": "Active"
     },
     {
       "ID": 34,
-      "Presenter_Name": "Fr. (Dr.) Sajith Cyriac, SSP",
+      "Presenter_Name": "Fr. Dr. Sajith Cyriac, SSP",
       "Congregation_Name": "St.Pauls",
       "Paper_Title": "Media Hubs for Inter-Congregational Collaboration: A Communion–Synodal–Network Analysis of Collaborative Digital Mission among Women Religious",
       "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/34.jpg",
-      "Abstract_Link": "A priest of the Society of St. Paul, Fr. Sajith works in higher education, research, and priestly formation. His academic focus includes spirituality, communication, and pastoral challenges in contemporary society."
+      "Abstract_Link": "A priest of the Society of St. Paul, Fr. Sajith works in higher education, research, and priestly formation. His academic focus includes spirituality, communication, and pastoral challenges in contemporary society.",
+      "Status": "Active"
     },
     {
       "ID": 35,
-      "Presenter_Name": "#",
+      "Presenter_Name": "REMOVE",
       "Congregation_Name": "#",
       "Paper_Title": "Storytelling, visibility, and vocation promotion",
-      "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/35.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "#",
+      "Status": "Inactive"
     },
     {
       "ID": 36,
@@ -574,16 +794,88 @@
       "Paper_Title": "Radiating Hope Through the Lens: Reclaiming Women’s Voices and Renewing Consecrated Life in the Digital Age",
       "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/36.jpg",
-      "Abstract_Link": "#"
+      "Abstract_Link": "Sr. Lismy CMC, of the Congregation of the Mother of Carmel, is a Catholic media missionary from Kerala, popularly known as the “Camera Nun.” She uses filmmaking and digital media for evangelization and social awareness and has produced numerous films highlighting faith, human dignity, and social issues. She is also the recipient of the James Alberione Award for her contributions to Christian media.",
+      "Status": "Active"
     },
     {
       "ID": 37,
       "Presenter_Name": "Fr. Biju Madathikunnel",
       "Congregation_Name": "CSsR",
-      "Paper_Title": "Media hubs for inter-congregational collaboration",
+      "Paper_Title": "Media hubs for inter-congregational collaboration: A strategic model for catholic women religious in India.",
       "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/37.jpg",
-      "Abstract_Link": "Fr. Biju Madathikunnel, C.Ss.R. is a Redemptorist priest and media scholar with over 20 years’ experience in communication and leadership. A former Provincial Superior and communications director in Rome, he integrates creativity, digital media, and intercultural leadership in global contexts."
+      "Abstract_Link": "Fr. Biju Madathikunnel, C.Ss.R. is a Redemptorist priest and media scholar with over 20 years’ experience in communication and leadership. A former Provincial Superior and communications director in Rome, he integrates creativity, digital media, and intercultural leadership in global contexts.",
+      "Status": "Active"
+    },
+    {
+      "ID": 38,
+      "Presenter_Name": "Sr. Vijo Arul Selvi",
+      "Congregation_Name": "CRWI Staff",
+      "Paper_Title": "A Synodal Path toward Authentic Consecrated Living: Perceived Stress and the Role of Social Support & Accompaniment among Perpetually Professed Sisters in India",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/38.png",
+      "Abstract_Link": "Sr. Vijo Arul Selvi M, Research Coordinator at CRWI and Ph.D. scholar in Mathematics, is a Gold Medalist in both B.Ed. and M.Sc. with over a decade of academic leadership as Principal and Vice Principal. She combines international research training at Georgetown University with experience in mathematics education, classroom leadership, and spiritual accompaniment, making her a distinguished voice in both academic and faith‑based settings.",
+      "Status": "Active"
+    },
+    {
+      "ID": 39,
+      "Presenter_Name": "Dr. Fr. Jerin SDB",
+      "Congregation_Name": "#",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Formation",
+      "Image_Path": "images/Presenters/modrators/Jerin.jpg",
+      "Abstract_Link": "Fr. Jerin Peter Palatty is a scholar and priest with advanced studies in philosophy and theology, holding licentiates from Dharmaram Vidya Kshetram and the Pontifical Gregorian University, Rome, where he graduated Summa Cum Laude.\r\nHe has served as Professor, Managing Editor, and currently as Head of the Department of Philosophy at Kristu Jyoti College, Bangalore, and is the author of several books and numerous scholarly articles in philosophy, theology, and spirituality.",
+      "Status": "Active"
+    },
+    {
+      "ID": 40,
+      "Presenter_Name": "Dr. Greta D'Souza ",
+      "Congregation_Name": "#",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Education",
+      "Image_Path": "images/Presenters/modrators/GRETA.png",
+      "Abstract_Link": "Dr. Greta D’Souza is Professor and Chair, School of Education, and Associate Director, Global STEM Education Centre at CHRIST (Deemed to be University). Her research focuses on adolescence education, with strong international collaborations and a commitment to developing student leadership, communication, and social impact.",
+      "Status": "Active"
+    },
+    {
+      "ID": 41,
+      "Presenter_Name": "Dr. Fr. Emanuel",
+      "Congregation_Name": "#",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Media Engagement",
+      "Image_Path": "images/The Invisible Engines/logo.png",
+      "Abstract_Link": "#",
+      "Status": "Active"
+    },
+    {
+      "ID": 42,
+      "Presenter_Name": "Dr. Fr.Mathew",
+      "Congregation_Name": "#",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Health Ministry",
+      "Image_Path": "images/The Invisible Engines/logo.png",
+      "Abstract_Link": "#",
+      "Status": "Active"
+    },
+    {
+      "ID": 43,
+      "Presenter_Name": "Fr. Joye James",
+      "Congregation_Name": "SJ",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Social Ministry",
+      "Image_Path": "images/Presenters/modrators/fr. joye.jpeg",
+      "Abstract_Link": "Fr. Joye James SJ is a Jesuit priest and renowned social work educator with extensive leadership experience. He served as Professor of Social Work at Loyola College of Social Sciences, Thiruvananthapuram, and has held key roles including Kerala Jesuit Provincial, Asia‑Pacific Adviser of IMCS, Chairman of the Child Welfare Committee (TVM), and Vice‑President of the Indian Social Institute, Bengaluru. He is currently President of ICTA, Kalamassery.",
+      "Status": "Active"
+    },
+    {
+      "ID": 44,
+      "Presenter_Name": "Dr.Benny",
+      "Congregation_Name": "#",
+      "Paper_Title": "Moderator",
+      "Theme_Category": "Care for the Elderly",
+      "Image_Path": "images/The Invisible Engines/logo.png",
+      "Abstract_Link": "#",
+      "Status": "Active"
     }
   ],
   "Call_For_Papers": [
@@ -656,7 +948,7 @@
     {
       "ID": "3",
       "Name": "Sr. Ann Jose",
-      "Role": "Chief Functionary",
+      "Role": "Treasurer",
       "Image_Path": "images/Trustees/3.jpg"
     },
     {
@@ -676,6 +968,164 @@
       "Name": "Sr. Varickmackel Theresa Meera Mathew",
       "Role": "Member",
       "Image_Path": "images/Trustees/6.jpg"
+    }
+  ],
+  "The Invisible Engines": [
+    {
+      "ID": "CRWI Staff"
+    },
+    {
+      "ID": "1",
+      "Name": "Sr. Molly Mathew",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Leaders/Sr. Molly Mathew MSMHC.png"
+    },
+    {
+      "ID": "2",
+      "Name": "Sr. Doris D Souza",
+      "Role": "CRWI Trustee",
+      "Image_Path": "images/Presenters/25.jpg"
+    },
+    {
+      "ID": "3",
+      "Name": "Fr. Paul Pudussery",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Presenters/15.jpg"
+    },
+    {
+      "ID": "4",
+      "Name": "Sr. Mary Paul",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Presenters/8.jpg"
+    },
+    {
+      "ID": "5",
+      "Name": "Sr. Vijo Arul Selvi",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Presenters/38.png"
+    },
+    {
+      "ID": 6,
+      "Name": "Sr. Grecy",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/Sr, Grecy.jpeg"
+    },
+    {
+      "ID": 7,
+      "Name": "Mrs. Asha M Albert",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/Asha.jpeg"
+    },
+    {
+      "ID": 8,
+      "Name": "Mr. Abey Jose",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/abey.jpeg"
+    },
+    {
+      "ID": 9,
+      "Name": "Mr. Pavil ",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/Pavil.png"
+    },
+    {
+      "ID": 10,
+      "Name": "Mr. Arun",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/Arun.jpeg"
+    },
+    {
+      "ID": 11,
+      "Name": "Mr. Jomit",
+      "Role": "CRWI Staff - ",
+      "Image_Path": "images/Volunteers/Jomit.jpeg"
+    },
+    {
+      "ID": "Volunteers"
+    },
+    {
+      "ID": 1,
+      "Name": "Sr. Jenita Mary",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/JenittaAphoto.png"
+    },
+    {
+      "ID": 2,
+      "Name": "Sr. Biji Mathew",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Biji Mathew.jpeg"
+    },
+    {
+      "ID": 3,
+      "Name": "Sr. Praveena M N",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Praveena M.N.jpeg"
+    },
+    {
+      "ID": 4,
+      "Name": "Sr. Ragina ",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Regina.jpeg"
+    },
+    {
+      "ID": 5,
+      "Name": "Sr. Anthony Rani",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Anthony Ran.jpeg"
+    },
+    {
+      "ID": 6,
+      "Name": "Sr. Piholi Leena",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Piholi Leena.jpeg"
+    },
+    {
+      "ID": 7,
+      "Name": "Sr. Angela Bey",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Angela Bey.jpeg"
+    },
+    {
+      "ID": 8,
+      "Name": "Sr. Banpynsuk",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Banpynsuk.jpeg"
+    },
+    {
+      "ID": 9,
+      "Name": "Sr. Simera G Momin",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr.Simera G Momin.jpeg"
+    },
+    {
+      "ID": 10,
+      "Name": "Sr. Eusebia Rynshon",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr.Eusebia Rynshon.jpeg"
+    },
+    {
+      "ID": 11,
+      "Name": "Sr. Juli mate",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Juli mate.jpeg"
+    },
+    {
+      "ID": 12,
+      "Name": "Mrs. Sowmya",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sowmya.JPG"
+    },
+    {
+      "ID": 13,
+      "Name": "Mr. Sanjay KS ",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Mr. Sanjay KS.jpeg"
+    },
+    {
+      "ID": 14,
+      "Name": "Ms. Riya C V",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Riya C V.jpeg"
     }
   ],
   "Contacts_And_Footer": [
@@ -739,7 +1189,7 @@
       "ID": "9",
       "Contact_Type": "Footer_Venue",
       "Name_Or_Title": "Venue",
-      "Value_Or_Description": "Christ University Campus, Bangalore",
+      "Value_Or_Description": "CHRIST (Deemed to be University), Central Campus,Dharmaram College Post, Hosur Road, Bengaluru - 560029, Karnataka, India",
       "Image_Path_Or_Link": ""
     },
     {
