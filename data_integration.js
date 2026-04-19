@@ -454,10 +454,11 @@ async function fetchAndPopulateData() {
         if (data.Presenters) {
             // Filter out any presenter that explicitly contains the word 'inactive' in their data
             window.allPresenters = data.Presenters.filter(p => {
+                if (!p.Presenter_Name || p.Presenter_Name === '#' || p.Presenter_Name.toUpperCase() === 'REMOVE') return false;
+                
                 let isInactive = false;
                 for (let key in p) {
                     const value = String(p[key]).trim().toLowerCase();
-                    // We check if the column value is exactly "inactive" or if it contains "inactive"
                     if (value === 'inactive') {
                         isInactive = true;
                         break;
@@ -644,7 +645,7 @@ function populateInvisibleEngines(data) {
             card.className = 'staff-card';
             
             const imagePath = person.Image_Path || 'images/The Invisible Engines/logo.png';
-            const role = person.Role || '';
+            const role = (person.Role || '').replace(/\s*-\s*$/, '').trim();
 
             card.innerHTML = `
                 <img src="${imagePath}" alt="${person.Name}" class="staff-photo">

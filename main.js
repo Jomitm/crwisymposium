@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                if (!entry.target.classList.contains('fade-in-up')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
                 observer.unobserve(entry.target);
             }
         });
@@ -66,13 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     animElements.forEach(el => observer_v2.observe(el));
-
-    // Add visible class to trigger CSS animations if they use it
-    const cssAnimElements = document.querySelectorAll('.fade-in-up');
-    cssAnimElements.forEach(el => {
-        observer.observe(el);
-    });
-
 
     // Removed redundant scroll listener for animation trigger
 
