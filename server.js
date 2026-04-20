@@ -33,14 +33,21 @@ app.get('/api/counter', (req, res) => {
     
     try {
         if (fs.existsSync(counterPath)) {
-            countData = JSON.parse(fs.readFileSync(counterPath, 'utf8'));
+            const rawData = fs.readFileSync(counterPath, 'utf8');
+            try {
+                countData = JSON.parse(rawData);
+            } catch (pErr) {
+                console.error('Json Parse Error, resetting counter:', pErr);
+            }
             countData.count += 1;
+        } else {
+            console.log('Initialing new visitor_count.json');
         }
-        fs.writeFileSync(counterPath, JSON.stringify(countData));
+        fs.writeFileSync(counterPath, JSON.stringify(countData, null, 2));
         res.json(countData);
     } catch (error) {
         console.error('Local Counter Error:', error);
-        res.status(500).json({ error: 'Failed to update counter' });
+        res.status(500).json({ error: 'Failed to update counter', details: error.message });
     }
 });
 

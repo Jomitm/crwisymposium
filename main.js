@@ -224,22 +224,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const updateCount = async () => {
             try {
                 // Fetch from our local proxy to avoid CORS issues and handle fallback
+                // We use a relative path which works if served from the node server
                 const response = await fetch('/api/counter');
                 if (response.ok) {
                     const data = await response.json();
                     if (data && data.count) {
-                        vCountEl.textContent = data.count;
+                        vCountEl.textContent = data.count.toLocaleString();
                         return;
                     }
                 }
-                throw new Error('Local proxy failed');
+                throw new Error('Local proxy unresponsive');
             } catch (err) {
-                console.error("Counter Error:", err);
-                // Fallback text if everything fails
+                console.warn("Counter fallback initiated:", err.message);
+                // Try to find if we have it in data.json as a fallback or just show 'Active'
+                // For now, we keep 'Active' as an elegant fallback
                 vCountEl.textContent = "Active"; 
             }
         };
-        updateCount();
+        // Small delay to let other critical UI elements load first
+        setTimeout(updateCount, 500);
     }
 });
 
