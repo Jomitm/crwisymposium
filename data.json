@@ -421,7 +421,7 @@
     {
       "ID": 5,
       "Speaker_Name": "Sr. Thu T. Do",
-      "Speaker_Role": "#",
+      "Speaker_Role": "Research Associate CARA, Vietnam  ",
       "Image_Path": "images/Speakers/SR. Thu.jpg"
     },
     {
@@ -433,8 +433,8 @@
     {
       "ID": 7,
       "Speaker_Name": "Sr. Bibiana Munini Ngundo",
-      "Speaker_Role": "#",
-      "Image_Path": "images/The Invisible Engines/logo.png"
+      "Speaker_Role": "Research Associate",
+      "Image_Path": "images/Speakers/Bibina.jpg"
     },
     {
       "ID": 8,
@@ -565,7 +565,7 @@
     },
     {
       "ID": 13,
-      "Presenter_Name": "Dr. Alphonsa K. K.",
+      "Presenter_Name": "Sr. Dr. Alphonsa K. K.",
       "Congregation_Name": "CMC",
       "Paper_Title": "Effectiveness of Relaxation Therapy on Psychological, Physiological and Bio-Chemical Variables among Elderly Residing at Old Age Homes.",
       "Theme_Category": "Care for the Elderly",
@@ -824,7 +824,7 @@
       "Paper_Title": "Moderator",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/modrators/Jerin.jpg",
-      "Abstract_Link": "Fr. Jerin Peter Palatty is a philosopher‑theologian and priest, currently Head of the Department of Philosophy at Kristu Jyoti College, Bangalore, with advanced studies from Dharmaram Vidya Kshetram and the Pontifical Gregorian University, Rome, and is a published author in philosophy, theology, and spirituality.",
+      "Abstract_Link": "Fr. Jerin Peter Palatty is a philosopher‑theologian and priest, serving as Head of the Department of Philosophy at Kristu Jyoti College, Bangalore, with advanced studies from Dharmaram Vidya Kshetram and the Pontifical Gregorian University, Rome, and is a published author in philosophy, theology, and spirituality.",
       "Status": "Active"
     },
     {
