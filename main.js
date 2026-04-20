@@ -221,17 +221,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Visitor Counter Logic ---
     const vCountEl = document.getElementById('v-count');
     if (vCountEl) {
-        fetch('https://api.counterapi.dev/v1/crwisymposium/visits/up')
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.count) {
-                    vCountEl.textContent = data.count;
+        const updateCount = async () => {
+            try {
+                // Fetch from our local proxy to avoid CORS issues and handle fallback
+                const response = await fetch('/api/counter');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data && data.count) {
+                        vCountEl.textContent = data.count;
+                        return;
+                    }
                 }
-            })
-            .catch(err => {
+                throw new Error('Local proxy failed');
+            } catch (err) {
                 console.error("Counter Error:", err);
-                vCountEl.style.display = 'none';
-            });
+                // Fallback text if everything fails
+                vCountEl.textContent = "Active"; 
+            }
+        };
+        updateCount();
     }
 });
 

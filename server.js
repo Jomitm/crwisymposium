@@ -26,6 +26,24 @@ app.get('/api/data', (req, res) => {
     }
 });
 
+// Endpoint to proxy the visitor counter (Local storage for reliability)
+app.get('/api/counter', (req, res) => {
+    const counterPath = path.join(__dirname, 'visitor_count.json');
+    let countData = { count: 35 }; // Default starting count if no file exists
+    
+    try {
+        if (fs.existsSync(counterPath)) {
+            countData = JSON.parse(fs.readFileSync(counterPath, 'utf8'));
+            countData.count += 1;
+        }
+        fs.writeFileSync(counterPath, JSON.stringify(countData));
+        res.json(countData);
+    } catch (error) {
+        console.error('Local Counter Error:', error);
+        res.status(500).json({ error: 'Failed to update counter' });
+    }
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

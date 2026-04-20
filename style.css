@@ -75,6 +75,7 @@ h4 + p.sub-theme,
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.85em;
+    margin-bottom: 0.2rem !important; /* Tightened */
 }
 
 /* Utilities */
@@ -519,10 +520,11 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
 
 .presenter-info h5 {
     color: var(--primary-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.1rem;
     font-size: 1.15rem;
     font-weight: 800; /* Bolder for elegance */
     letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .presenter-info .role {
@@ -919,7 +921,8 @@ body.has-global-video .search-filter-bar {
 
 .card p {
     font-size: 0.9rem; /* Compact text */
-    line-height: 1.4;
+    line-height: 1.3; /* Tightened from 1.4 */
+    margin-top: 0;
 }
 
 /* Themes Grid */
@@ -986,7 +989,8 @@ body.has-global-video .search-filter-bar {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem; /* Even tighter from 0.35rem */
+    line-height: 1.2;
 }
 
 /* Presenters Section */
@@ -1061,10 +1065,23 @@ body.has-global-video .search-filter-bar {
 
 .presenters-grid-large {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 240px));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.8rem;
     min-height: 400px;
     justify-content: center;
+}
+
+/* Specific overrides for laptop and large screens */
+@media (min-width: 1024px) {
+    .presenters-grid-large {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .presenters-grid-large {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 
 /* Key Speakers specific grid to adjust naturally */
@@ -1083,33 +1100,28 @@ body.has-global-video .search-filter-bar {
 }
 
 
-.presenter-card-large {
-    background: transparent;
-    perspective: 1000px;
-    height: 400px; /* Restored height for large flip cards to prevent clipping */
-    border: none;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 240px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
+.presenter-card-large,
 .presenter-card-static {
     background: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.04);
-    height: auto; /* Remove fixed height for static cards to eliminate empty space */
     border-radius: 12px;
     width: 100%;
-    max-width: 240px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
     overflow: hidden;
+}
+
+.presenter-card-large {
+    perspective: 1000px;
+    height: 400px; /* Keep height for flip consistency */
+}
+
+.presenter-card-static {
+    height: auto;
 }
 
 .presenter-card-static:hover {
@@ -1243,12 +1255,12 @@ body.has-global-video .search-filter-bar {
 
 .presenter-info h5 {
     font-family: var(--font-heading-sub);
-    font-size: 0.85rem; /* Further reduced from 0.9rem */
+    font-size: 0.85rem; 
     color: var(--primary-color);
-    margin-bottom: 0px;
+    margin-bottom: 0.1rem; /* Added tiny margin */
     line-height: 1.1;
     letter-spacing: -0.01em;
-    min-height: 2.2em; 
+    min-height: 1.1em; /* Reduced from 2.2em to eliminate gap when name is 1 line */
     height: auto;
     overflow: hidden;
     display: -webkit-box;
@@ -1258,12 +1270,12 @@ body.has-global-video .search-filter-bar {
 }
 
 .presenter-info .role {
-    font-size: 0.62rem; /* Reduced from 0.68rem */
+    font-size: 0.62rem; 
     line-height: 1.1;
     letter-spacing: -0.015em;
     color: var(--text-light);
     margin-bottom: 0.1rem;
-    min-height: 2.2rem; /* Further reduced */
+    min-height: 1.1rem; /* Reduced from 2.2rem */
     height: auto;
     overflow: hidden;
     display: -webkit-box;
@@ -1275,8 +1287,8 @@ body.has-global-video .search-filter-bar {
 .divider-small {
     border: none;
     border-top: 1px solid #eee;
-    width: 25px; /* Narrower */
-    margin: 0.15rem auto 0.35rem; /* Tightened margins */
+    width: 20px; /* Even narrower */
+    margin: 0.1rem auto 0.2rem; /* Tightened from 0.15rem auto 0.35rem */
 }
 
 .paper-title {
@@ -2399,6 +2411,7 @@ footer {
     color: var(--accent-color);
     font-weight: 600;
     line-height: 1.1;
+    margin-top: 0; /* Remove gap */
 }
 
 /* Compact Search Inside Nav */
