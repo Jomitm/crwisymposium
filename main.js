@@ -222,9 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const vCountEl = document.getElementById('v-count');
     if (vCountEl) {
         const updateCount = async () => {
+            const BASE_COUNT = 50; // Current count from visitor_count.json
+            
             try {
-                // Fetch from our local proxy to avoid CORS issues and handle fallback
-                // We use a relative path which works if served from the node server
+                // 1. Try Local Proxy (Node.js Environment)
                 const response = await fetch('/api/counter');
                 if (response.ok) {
                     const data = await response.json();
@@ -233,16 +234,32 @@ document.addEventListener('DOMContentLoaded', () => {
                         return;
                     }
                 }
-                throw new Error('Local proxy unresponsive');
+                throw new Error('Local server not found');
             } catch (err) {
-                console.warn("Counter fallback initiated:", err.message);
-                // Try to find if we have it in data.json as a fallback or just show 'Active'
-                // For now, we keep 'Active' as an elegant fallback
+                // 2. Fallback for Static Live Site (GitHub Pages / OneDrive)
+                // We use a reliable public counter API as a fallback
+                try {
+                    // This API increments and returns the new count
+                    const pubRes = await fetch('https://api.counterapi.dev/v1/crwisymposium-2026/visits/up');
+                    if (pubRes.ok) {
+                        const pubData = await pubRes.json();
+                        if (pubData && pubData.count) {
+                            // Add our base count to the public count to maintain consistency
+                            const total = BASE_COUNT + pubData.count;
+                            vCountEl.textContent = total.toLocaleString();
+                            return;
+                        }
+                    }
+                } catch (pubErr) {
+                    console.warn("Public counter also failed:", pubErr.message);
+                }
+                
+                // 3. Final Fallback (E.g. No Internet or API down)
                 vCountEl.textContent = "Active"; 
             }
         };
-        // Small delay to let other critical UI elements load first
-        setTimeout(updateCount, 500);
+        // Small delay to ensure smooth UI transition
+        setTimeout(updateCount, 1000);
     }
 });
 
