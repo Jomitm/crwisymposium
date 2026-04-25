@@ -82,9 +82,11 @@ h4 + p.sub-theme,
 
 /* Utilities */
 .container {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section {
@@ -194,11 +196,19 @@ h4 + p.sub-theme,
     justify-content: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: #0a145a; /* Fallback for gaps */
     color: var(--white);
-    padding-top: calc(var(--header-height) + 2rem);
-    padding-bottom: 3rem;
-    /* overflow: hidden; Removed to prevent clipping */
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 4rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 2rem;
+    }
 }
 
 .waves-container {
@@ -245,8 +255,8 @@ h4 + p.sub-theme,
 }
 
 /* Make waves transparent and glassy over the global video */
-body.has-global-video .parallax > use:nth-child(1) { fill: rgba(255, 255, 255, 0.3); }
-body.has-global-video .parallax > use:nth-child(2) { fill: rgba(255, 255, 255, 0.2); }
+body.has-global-video .parallax > use:nth-child(1) { fill: rgba(255, 255, 255, 0.2); }
+body.has-global-video .parallax > use:nth-child(2) { fill: rgba(255, 255, 255, 0.15); }
 body.has-global-video .parallax > use:nth-child(3) { fill: rgba(255, 255, 255, 0.1); }
 body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0.05); }
 
@@ -335,8 +345,10 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
 
 .logo-group {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     align-items: center;
+    flex-wrap: wrap; /* Ensure logos wrap on mobile */
+    width: 100%;
 }
 
 .btn-register-top {
@@ -367,12 +379,29 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
 @media (max-width: 768px) {
     .hero-logos-top {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        align-items: center; /* Center on mobile */
+        text-align: center;
+        gap: 1.5rem;
     }
     
+    .logo-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .collab-logo {
+        height: 55px; /* Smaller logos on mobile */
+        width: 55px;
+        padding: 4px;
+    }
+
     .btn-register-top {
-        align-self: flex-start;
+        align-self: center; /* Center button on mobile */
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -455,6 +484,7 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        padding-bottom: 80px; /* Space for waves */
     }
 
     .hero-main-column {
@@ -646,8 +676,9 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    height: 100svh; /* Modern mobile-friendly height */
     z-index: -2;
     background: var(--dark-navy); /* Fallback */
     overflow: hidden;
@@ -660,6 +691,9 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
 }
 
 .video-stage video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -675,7 +709,11 @@ body.has-global-video .parallax > use:nth-child(4) { fill: rgba(255, 255, 255, 0
     z-index: 1;
 }
 
-/* When global video is active, make sections transparent windows */
+body.has-global-video {
+    background-color: #0a145a !important; /* Matches video fallback */
+}
+
+body.has-global-video .hero,
 body.has-global-video .parallax-section,
 body.has-global-video .section,
 body.has-global-video .section.bg-light {
@@ -692,6 +730,7 @@ body.has-global-video .presenter-card-static,
 body.has-global-video .staff-card,
 body.has-global-video .council-card {
     background-color: rgba(255, 255, 255, 0.95) !important;
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 
@@ -1617,8 +1656,8 @@ footer {
     }
 
     .leader-photo-frame {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         margin: 0 auto;
         padding: 4px;
     }
@@ -1634,11 +1673,14 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
     }
 
     .sub-headline {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
     }
 
     .presenter-card-large {
@@ -1649,9 +1691,9 @@ footer {
     .presenters-grid-large,
     #dev-partners-grid,
     .key-speakers-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.4rem !important; /* Tighter for mobile 3-col */
-        padding: 0 0.2rem; /* Give a bit more breathing room on edge */
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+        gap: 0.5rem !important;
+        padding: 0 0.5rem;
     }
 
     .presenter-card-large,
@@ -2357,8 +2399,8 @@ footer {
     font-family: 'Cinzel', serif; /* Use the more decorative premium font */
     background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: 0.15em; /* Spaced out for high-fashion elegance */
     font-weight: 700;
     margin-bottom: 0px;

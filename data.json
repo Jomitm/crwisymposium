@@ -228,6 +228,126 @@
       "Sort_Order": "4"
     }
   ],
+  "Time Table": [
+    {
+      "__EMPTY": "Date",
+      "RESEARCH SYMPOSIUM ": "Particulars",
+      "__EMPTY_2": "Time"
+    },
+    {
+      "__EMPTY": 46148,
+      "RESEARCH SYMPOSIUM ": "Registration",
+      "__EMPTY_2": "16-00 - 18:15"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Greet & Meet and Welcome Dinner",
+      "__EMPTY_2": "18.30 - 21.00 "
+    },
+    {
+      "__EMPTY": 46149,
+      "RESEARCH SYMPOSIUM ": "Eucharistic Celebration",
+      "__EMPTY_1": "Most Reverend Ivan Pereira",
+      "__EMPTY_2": "06:30 - 07:30 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Breakfast",
+      "__EMPTY_2": "07:30- 08:30 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Inaugural Function",
+      "__EMPTY_2": "08:45 - 10:45 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Tea Break",
+      "__EMPTY_2": "10:50 - 11:10 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Plenary Session: Research updates",
+      "__EMPTY_2": " 11:15 - 13:00"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Lunch Break",
+      "__EMPTY_2": "13:00-14.00 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Panel Discussion : Religious Women in the 21st Century: Challenges, Opportunities, and New \r\nPathways",
+      "__EMPTY_2": "14:00 - 15:30 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Formation",
+      "__EMPTY_2": "16:00 - 17:45 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Health",
+      "__EMPTY_2": "16:00 - 17:45 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Social Media",
+      "__EMPTY_2": "16:00 - 17:45 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Catch Up and Connect ",
+      "__EMPTY_2": "18:30 - 19:15"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Dinner",
+      "__EMPTY_2": "19:30 - 20:30"
+    },
+    {
+      "__EMPTY": 46150,
+      "RESEARCH SYMPOSIUM ": "Eucharistic Celebration",
+      "__EMPTY_1": "Most Rev. Elias Gonsalves, ",
+      "__EMPTY_2": "06:30 - 07:30"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Breakfast",
+      "__EMPTY_2": "07:30 - 08:15"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Echoes of Hope: Messages ",
+      "__EMPTY_2": "08:45 - 09:45"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Panel Discussion: A Ministry of Care: Addressing Inequality, Resources, and New Pathways in Caring for Elderly Sisters",
+      "__EMPTY_2": "10:00 - 11:30 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Tea Break",
+      "__EMPTY_2": "11:30 - 11:45 "
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Elderly Care",
+      "__EMPTY_2": "11:45- 13:45"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Education",
+      "__EMPTY_2": "11:45- 13:45"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Technical Session -  Social Ministry",
+      "__EMPTY_2": "11:45- 13:45"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Lunch Break",
+      "__EMPTY_2": "13:45 -14:45"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Transvergence: Coverging for Trasnformative \r\nRenewal (Sharing by the Moderators)",
+      "__EMPTY_2": "14:45 - 16:05"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Valedictory Function",
+      "__EMPTY_2": "16:05 - 17:00"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Pilgrim Walk",
+      "__EMPTY_2": "17:00 - 17:30"
+    },
+    {
+      "RESEARCH SYMPOSIUM ": "Tea, Talk & Take Off",
+      "__EMPTY_2": "17:30 - 18:00"
+    }
+  ],
   "About_Section": [
     {
       "ID": "1",
@@ -339,70 +459,98 @@
       "ID": "1",
       "Speaker_Name": "His Eminence Anthony Poola",
       "Speaker_Role": "Cardinal, Metropolitan Archbishop of Hyderabad",
-      "Paper_Title": "Message",
+      "Paper_Title": "Chief Guest - Cultural Event",
       "Image_Path": "images/Speakers/His Eminence Anthony Poola.jpg"
     },
     {
       "ID": "2",
       "Speaker_Name": "Most Rev. Ivan Pereira",
       "Speaker_Role": "Bishop of Jammu-Srinagar",
-      "Paper_Title": "Message",
+      "Paper_Title": "Special Guest/ Celebrant",
       "Image_Path": "images/Speakers/Most Rev.Ivan Pereira.jpeg"
     },
     {
       "ID": "3",
       "Speaker_Name": "Most Rev. Elias Gonsalves",
       "Speaker_Role": "Archbishop of Nagpur",
-      "Paper_Title": "Message",
+      "Paper_Title": "Special Guest/ Celebrant",
       "Image_Path": "images/Speakers/Most Rev. Elias Gonsalves.png"
     },
     {
       "ID": "4",
-      "Speaker_Name": "Rev. Dr. Mathew Koikkal",
-      "Speaker_Role": "Deputy Secretary General Of The CBCI",
-      "Paper_Title": "Message",
-      "Image_Path": "images/Speakers/Rev. Dr. Mathew Koikkal.jpeg"
+      "Speaker_Name": "Most Rev. Johannes Gorantla",
+      "Speaker_Role": "Bishop of Kurnool",
+      "Paper_Title": "Chief Guest - Inaugural Function",
+      "Image_Path": "images/Speakers/Most Rev. Johannes Gorantla.jpeg"
     },
     {
       "ID": "5",
-      "Speaker_Name": "Sr. Maria Nirmalini AC",
-      "Speaker_Role": "President Women Section",
-      "Paper_Title": "Message",
-      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg"
+      "Speaker_Name": "Rev. Dr. Mathew Koikkal",
+      "Speaker_Role": "Deputy Secretary General Of The CBCI",
+      "Paper_Title": "Special Guest",
+      "Image_Path": "images/Speakers/Rev. Dr. Mathew Koikkal.jpeg"
     },
     {
       "ID": "6",
-      "Speaker_Name": "Fr. Saju Chackalakkal ",
-      "Speaker_Role": "CRI President",
-      "Paper_Title": "Message",
-      "Image_Path": "images/Speakers/Fr. Saju.jpg"
+      "Speaker_Name": "Sr. Maria Nirmalini ",
+      "Speaker_Role": "President Women Section",
+      "Paper_Title": "Chairperson",
+      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg"
     },
     {
       "ID": "7",
-      "Speaker_Name": "Fr. Jose Palely   ",
-      "Speaker_Role": "Vice Chancelor, ADBU, Guwahati",
-      "Paper_Title": "Message",
-      "Image_Path": "images/Speakers/Fr. Jose Palely.jpg"
+      "Speaker_Name": "Fr. Saju Chackalakkal ",
+      "Speaker_Role": "CRI President",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Speakers/Fr. Saju.jpg"
     },
     {
       "ID": "8",
-      "Speaker_Name": "Fr. Varghese",
-      "Speaker_Role": "Administrator Christ University ",
-      "Paper_Title": "Message",
-      "Image_Path": "images/Speakers/Fr, Varghese.jpg"
+      "Speaker_Name": "Fr. Jose Palely   ",
+      "Speaker_Role": "Vice Chancelor, ADBU, Guwahati",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Speakers/Fr. Jose Palely.jpg"
     },
     {
       "ID": "9",
+      "Speaker_Name": "Fr.Dr. Varghese K J",
+      "Speaker_Role": "Administrator Christ University ",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Speakers/Fr, Varghese.jpg"
+    },
+    {
+      "ID": "10",
+      "Speaker_Name": "Sr. DJ Margaret ",
+      "Speaker_Role": "Executive Council CRWI",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
+    },
+    {
+      "ID": 11,
+      "Speaker_Name": "Sr. Molly Attully",
+      "Speaker_Role": "Mother General - CCR",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Speakers/Molly attully.jpeg"
+    },
+    {
+      "ID": 12,
+      "Speaker_Name": "Sr. Sheela Nicholas",
+      "Speaker_Role": "Executive Council CRWI",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Council/Dr. Sr. Sheela Nicholas.jpg"
+    },
+    {
+      "ID": 13,
       "Speaker_Name": "Br. Santhosh P J",
       "Speaker_Role": "President Brother Section",
-      "Paper_Title": "Message",
+      "Paper_Title": "Guest of Honor",
       "Image_Path": "images/Speakers/Br. Santhosh P J.jpg"
     }
   ],
   "Development Partners": [
     {
       "ID": 1,
-      "Speaker_Name": "Sr. Jane Wakahiu  ",
+      "Speaker_Name": "Sr. Dr. Jane Wakahiu  ",
       "Speaker_Role": "Associate Vice President, Program Operations and Head of Catholic Sisters",
       "Image_Path": "images/Speakers/Sr. Jane.jpg"
     },
@@ -420,31 +568,31 @@
     },
     {
       "ID": 4,
-      "Speaker_Name": "Thomas P. Gaunt, SJ.",
+      "Speaker_Name": "Fr. Dr. Thomas P. Gaunt, SJ.",
       "Speaker_Role": "Executive director at CARA",
       "Image_Path": "images/Speakers/Thomas P. Gaunt.webp"
     },
     {
       "ID": 5,
-      "Speaker_Name": "Sr. Thu T. Do",
+      "Speaker_Name": "Sr.Dr.  Thu T. Do",
       "Speaker_Role": "Research Associate CARA, Vietnam  ",
       "Image_Path": "images/Speakers/SR. Thu.jpg"
     },
     {
       "ID": 6,
-      "Speaker_Name": "Sr. Candida   Mukundi ",
+      "Speaker_Name": "Sr. Dr.Candida   Mukundi ",
       "Speaker_Role": "CERRA",
       "Image_Path": "images/Speakers/Sr. Cadita Njeri Mukundi.jpg"
     },
     {
       "ID": 7,
-      "Speaker_Name": "Sr. Bibiana Munini Ngundo",
+      "Speaker_Name": "Sr. Dr. Bibiana Munini Ngundo",
       "Speaker_Role": "Research Associate",
       "Image_Path": "images/Speakers/Bibina.jpg"
     },
     {
       "ID": 8,
-      "Speaker_Name": "Fr. Luis Fernando Falcó, MsPs.",
+      "Speaker_Name": "Fr. Dr Luis Fernando Falcó, MsPs.",
       "Speaker_Role": "Coordinator of Research and Projects- Desarrollo y Salud",
       "Image_Path": "images/Speakers/Luis Fernando.png"
     }
@@ -452,8 +600,8 @@
   "Presenters": [
     {
       "ID": 1,
-      "Presenter_Name": "Dr. Fr. Jerin SDB",
-      "Congregation_Name": "#",
+      "Presenter_Name": "Dr. Fr. Jerin ",
+      "Congregation_Name": "SDB",
       "Paper_Title": "Moderator",
       "Theme_Category": "Formation",
       "Image_Path": "images/Presenters/modrators/Jerin.jpg",
@@ -472,7 +620,7 @@
     },
     {
       "ID": 3,
-      "Presenter_Name": "Sr. Jincy Maria",
+      "Presenter_Name": "Sr. Dr. Jincy Maria",
       "Congregation_Name": "FCC",
       "Paper_Title": "Addressing psychological well-being, intercultural living, and the responsible use of technology",
       "Theme_Category": "Formation",
@@ -482,7 +630,7 @@
     },
     {
       "ID": 4,
-      "Presenter_Name": "Fr. Augustin  Bhayju",
+      "Presenter_Name": "Fr. Dr.  Augustin  Bhayju",
       "Congregation_Name": "CMF",
       "Paper_Title": "Reimagining structures to integrate spiritual, human, intellectual, and pastoral dimensions.",
       "Theme_Category": "Formation",
@@ -522,12 +670,12 @@
     },
     {
       "ID": 8,
-      "Presenter_Name": "Fr. Mathew Abraham",
-      "Congregation_Name": "#",
+      "Presenter_Name": "Fr. Dr. Mathew Abraham",
+      "Congregation_Name": "C.Ss.R.",
       "Paper_Title": "Moderator",
       "Theme_Category": "Health Ministry",
-      "Image_Path": "images/The Invisible Engines/logo.png",
-      "Abstract_Link": "#",
+      "Image_Path": "images/Presenters/39.jpg",
+      "Abstract_Link": "Fr. Dr. Mathew Abraham is a medical doctor and Catholic priest with extensive leadership in public health. As former Director General of CHAI, he championed compassionate, affordable healthcare for marginalized communities, bringing both medical expertise and moral clarity to symposium discussions.",
       "Status": "Active"
     },
     {
@@ -572,7 +720,7 @@
     },
     {
       "ID": 13,
-      "Presenter_Name": "Mr. Ronald ",
+      "Presenter_Name": "Dr. Ronald ",
       "Congregation_Name": "#",
       "Paper_Title": "Moderator",
       "Theme_Category": "Media Engagement",
@@ -652,12 +800,12 @@
     },
     {
       "ID": 21,
-      "Presenter_Name": "Fr. Dr. Johnson",
+      "Presenter_Name": "Fr. Dr. Johnson S V",
       "Congregation_Name": "CMI",
       "Paper_Title": "New Education Policy",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/5.jpeg",
-      "Abstract_Link": "#",
+      "Abstract_Link": "Fr. Dr. Johnson S. V is an academic leader with a Ph.D. in Education and over two decades of service at Christ College, Bhopal. Recently honored for his contributions to NEP 2020 reforms, he continues to champion holistic education, faculty development, and student empowerment.",
       "Status": "Active"
     },
     {
@@ -722,7 +870,7 @@
     },
     {
       "ID": 28,
-      "Presenter_Name": "Sr. Rushila Rebello",
+      "Presenter_Name": "Sr. Adv. Rushila Rebello",
       "Congregation_Name": "DHM",
       "Paper_Title": "Pilgrims of Hope at the Margins: Consecrated Women as Defenders of Human Rights and Agents of Justice",
       "Theme_Category": "Social Ministry",
@@ -742,7 +890,7 @@
     },
     {
       "ID": 30,
-      "Presenter_Name": "Sr. Sujata Jena",
+      "Presenter_Name": "Sr. Adv. Sujata Jena",
       "Congregation_Name": "SSCC",
       "Paper_Title": "Faith-based responses to systemic injustice",
       "Theme_Category": "Social Ministry",
@@ -772,7 +920,7 @@
     },
     {
       "ID": 33,
-      "Presenter_Name": "Sr. Helen Mary",
+      "Presenter_Name": "Sr. Dr. Helen Mary",
       "Congregation_Name": "SAB",
       "Paper_Title": "Care for the Elderly: Honoring Wisdom, Ensuring Dignity—A Pilot Study on Intercongregational Collaboration in Housing, Healthcare, and Palliative Care",
       "Theme_Category": "Care for the Elderly",
@@ -1012,7 +1160,7 @@
     },
     {
       "ID": 6,
-      "Name": "Sr. Grecy",
+      "Name": "Sr. Grecy Lily",
       "Role": "CRWI Staff - ",
       "Image_Path": "images/Volunteers/Sr, Grecy.jpeg"
     },
@@ -1117,18 +1265,24 @@
     },
     {
       "ID": 12,
+      "Name": "Sr.Stella Zimik",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr.Stella Zimik.jpeg"
+    },
+    {
+      "ID": 13,
       "Name": "Mrs. Sowmya",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sowmya.JPG"
     },
     {
-      "ID": 13,
+      "ID": 14,
       "Name": "Mr. Sanjay KS ",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Mr. Sanjay KS.jpeg"
     },
     {
-      "ID": 14,
+      "ID": 15,
       "Name": "Ms. Riya C V",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Riya C V.jpeg"

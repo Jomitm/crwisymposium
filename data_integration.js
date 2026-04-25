@@ -612,6 +612,9 @@ async function fetchAndPopulateData() {
         // --- Populate The Invisible Engines ---
         populateInvisibleEngines(data);
 
+        // --- Populate Timetable ---
+        populateTimetable(data);
+
         setupFilters();
     } catch (error) {
         console.error('Error fetching or populating data:', error);
@@ -801,6 +804,155 @@ function setupFilters() {
 
     searchInput.oninput = filterHandler;
     filterSelect.onchange = filterHandler;
+}
+
+function populateTimetable(data) {
+    const timetableData = data["Time Table"];
+    const renderArea = document.getElementById('timetable-render-area');
+    const tabsArea = document.getElementById('timetable-tabs');
+    if (!timetableData || !renderArea || !tabsArea) return;
+
+    renderArea.innerHTML = '';
+    tabsArea.innerHTML = '';
+
+    // Helper: Convert Excel Serial Date to Formatted String
+    const formatExcelDate = (serial) => {
+        if (typeof serial !== 'number') return serial;
+        const date = new Date(Math.round((serial - 25569) * 86400 * 1000));
+        const options = { weekday: 'long', month: 'long', day: '2-digit', year: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    };
+
+    const getShortDate = (serial) => {
+        if (typeof serial !== 'number') return serial;
+        const date = new Date(Math.round((serial - 25569) * 86400 * 1000));
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `${months[date.getMonth()]} ${String(date.getDate()).padStart(2, '0')}`;
+    };
+
+    // Group by Date
+    const days = [];
+    let currentDay = null;
+
+    // Skip the first header row
+    timetableData.slice(1).forEach(row => {
+        const rawDate = row["__EMPTY"];
+        const particulars = row["RESEARCH SYMPOSIUM "] || row["Particulars"];
+        const time = row["__EMPTY_2"] || row["Time"];
+        const responsible = row["__EMPTY_1"] || "";
+
+        if (!particulars && !time) return;
+
+        if (rawDate && typeof rawDate === 'number') {
+            currentDay = {
+                id: `day-${days.length}`,
+                date: getShortDate(rawDate),
+                fullDate: formatExcelDate(rawDate),
+                items: []
+            };
+            days.push(currentDay);
+        }
+
+        if (currentDay) {
+            // Determine type based on particulars
+            let type = 'session';
+            const pLower = particulars.toLowerCase();
+            if (pLower.includes('break') || pLower.includes('lunch') || pLower.includes('tea') || pLower.includes('breakfast') || pLower.includes('dinner')) {
+                type = 'break';
+            } else if (pLower.includes('celebration') || pLower.includes('inaugural') || pLower.includes('valedictory')) {
+                type = 'ceremony';
+            } else if (pLower.includes('greet') || pLower.includes('meet') || pLower.includes('walk')) {
+                type = 'event';
+            }
+
+            currentDay.items.push({
+                time: time,
+                particulars: particulars,
+                responsible: responsible,
+                type: type
+            });
+        }
+    });
+
+    // Render HTML
+    days.forEach((day, index) => {
+        // Create Tab
+        const tab = document.createElement('div');
+        tab.className = `timetable-tab ${index === 0 ? 'active' : ''}`;
+        tab.textContent = day.date;
+        tab.onclick = () => {
+            // Toggle Tab Active State
+            document.querySelectorAll('.timetable-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Toggle Content Active State
+            document.querySelectorAll('.day-group').forEach(g => g.classList.remove('active'));
+            document.getElementById(day.id).classList.add('active');
+            
+            // Re-trigger staggered animation
+            const items = document.getElementById(day.id).querySelectorAll('.schedule-item');
+            items.forEach((item, i) => {
+                item.style.animation = 'none';
+                item.offsetHeight; // trigger reflow
+                item.style.animation = `itemFadeIn 0.5s ease forwards ${i * 0.1}s`;
+            });
+        };
+        tabsArea.appendChild(tab);
+
+        // Create Day Content Section
+        const daySection = document.createElement('div');
+        daySection.className = `day-group ${index === 0 ? 'active' : ''}`;
+        daySection.id = day.id;
+        
+        let itemsHtml = '';
+        day.items.forEach((item, i) => {
+            // Determine relevant icon
+            let icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+            const pLower = item.particulars.toLowerCase();
+            
+            if (pLower.includes('break') || pLower.includes('lunch') || pLower.includes('tea') || pLower.includes('breakfast') || pLower.includes('dinner')) {
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coffee"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>';
+            } else if (pLower.includes('celebration') || pLower.includes('eucharistic')) {
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-church"><path d="m18 7 4 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9l4-2"/><path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4"/><path d="M18 5 12 2 6 5"/><path d="M12 7v5"/><path d="M10 9h4"/></svg>';
+            } else if (pLower.includes('session') || pLower.includes('plenary') || pLower.includes('panel') || pLower.includes('technical')) {
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic-2"><path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/><circle cx="17" cy="7" r="5"/><path d="m21 11-2.39-2.39"/><path d="m13 3 2.39 2.39"/></svg>';
+            } else if (pLower.includes('inaugural') || pLower.includes('valedictory')) {
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.937A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>';
+            } else if (pLower.includes('registration')) {
+                icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>';
+            }
+
+            itemsHtml += `
+                <div class="schedule-item" style="animation: itemFadeIn 0.5s ease forwards ${i * 0.1}s">
+                    <div class="item-time">
+                        ${icon}
+                        ${item.time}
+                    </div>
+                    <div class="item-details">
+                        <div class="item-particulars">${item.particulars}</div>
+                        <span class="item-type-tag type-${item.type}">${item.type}</span>
+                    </div>
+                    <div class="item-responsible">
+                        ${item.responsible ? `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user" style="margin-right: 4px; vertical-align: middle;"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            ${item.responsible}
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        });
+
+        daySection.innerHTML = `
+            <div class="day-header">
+                <h2>${day.date}</h2>
+                <span class="full-date">${day.fullDate}</span>
+            </div>
+            <div class="schedule-list">
+                ${itemsHtml}
+            </div>
+        `;
+        renderArea.appendChild(daySection);
+    });
 }
 
 // Execute immediately since the script tag is at the end of the body
