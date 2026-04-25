@@ -615,9 +615,65 @@ async function fetchAndPopulateData() {
         // --- Populate Timetable ---
         populateTimetable(data);
 
+        // --- Populate Cultural Events ---
+        populateCulturalEvents(data);
+
         setupFilters();
     } catch (error) {
         console.error('Error fetching or populating data:', error);
+    }
+}
+
+function populateCulturalEvents(data) {
+    const culturalData = data["Cultural"];
+    const container = document.querySelector('.cultural-list-modern');
+    if (!culturalData || !container) return;
+
+    container.innerHTML = '';
+
+    // Identify keys dynamically since they are based on Excel header row
+    // Typically: index 0 is a title row, index 1 starts data
+    // We look for the first row with at least 2 non-empty values to find our keys
+    let keys = [];
+    if (culturalData.length > 1) {
+        keys = Object.keys(culturalData[1]).filter(k => k !== '__EMPTY' && k !== 'ID');
+    }
+
+    // Skip the first row if it looks like a section header (e.g. only 1 key)
+    const startIndex = (Object.keys(culturalData[0]).length <= 2) ? 1 : 0;
+
+    culturalData.slice(startIndex).forEach((item, index) => {
+        // Extract values based on identified keys
+        // key1 usually "MC " or Role, key2 usually Name/Group
+        const role = item[keys[0]] || "";
+        const performer = item[keys[1]] || "";
+
+        if (!role && !performer) return;
+
+        // Determine icon based on role/particulars
+        let iconName = 'star';
+        const rLower = role.toLowerCase();
+        if (rLower.includes('mc') || rLower.includes('anchor')) iconName = 'mic';
+        else if (rLower.includes('prayer') || rLower.includes('dance')) iconName = 'sparkles';
+        else if (rLower.includes('song') || rLower.includes('music')) iconName = 'music';
+        else if (rLower.includes('message') || rLower.includes('address')) iconName = 'message-square';
+        else if (rLower.includes('vote') || rLower.includes('thanks')) iconName = 'heart';
+
+        container.innerHTML += `
+            <div class="modern-item" style="animation-delay: ${index * 0.1}s">
+                <div class="item-icon-box"><i data-lucide="${iconName}"></i></div>
+                <div class="item-info">
+                    <p class="item-role">${role}</p>
+                    <h4 class="item-performer">${performer}</h4>
+                </div>
+                <div class="item-hover-indicator"><i data-lucide="chevron-right"></i></div>
+            </div>
+        `;
+    });
+
+    // Refresh Lucide icons if available
+    if (window.lucide) {
+        window.lucide.createIcons();
     }
 }
 

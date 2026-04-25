@@ -348,6 +348,56 @@
       "__EMPTY_2": "17:30 - 18:00"
     }
   ],
+  "Cultural": [
+    {
+      "MC ": "Programms- Cultural Event"
+    },
+    {
+      "__EMPTY": 1,
+      "MC ": "Prayer Dance",
+      "Sr. Rushila Rebello": "Sacred Heart TTI"
+    },
+    {
+      "__EMPTY": 2,
+      "MC ": "Welcome & Inaugural Address",
+      "Sr. Rushila Rebello": "Sr. Molly Mathew"
+    },
+    {
+      "__EMPTY": 3,
+      "MC ": "Symposium Theme Song",
+      "Sr. Rushila Rebello": "Pushpa Sadan"
+    },
+    {
+      "__EMPTY": 4,
+      "MC ": "Message",
+      "Sr. Rushila Rebello": "Fr. Mathew Koyickal"
+    },
+    {
+      "__EMPTY": 4,
+      "MC ": "Karnataka Cultural Dance",
+      "Sr. Rushila Rebello": "St. Antonys Com'ty"
+    },
+    {
+      "__EMPTY": 5,
+      "MC ": "Solo Song",
+      "Sr. Rushila Rebello": "Sonia lamngaihchiin neihsiel"
+    },
+    {
+      "__EMPTY": 6,
+      "MC ": "Message",
+      "Sr. Rushila Rebello": "Cardinal Antony Poola"
+    },
+    {
+      "__EMPTY": 7,
+      "MC ": "Tribal  Dance",
+      "Sr. Rushila Rebello": "Carmel Students"
+    },
+    {
+      "__EMPTY": 8,
+      "MC ": "Vote of Thanks",
+      "Sr. Rushila Rebello": "Sr. Noella"
+    }
+  ],
   "About_Section": [
     {
       "ID": "1",
@@ -630,7 +680,7 @@
     },
     {
       "ID": 4,
-      "Presenter_Name": "Fr. Dr.  Augustin  Bhayju",
+      "Presenter_Name": "Fr. Dr. V. Antony Bhyju",
       "Congregation_Name": "CMF",
       "Paper_Title": "Reimagining structures to integrate spiritual, human, intellectual, and pastoral dimensions.",
       "Theme_Category": "Formation",
@@ -680,7 +730,7 @@
     },
     {
       "ID": 9,
-      "Presenter_Name": "Sr. Dr. Sally ",
+      "Presenter_Name": "Sr. Dr. Sally John",
       "Congregation_Name": "SJB",
       "Paper_Title": "Pilgrims of Hope in Healing Ministries: The TREASURE Model for Mental Health and Holistic Wellbeing of Women Religious in India ",
       "Theme_Category": "Health Ministry",
@@ -960,7 +1010,7 @@
     },
     {
       "ID": 37,
-      "Presenter_Name": "Dr. Kripanjali",
+      "Presenter_Name": "Dr. Kripanjali Tellis Nayak",
       "Congregation_Name": "Lay Person",
       "Paper_Title": "Establishing sustainable and faith -rooted eldercare models that uphold diginity and independence",
       "Theme_Category": "Care for the Elderly",
