@@ -556,10 +556,10 @@
     },
     {
       "ID": "8",
-      "Speaker_Name": "Fr. Jose Palely   ",
-      "Speaker_Role": "Vice Chancelor, ADBU, Guwahati",
+      "Speaker_Name": "Fr. Viju Painadath",
+      "Speaker_Role": "Pro Vice Chancellor, Christ",
       "Paper_Title": "Guest of Honor",
-      "Image_Path": "images/Speakers/Fr. Jose Palely.jpg"
+      "Image_Path": "images/Speakers/Dr Fr Viju P D.jpg"
     },
     {
       "ID": "9",
@@ -741,7 +741,7 @@
     {
       "ID": 10,
       "Presenter_Name": "Sr. Dr. Blanch Ancintha Rosario",
-      "Congregation_Name": "Sister",
+      "Congregation_Name": "FDCC",
       "Paper_Title": "Motivational Factors Influencing Doctors to Provide Holistic Care: A Qualitative study",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/23.jpg",
@@ -780,8 +780,8 @@
     },
     {
       "ID": 14,
-      "Presenter_Name": "Fr. Dr. Sajith Cyriac, SSP",
-      "Congregation_Name": "St.Pauls",
+      "Presenter_Name": "Fr. Dr. Sajith Cyriac",
+      "Congregation_Name": "SSP",
       "Paper_Title": "Media Hubs for Inter-Congregational Collaboration: A Communion–Synodal–Network Analysis of Collaborative Digital Mission among Women Religious",
       "Theme_Category": "Media Engagement",
       "Image_Path": "images/Presenters/34.jpg",
@@ -960,12 +960,12 @@
     },
     {
       "ID": 32,
-      "Presenter_Name": "Dr.Benny",
-      "Congregation_Name": "#",
+      "Presenter_Name": "Dr. Benny Joseph Neelankavil",
+      "Congregation_Name": "CEO, Jubilee Mission Health Care Institutions",
       "Paper_Title": "Moderator",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/The Invisible Engines/logo.png",
-      "Abstract_Link": "#",
+      "Abstract_Link": "Dr. Benny Joseph Neelankavil CEO, Jubilee Mission Health Care Institutions\r\nHealthcare leader with 25+ years in management and academics. Oversees seven institutions including a 1,700-bed hospital. Ph.D. in Management (IIM Ahmedabad). President, AHPI Kerala Chapter; Board Member, CHAI Kerala.",
       "Status": "Active"
     },
     {
@@ -975,7 +975,7 @@
       "Paper_Title": "Care for the Elderly: Honoring Wisdom, Ensuring Dignity—A Pilot Study on Intercongregational Collaboration in Housing, Healthcare, and Palliative Care",
       "Theme_Category": "Care for the Elderly",
       "Image_Path": "images/Presenters/12.jpg",
-      "Abstract_Link": "Sr. Dr. Helen Mary, SABS, is an Obstetrician and Gynecologist with an MBBS and MD from St. John’s Medical College and has served as Chief Medical Officer at Nirmala Health Centre, Bangalore, since 2002.",
+      "Abstract_Link": "Sr. Dr. Helen Mary, SAB, is an Obstetrician and Gynecologist with an MBBS and MD from St. John’s Medical College and has served as Chief Medical Officer at Nirmala Health Centre, Bangalore, since 2002.",
       "Status": "Active"
     },
     {
