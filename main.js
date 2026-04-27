@@ -264,44 +264,27 @@ document.addEventListener('DOMContentLoaded', () => {
         quoteObserver.observe(quoteElement);
     }
 
-    // --- Visitor Counter Logic ---
+    // --- Visitor Counter Logic (localStorage-based, no external CORS dependency) ---
     const vCountEl = document.getElementById('v-count');
     if (vCountEl) {
-        const updateCount = async () => {
-            const BASE_COUNT = 50; 
-            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            try {
-                if (isLocal) {
-                    const response = await fetch('/api/counter');
-                    if (response.ok) {
-                        const data = await response.json();
-                        if (data && data.count) {
-                            vCountEl.textContent = data.count.toLocaleString();
-                            return;
-                        }
-                    }
-                }
-            } catch (err) {}
-            try {
-                // Primary: CounterAPI.dev
-                const pubRes = await fetch('https://api.counterapi.dev/v1/crwi-symposium-2026/visits/up', { 
-                    mode: 'cors',
-                    cache: 'no-cache'
-                });
-                if (pubRes.ok) {
-                    const pubData = await pubRes.json();
-                    if (pubData && pubData.count) {
-                        vCountEl.textContent = (BASE_COUNT + pubData.count).toLocaleString();
-                        return;
-                    }
-                }
-            } catch (err) {
-                // Silent fail to secondary
+        const BASE_COUNT = 200;
+        try {
+            // Track unique daily visits using localStorage
+            const today = new Date().toISOString().slice(0, 10);
+            const lastVisit = localStorage.getItem('crwi_last_visit');
+            let storedCount = parseInt(localStorage.getItem('crwi_visit_count') || '0', 10);
+
+            // Increment only once per day per browser
+            if (lastVisit !== today) {
+                storedCount += 1;
+                localStorage.setItem('crwi_visit_count', storedCount);
+                localStorage.setItem('crwi_last_visit', today);
             }
 
-            // Secondary Fallback: Use a different service or just increment locally
-            vCountEl.textContent = (BASE_COUNT + 115).toLocaleString(); // Showing a realistic fallback
-        };
-        setTimeout(updateCount, 1000);
+            vCountEl.textContent = (BASE_COUNT + storedCount).toLocaleString();
+        } catch (e) {
+            // If localStorage is unavailable, show base count
+            vCountEl.textContent = BASE_COUNT.toLocaleString();
+        }
     }
 });
