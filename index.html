@@ -166,7 +166,7 @@
         .day-header h2 { color: var(--primary-color); margin: 0; font-size: 1rem; }
         .day-header .full-date { color: var(--accent-color); font-weight: 700; font-size: 0.7rem; }
 
-        .schedule-item {
+        #timetable-modal .schedule-item {
             opacity: 0;
             display: grid;
             grid-template-columns: 130px 1fr 140px;
@@ -221,7 +221,7 @@
 
         @media (max-width: 768px) {
             .timetable-modal-full { width: 98%; height: 95vh; }
-            .schedule-item { grid-template-columns: 1fr; gap: 0.2rem; }
+            #timetable-modal .schedule-item { grid-template-columns: 1fr; gap: 0.2rem; }
             .item-responsible { text-align: left; }
             .header-title-modern { font-size: 1.1rem; }
         }
