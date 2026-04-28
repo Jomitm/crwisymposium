@@ -645,6 +645,12 @@
       "Speaker_Name": "Fr. Dr Luis Fernando Falcó, MsPs.",
       "Speaker_Role": "Coordinator of Research and Projects- Desarrollo y Salud",
       "Image_Path": "images/Speakers/Luis Fernando.png"
+    },
+    {
+      "ID": 9,
+      "Speaker_Name": "Mr. Alessandro Cassinerio",
+      "Speaker_Role": "Grants Program Manager, Anna Trust",
+      "Image_Path": "images/Speakers/Mr. Alessandro Cassinerio.png"
     }
   ],
   "Presenters": [
@@ -1102,14 +1108,14 @@
     },
     {
       "ID": "2",
-      "Name": "Sr. Audrey D'Souza",
+      "Name": "Sr. Audrey D'Souza FDCC",
       "Role": "Secretary",
       "Congregation": "Canossian Sister",
       "Image_Path": "images/Council/Sr. Audrey D'Souza.jpg"
     },
     {
       "ID": "3",
-      "Name": "Sr. Celine Fathima",
+      "Name": "Sr. Celine Fathima SSAM",
       "Role": "Treasurer",
       "Congregation": "St. Anne Madras",
       "Image_Path": "images/Council/Sr. Celine Fathima.jpg"
@@ -1123,7 +1129,7 @@
     },
     {
       "ID": "5",
-      "Name": "Dr. D.J. Margaret FMS",
+      "Name": "Dr. D.J. Margaret FMA",
       "Role": "Member",
       "Congregation": "Salesian Sister",
       "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
