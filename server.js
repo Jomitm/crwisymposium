@@ -29,7 +29,7 @@ app.get('/api/data', (req, res) => {
 // Endpoint to proxy the visitor counter (Local storage for reliability)
 app.get('/api/counter', (req, res) => {
     const counterPath = path.join(__dirname, 'visitor_count.json');
-    let countData = { count: 35 }; // Default starting count if no file exists
+    let countData = { count: 205 }; // Default starting count if no file exists
     
     try {
         if (fs.existsSync(counterPath)) {

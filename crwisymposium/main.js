@@ -124,4 +124,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filterSelect) {
         filterSelect.addEventListener('change', filterPresenters);
     }
+
+    // --- Visitor Counter Logic (Environment-Aware & Robust) ---
+    const vCountEl = document.getElementById('v-count');
+    if (vCountEl) {
+        const updateDisplay = (val) => {
+            if (vCountEl) {
+                const count = typeof val === 'number' ? val : parseInt(val, 10) || 0;
+                vCountEl.textContent = count.toLocaleString();
+            }
+        };
+
+        const localFallback = () => {
+            const BASE_COUNT = 205; 
+            try {
+                const today = new Date().toISOString().slice(0, 10);
+                const lastVisit = localStorage.getItem('crwi_last_visit');
+                let storedCount = parseInt(localStorage.getItem('crwi_visit_count') || '0', 10);
+                if (lastVisit !== today) {
+                    storedCount += 1;
+                    localStorage.setItem('crwi_visit_count', storedCount);
+                    localStorage.setItem('crwi_last_visit', today);
+                }
+                updateDisplay(BASE_COUNT + storedCount);
+            } catch (e) {
+                updateDisplay(BASE_COUNT);
+            }
+        };
+
+        fetch('/api/counter')
+            .then(res => {
+                if (!res.ok) throw new Error('API Error');
+                return res.json();
+            })
+            .then(data => {
+                if (data && typeof data.count === 'number') {
+                    updateDisplay(data.count);
+                } else {
+                    localFallback();
+                }
+            })
+            .catch(() => {
+                localFallback();
+            });
+    }
 });

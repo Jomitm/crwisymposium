@@ -114,12 +114,12 @@
     },
     {
       "Setting_Key": "Presenters_Section_Title",
-      "Setting_Value": "Our Presenters",
+      "Setting_Value": "Research from Our Presenters",
       "Description": "Changes \"Speakers and Presenters\""
     },
     {
       "Setting_Key": "Presenters_Subtitle",
-      "Setting_Value": "Research from our sisters",
+      "Setting_Value": "“Explore the profiles below - Click on each category to view them.",
       "Description": "Changes the text under \"Speakers and Presenters\""
     },
     {
@@ -373,9 +373,14 @@
       "Sr. Rushila Rebello": "Fr. Mathew Koyickal"
     },
     {
-      "__EMPTY": 4,
+      "__EMPTY": 5,
       "MC ": "Karnataka Cultural Dance",
       "Sr. Rushila Rebello": "St. Antonys Com'ty"
+    },
+    {
+      "__EMPTY": 6,
+      "MC ": "Surprise Surprise",
+      "Sr. Rushila Rebello": "??"
     },
     {
       "__EMPTY": 5,
@@ -545,10 +550,17 @@
       "Speaker_Name": "Sr. Maria Nirmalini ",
       "Speaker_Role": "President Women Section",
       "Paper_Title": "Chairperson",
-      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg"
+      "Image_Path": "images/Speakers/Sr. Nirmalini.png"
     },
     {
-      "ID": "7",
+      "ID": 7,
+      "Speaker_Name": "Fr. Dr. Joseph C C",
+      "Speaker_Role": "Vice Chancellor, Christ",
+      "Paper_Title": "Guest of Honor",
+      "Image_Path": "images/Speakers/Fr. Jseph.jpg"
+    },
+    {
+      "ID": 8,
       "Speaker_Name": "Fr. Saju Chackalackal ",
       "Speaker_Role": "CRI President",
       "Paper_Title": "Guest of Honor",
@@ -556,41 +568,34 @@
     },
     {
       "ID": "8",
-      "Speaker_Name": "Fr. Dr. Viju P. Devassy",
-      "Speaker_Role": "Pro Vice Chancellor, Christ",
-      "Paper_Title": "Guest of Honor",
-      "Image_Path": "images/Speakers/Fr Viju (1).png"
-    },
-    {
-      "ID": "9",
       "Speaker_Name": "Fr.Dr. Varghese K J",
       "Speaker_Role": "Administrator Christ University ",
       "Paper_Title": "Guest of Honor",
       "Image_Path": "images/Speakers/Fr, Varghese.jpg"
     },
     {
-      "ID": "10",
+      "ID": "9",
       "Speaker_Name": "Sr. DJ Margaret ",
       "Speaker_Role": "Executive Council CRWI",
       "Paper_Title": "Guest of Honor",
       "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
     },
     {
-      "ID": 11,
+      "ID": "10",
       "Speaker_Name": "Sr. Molly Attully",
       "Speaker_Role": "Mother General - CCR",
       "Paper_Title": "Guest of Honor",
       "Image_Path": "images/Speakers/Molly attully.jpeg"
     },
     {
-      "ID": 12,
+      "ID": 11,
       "Speaker_Name": "Sr. Sheela Nicholas",
       "Speaker_Role": "Executive Council CRWI",
       "Paper_Title": "Guest of Honor",
       "Image_Path": "images/Council/Dr. Sr. Sheela Nicholas.jpg"
     },
     {
-      "ID": 13,
+      "ID": 12,
       "Speaker_Name": "Br. Santhosh P J",
       "Speaker_Role": "President Brother Section",
       "Paper_Title": "Guest of Honor",
@@ -738,7 +743,7 @@
       "ID": 9,
       "Presenter_Name": "Sr. Dr. Sally John",
       "Congregation_Name": "SJB",
-      "Paper_Title": "Pilgrims of Hope in Healing Ministries: The TREASURE Model for Mental Health and Holistic Wellbeing of Women Religious in India ",
+      "Paper_Title": "The Treasure Model for Mental Health and Holistic Wellbeing of Women Religious in India ",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/19.jpg",
       "Abstract_Link": "Senior psychiatrist with over 20 years of experience, Dr. Sally John is Head of the Department of Psychiatry at MGIMS, Sevagram, and founder of Treasure, a national mental health initiative for religious sisters.",
@@ -758,7 +763,7 @@
       "ID": 11,
       "Presenter_Name": " Sr. Dr. Viji Poulose",
       "Congregation_Name": "FCC",
-      "Paper_Title": "Compassionate Healing: Consecrated Women as Healers and Caregivers Continuing the Compassionate Mission of Christ.",
+      "Paper_Title": "Holistic Care as Vocation, Presence and Meaning",
       "Theme_Category": "Health Ministry",
       "Image_Path": "images/Presenters/21.jpg",
       "Abstract_Link": "Paediatrician with extensive clinical experience, Dr. Viji Poulose serves as Paediatrician, Sonologist, and Medical Superintendent at Dayasagar Hospital, Amravati.",
@@ -827,7 +832,7 @@
     {
       "ID": 18,
       "Presenter_Name": "Dr. Greta D'Souza ",
-      "Congregation_Name": "#",
+      "Congregation_Name": "Lay Person",
       "Paper_Title": "Moderator",
       "Theme_Category": "Education",
       "Image_Path": "images/Presenters/modrators/GRETA.png",
@@ -840,7 +845,7 @@
       "Congregation_Name": "AC",
       "Paper_Title": "Empowering consecrated women as educators and leaders in Christ centered, value-based education. ",
       "Theme_Category": "Education",
-      "Image_Path": "images/Speakers/Sr. Nirmalini2.jpg",
+      "Image_Path": "images/Speakers/Marria Nirmalini.png",
       "Abstract_Link": "Superior General of the Apostolic Carmel Congregation, Sr. Maria Nirmalini AC is President of CRWI and Vice President of CRI, with long experience in education, leadership, and advocacy for gender equality.",
       "Status": "Active"
     },
@@ -1327,18 +1332,24 @@
     },
     {
       "ID": 13,
+      "Name": "Sr. Maneesha",
+      "Role": "Volunteer -",
+      "Image_Path": "images/Volunteers/Sr. Maneesha.jpeg"
+    },
+    {
+      "ID": 14,
       "Name": "Mrs. Sowmya",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sowmya.JPG"
     },
     {
-      "ID": 14,
+      "ID": 15,
       "Name": "Mr. Sanjay KS ",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Mr. Sanjay KS.jpeg"
     },
     {
-      "ID": 15,
+      "ID": 16,
       "Name": "Ms. Riya C V",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Riya C V.jpeg"
