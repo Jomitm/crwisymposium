@@ -540,72 +540,72 @@
     },
     {
       "ID": "5",
-      "Speaker_Name": "Rev. Dr. Mathew Koikkal",
+      "Speaker_Name": "Rev. Dr. Mathew Koyickal",
       "Speaker_Role": "Deputy Secretary General Of The CBCI",
       "Paper_Title": "Special Guest",
       "Image_Path": "images/Speakers/Rev. Dr. Mathew Koikkal.jpeg"
     },
     {
       "ID": "6",
-      "Speaker_Name": "Sr. Maria Nirmalini ",
+      "Speaker_Name": "Sr. Maria Nirmalini AC",
       "Speaker_Role": "President Women Section",
       "Paper_Title": "Chairperson",
       "Image_Path": "images/Speakers/Sr. Nirmalini.png"
     },
     {
       "ID": 7,
-      "Speaker_Name": "Fr. Dr. Joseph C C",
+      "Speaker_Name": "Fr. Dr. Joseph C C CMI",
       "Speaker_Role": "Vice Chancellor, Christ",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Speakers/Fr. Jseph.jpg"
     },
     {
       "ID": 8,
-      "Speaker_Name": "Fr. Saju Chackalackal ",
+      "Speaker_Name": "Fr. Saju Chackalackal CMI",
       "Speaker_Role": "CRI President",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Speakers/Fr.Saju.jpg"
     },
     {
       "ID": "8",
-      "Speaker_Name": "Fr.Dr. Varghese K J",
+      "Speaker_Name": "Fr. Dr. Varghese K J CMI",
       "Speaker_Role": "Administrator Christ University ",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Speakers/Fr, Varghese.jpg"
     },
     {
       "ID": "9",
-      "Speaker_Name": "Sr. DJ Margaret ",
+      "Speaker_Name": "Sr. DJ Margaret FMA",
       "Speaker_Role": "Executive Council CRWI",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
     },
     {
       "ID": "10",
-      "Speaker_Name": "Sr. Molly Attully",
+      "Speaker_Name": "Sr. Molly Attully CCR",
       "Speaker_Role": "Mother General - CCR",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Speakers/Molly attully.jpeg"
     },
     {
       "ID": 11,
-      "Speaker_Name": "Sr. Sheela Nicholas",
+      "Speaker_Name": "Sr. Sheela Nicholas SAB",
       "Speaker_Role": "Executive Council CRWI",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Council/Dr. Sr. Sheela Nicholas.jpg"
     },
     {
       "ID": 12,
-      "Speaker_Name": "Br. Santhosh P J",
+      "Speaker_Name": "Br. Santhosh P J CSC",
       "Speaker_Role": "President Brother Section",
-      "Paper_Title": "Guest of Honor",
+      "Paper_Title": "Guest of Honour",
       "Image_Path": "images/Speakers/Br. Santhosh P J.jpg"
     }
   ],
   "Development Partners": [
     {
       "ID": 1,
-      "Speaker_Name": "Sr. Dr. Jane Wakahiu  ",
+      "Speaker_Name": "Sr. Dr. Jane Wakahiu  LSOSF",
       "Speaker_Role": "Associate Vice President, Program Operations and Head of Catholic Sisters",
       "Image_Path": "images/Speakers/Sr. Jane.jpg"
     },
@@ -624,30 +624,30 @@
     {
       "ID": 4,
       "Speaker_Name": "Fr. Dr. Thomas P. Gaunt, SJ.",
-      "Speaker_Role": "Executive director at CARA",
+      "Speaker_Role": "Executive director at CARA, USA",
       "Image_Path": "images/Speakers/Thomas P. Gaunt.webp"
     },
     {
       "ID": 5,
-      "Speaker_Name": "Sr.Dr.  Thu T. Do",
-      "Speaker_Role": "Research Associate CARA, Vietnam  ",
+      "Speaker_Name": "Sr.Dr.  Thu T. Do LHC",
+      "Speaker_Role": "Research Associate CARA, USA  ",
       "Image_Path": "images/Speakers/SR. Thu.jpg"
     },
     {
       "ID": 6,
-      "Speaker_Name": "Sr. Dr.Candida   Mukundi ",
-      "Speaker_Role": "Excecutive Director CERRA",
+      "Speaker_Name": "Sr. Dr.Candida   Mukundi  ASN",
+      "Speaker_Role": "Excecutive Director CERRA - Africa",
       "Image_Path": "images/Speakers/Sr. Cadita Njeri Mukundi.jpg"
     },
     {
       "ID": 7,
       "Speaker_Name": "Sr. Dr. Bibiana Munini Ngundo",
-      "Speaker_Role": "Research Associate",
-      "Image_Path": "images/Speakers/Bibina.jpg"
+      "Speaker_Role": "Research Associate CERRA - Africa",
+      "Image_Path": "images/Speakers/Bibiana.png"
     },
     {
       "ID": 8,
-      "Speaker_Name": "Fr. Dr Luis Fernando Falcó, MsPs.",
+      "Speaker_Name": "Fr. Dr Luis Fernando Falcó, MSpS.",
       "Speaker_Role": "Coordinator of Research and Projects- Desarrollo y Salud",
       "Image_Path": "images/Speakers/Luis Fernando.png"
     },
@@ -661,7 +661,7 @@
   "Presenters": [
     {
       "ID": 1,
-      "Presenter_Name": "Dr. Fr. Jerin ",
+      "Presenter_Name": "Fr. Jerin Peter",
       "Congregation_Name": "SDB",
       "Paper_Title": "Moderator",
       "Theme_Category": "Formation",
@@ -1106,7 +1106,7 @@
   "Executive_Council": [
     {
       "ID": "1",
-      "Name": "Dr. Sr. Aruna Jose CHF",
+      "Name": "Sr. Dr. Aruna Jose CHF",
       "Role": "Vice President",
       "Congregation": "Congregation of Holy Family",
       "Image_Path": "images/Council/Dr. Sr. Aruna Jose CHF.jpg"
@@ -1134,14 +1134,14 @@
     },
     {
       "ID": "5",
-      "Name": "Dr. D.J. Margaret FMA",
+      "Name": "Sr. Dr. D.J. Margaret FMA",
       "Role": "Member",
       "Congregation": "Salesian Sister",
       "Image_Path": "images/Council/Dr. D.J. Margaret.jpg"
     },
     {
       "ID": "6",
-      "Name": "Dr. Sr. Sheela Nicholas SAB",
+      "Name": "Sr. Dr. Sheela Nicholas SAB",
       "Role": "Member",
       "Congregation": "Sisters of St. Anne",
       "Image_Path": "images/Council/Dr. Sr. Sheela Nicholas.jpg"
@@ -1191,68 +1191,62 @@
     },
     {
       "ID": "1",
-      "Name": "Sr. Molly Mathew",
-      "Role": "CRWI Staff - ",
+      "Name": "Sr. Molly Mathew MSMHC",
+      "Role": "Executive Director",
       "Image_Path": "images/Leaders/Sr. Molly Mathew MSMHC.png"
     },
     {
       "ID": "2",
-      "Name": "Sr. Doris D Souza",
-      "Role": "CRWI Trustee",
+      "Name": "Sr. Dr. Doris D Souza AC",
+      "Role": "Research Consultant",
       "Image_Path": "images/Presenters/25.jpg"
     },
     {
       "ID": "3",
-      "Name": "Fr. Paul Pudussery",
-      "Role": "CRWI Staff - ",
+      "Name": "Fr.(Dr.) Paul Pudussery CSC",
+      "Role": "Lead Researcher",
       "Image_Path": "images/Presenters/15.jpg"
     },
     {
       "ID": "4",
-      "Name": "Sr. Mary Paul",
-      "Role": "CRWI Staff - ",
+      "Name": "Sr. Dr. Mary Paul FCC",
+      "Role": "Research Co-ordinator",
       "Image_Path": "images/Presenters/8.jpg"
     },
     {
       "ID": "5",
-      "Name": "Sr. Vijo Arul Selvi",
-      "Role": "CRWI Staff - ",
+      "Name": "Sr. Vijo Arul Selvi CFMSS",
+      "Role": "Research Co-ordinator",
       "Image_Path": "images/Presenters/38.png"
     },
     {
-      "ID": 6,
-      "Name": "Sr. Grecy Lily",
-      "Role": "CRWI Staff - ",
-      "Image_Path": "images/Volunteers/Sr, Grecy.jpeg"
-    },
-    {
-      "ID": 7,
+      "ID": "6",
       "Name": "Mrs. Asha M Albert",
-      "Role": "CRWI Staff - ",
+      "Role": "MIS Co-ordinator",
       "Image_Path": "images/Volunteers/Asha.jpeg"
     },
     {
-      "ID": 8,
+      "ID": "7",
       "Name": "Mr. Abey Jose",
-      "Role": "CRWI Staff - ",
+      "Role": "Data and Communication",
       "Image_Path": "images/Volunteers/abey.jpeg"
     },
     {
-      "ID": 9,
-      "Name": "Mr. Pavil ",
-      "Role": "CRWI Staff - ",
+      "ID": "8",
+      "Name": "Mr. Pavil Nithin R",
+      "Role": "Media Co-ordinator",
       "Image_Path": "images/Volunteers/Pavil.png"
     },
     {
-      "ID": 10,
-      "Name": "Mr. Arun",
-      "Role": "CRWI Staff - ",
+      "ID": "9",
+      "Name": "Mr. Arun Joji",
+      "Role": "Accountant",
       "Image_Path": "images/Volunteers/Arun.jpeg"
     },
     {
-      "ID": 11,
-      "Name": "Mr. Jomit",
-      "Role": "CRWI Staff - ",
+      "ID": "10",
+      "Name": "Mr. Jomit Mathew",
+      "Role": "Finance Manager",
       "Image_Path": "images/Volunteers/Jomit.jpeg"
     },
     {
@@ -1260,79 +1254,79 @@
     },
     {
       "ID": 1,
-      "Name": "Sr. Jenita Mary",
+      "Name": "Sr. Jenita Mary AC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/JenittaAphoto.png"
     },
     {
       "ID": 2,
-      "Name": "Sr. Biji Mathew",
+      "Name": "Sr. Biji Mathew MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Biji Mathew.jpeg"
     },
     {
       "ID": 3,
-      "Name": "Sr. Praveena M N",
+      "Name": "Sr. Praveena M N FMA",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Praveena M.N.jpeg"
     },
     {
       "ID": 4,
-      "Name": "Sr. Ragina ",
+      "Name": "Sr. Ragina  SMMI",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Regina.jpeg"
     },
     {
       "ID": 5,
-      "Name": "Sr. Anthony Rani",
+      "Name": "Sr. Anthony Rani PHJC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Anthony Ran.jpeg"
     },
     {
       "ID": 6,
-      "Name": "Sr. Piholi Leena",
+      "Name": "Sr. Piholi Leena MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Piholi Leena.jpeg"
     },
     {
       "ID": 7,
-      "Name": "Sr. Angela Bey",
+      "Name": "Sr. Angela Bey MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Angela Bey.jpeg"
     },
     {
       "ID": 8,
-      "Name": "Sr. Banpynsuk",
+      "Name": "Sr. Banpynsuk MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Banpynsuk.jpeg"
     },
     {
       "ID": 9,
-      "Name": "Sr. Simera G Momin",
+      "Name": "Sr. Simera G Momin MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr.Simera G Momin.jpeg"
     },
     {
       "ID": 10,
-      "Name": "Sr. Eusebia Rynshon",
+      "Name": "Sr. Eusebia Rynshon MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr.Eusebia Rynshon.jpeg"
     },
     {
       "ID": 11,
-      "Name": "Sr. Juli mate",
+      "Name": "Sr. Juli mate MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Juli mate.jpeg"
     },
     {
       "ID": 12,
-      "Name": "Sr.Stella Zimik",
+      "Name": "Sr.Stella Zimik MSMHC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr.Stella Zimik.jpeg"
     },
     {
       "ID": 13,
-      "Name": "Sr. Maneesha",
+      "Name": "Sr. Maneesha AC",
       "Role": "Volunteer -",
       "Image_Path": "images/Volunteers/Sr. Maneesha.jpeg"
     },
